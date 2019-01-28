@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Wingtree`,
-    description: `Devlog of wingtree, a developer who want to rule this world`,
+    title: `Wingtree.github.io`,
+    description: `Devlog and Portfolio of wingtree`,
     author: `@wingtree`,
   },
   plugins: [
