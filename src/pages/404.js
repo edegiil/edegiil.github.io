@@ -1,20 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react';
 
-import Layout from '../components/Layout';
-import SEO from '../components/SEO';
+import Layout from 'components/layout';
+import SEO from 'components/seo';
 
-class Page404 extends Component {
-  render() {
-    return (
-      <Layout>
-        <SEO title="404" />
-        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '95%' }}>
-          <h1 style={{ textAlign: 'center' }}>PAGE NOT FOUND</h1>
-          <p style={{ fontWeight: 'bold', fontSize: 20, textAlign: 'center' }}>code: 404</p>
-        </div>
-      </Layout>
-    )
-  }
-}
+const NotFoundPage = () => (
+  <Layout>
+    <SEO title='404: Not found' />
+    <h1>NOT FOUND</h1>
+    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+  </Layout>
+);
 
-export default Page404;
+export default NotFoundPage;
