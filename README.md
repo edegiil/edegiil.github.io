@@ -10,3 +10,4 @@ Devlog portfolio
 `v1.0.0` - 2019.1.27 <br/>
 Initiate Devlog
 
+https://drive.google.com/file/d/1p-QZqeQWegyDuJ2vepTosYh4zAloPXk3/view?usp=sharing
