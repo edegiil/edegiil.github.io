@@ -1,0 +1,72 @@
+@import '../../configs/color.scss';
+
+.about-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.about-column {
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+}
+
+.about-main-box {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.about-content-box {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background-color: $MAIN_COLOR;
+}
+
+.about-design-bar {
+
+}
+
+.about-main-name {
+
+}
+
+.about-main-description {
+
+}
+
+.about-title {
+  font-family: 'ZCOOL QingKe HuangYou';
+  font-size: 30px;
+  font-weight: 100;
+  color: $BACKGROUND_COLOR;
+}
+
+.about-content {
+
+}
+
+.about-timeline-left {
+
+}
+
+.about-content-wrapper {
+
+}
+
+.about-content-text {
+
+}
+
+.about-content-subtext {
+
+}
+
+.about-timeline-bar {
+
+}
+
+.about-timeline-dot {
+
+}

@@ -1,0 +1,56 @@
+@import '../configs/color.scss';
+
+.header-wrapper {
+  background-color: $BACKGROUND_COLOR;
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  padding: 0px 50px;
+  align-items: center;
+  justify-content: space-between;
+
+  .header-title-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .header-title-link {
+    text-decoration: none;
+  }
+
+  .header-title {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-weight: bold;
+    font-size: 24px;
+    color: $MAIN_COLOR;
+  }
+
+  .header-location {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-weight: bold;
+    font-size: 20px;
+    color: $LIGHT_MAIN_COLOR;
+    margin-left: 10px;
+  }
+
+  .header-lang-wrapper {
+    display: flex;
+    flex-direction: row;
+
+    .header-lang.on {
+      font-family: 'ZCOOL QingKe HuangYou', cursive;
+      font-weight: bold;
+      margin: 0px 10px;
+      color: $MAIN_COLOR;
+      cursor: default;
+    }
+    .header-lang.off {
+      font-family: 'ZCOOL QingKe HuangYou', cursive;
+      font-weight: bold;
+      margin: 0px 10px;
+      color: $LIGHT_MAIN_COLOR;
+      cursor: pointer;
+    }
+  }
+}
