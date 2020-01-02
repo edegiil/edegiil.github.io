@@ -2,6 +2,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
+import logo from 'images/logo.png';
+
 import './header.scss';
 
 class Header extends React.Component<any> {
@@ -16,6 +18,7 @@ class Header extends React.Component<any> {
       <div className='header-wrapper'>
         <div className='header-title-wrapper'>
           <Link to='/' className='header-title-link'>
+            <img alt='logo' src={logo} className='header-logo' />
             <div className='header-title'>WINGTREE</div>
           </Link>
           {

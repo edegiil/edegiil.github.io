@@ -1,5 +1,7 @@
 import React from 'react';
 
+import withLayout from 'hoc/withLayout';
+
 import Layout from 'components/layout';
 import SEO from 'components/seo';
 
@@ -10,17 +12,16 @@ class About extends React.Component {
 
   render() {
     return (
-      <Layout width='full'>
-        <SEO title='About wingtree' />
+      <>
+        <SEO title='About' />
         <div className='about-wrapper'>
           <div className='about-column'>
             <div className='about-main-box'>
               <div className='about-design-bar' />
               <div className='about-main-name'>Wingtree</div>
-              <div className='about-main-description'>개발자</div>
             </div>
             <div className='about-content-box'>
-              <div className='about-title'>Education</div>
+              <div className='about-title'>학력</div>
               <div className='about-content'>
                 <div className='about-timeline-left'>
                   <div className='about-content-wrapper'>
@@ -43,17 +44,18 @@ class About extends React.Component {
           </div>
           <div className='about-column'>
             <div className='about-content-box'>
-              <div className='about-title'>Interest</div>
+              <div className='about-title'>관심분야</div>
               <div className='about-content'>
-                <div className='about-content-text'>인공지능</div>
-                <div className='about-content-text'>가상현실</div>
-                <div className='about-content-text'>반지의 제왕</div>
-                <div className='about-content-text'>스타워즈</div>
-                <div className='about-content-text'>마블 시네마틱 유니버스</div>
+                <div className='about-content-text'>A.I.</div>
+                <div className='about-content-text'>Virtual Reality</div>
+                <div className='about-content-text'>Mobile App</div>
+                <div className='about-content-text'>LotR</div>
+                <div className='about-content-text'>MARVEL</div>
+                <div className='about-content-text'>STARWARS</div>
               </div>
             </div>
             <div className='about-content-box'>
-              <div className='about-title'>Work</div>
+              <div className='about-title'>경력</div>
               <div className='about-content'>
                 <div className='about-timeline-left'>
                   <div className='about-content-wrapper'>
@@ -76,9 +78,9 @@ class About extends React.Component {
             </div>
           </div>
         </div>
-      </Layout>
+      </>
     );
   }
 }
 
-export default About;
+export default withLayout(About)({ title: 'About', width: 'full' });

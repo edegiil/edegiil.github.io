@@ -13,18 +13,27 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    .header-title-link {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      text-decoration: none;
+    }
+  
+    .header-title {
+      font-family: 'ZCOOL QingKe HuangYou', cursive;
+      font-weight: bold;
+      font-size: 24px;
+      color: $MAIN_COLOR;
+    }
+
+    .header-logo {
+      width: 35px;
+      height: 35px;
+    }
   }
 
-  .header-title-link {
-    text-decoration: none;
-  }
-
-  .header-title {
-    font-family: 'ZCOOL QingKe HuangYou', cursive;
-    font-weight: bold;
-    font-size: 24px;
-    color: $MAIN_COLOR;
-  }
 
   .header-location {
     font-family: 'ZCOOL QingKe HuangYou', cursive;

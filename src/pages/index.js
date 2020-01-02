@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
+import withLayout from 'hoc/withLayout';
+
 import Layout from 'components/layout';
 import SEO from 'components/seo';
 
@@ -11,7 +13,7 @@ class IndexPage extends React.Component {
 
   render() {
     return (
-      <Layout width='full'>
+      <>
         <SEO title="Home" />
         <div className='index-wrapper'>
           <div className='index-menu-wrapper'>
@@ -31,9 +33,9 @@ class IndexPage extends React.Component {
           { `© ${new Date().getFullYear()} wingtree, powered by ` }
           <a href="https://www.gatsbyjs.org" className='footer-link'>Gatsby</a>
         </footer>
-      </Layout>
+      </>
     );
   }
 }
 
-export default IndexPage;
+export default withLayout(IndexPage)({ title: 'Home', width: 'full' });

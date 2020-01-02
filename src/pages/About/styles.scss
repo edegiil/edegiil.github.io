@@ -15,6 +15,9 @@
   display: flex;
   flex: 1;
   flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  padding: 30px 40px;
 }
 
 .about-content-box {
@@ -22,18 +25,22 @@
   flex: 1;
   flex-direction: column;
   background-color: $MAIN_COLOR;
+  padding: 30px 40px;
 }
 
 .about-design-bar {
-
+  height: 5px;
+  width: 50px;
+  background-color: $MAIN_COLOR;
+  margin-bottom: 15px;
 }
 
 .about-main-name {
-
-}
-
-.about-main-description {
-
+  font-family: 'Raleway';
+  font-size: 35px;
+  font-weight: 100;
+  color: $MAIN_COLOR;
+  margin-bottom: 10px;
 }
 
 .about-title {
@@ -41,10 +48,11 @@
   font-size: 30px;
   font-weight: 100;
   color: $BACKGROUND_COLOR;
+  margin-bottom: 10px;
 }
 
 .about-content {
-
+  padding: 10px;
 }
 
 .about-timeline-left {
@@ -56,11 +64,16 @@
 }
 
 .about-content-text {
-
+  font-family: 'Raleway';
+  font-weight: 100;
+  font-size: 18px;
+  color: $BACKGROUND_COLOR;
+  margin-bottom: 5px;
 }
 
 .about-content-subtext {
-
+  font-family: 'Raleway';
+  color: $BACKGROUND_COLOR;
 }
 
 .about-timeline-bar {
