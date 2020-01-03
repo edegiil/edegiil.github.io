@@ -15,9 +15,7 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-  padding: 30px 40px;
+  padding: 30px 60px;
 }
 
 .about-content-box {
@@ -25,7 +23,7 @@
   flex: 1;
   flex-direction: column;
   background-color: $MAIN_COLOR;
-  padding: 30px 40px;
+  padding: 30px 60px;
 }
 
 .about-design-bar {
@@ -44,7 +42,7 @@
 }
 
 .about-title {
-  font-family: 'ZCOOL QingKe HuangYou';
+  font-family: 'Jua', 'ZCOOL QingKe HuangYou';
   font-size: 30px;
   font-weight: 100;
   color: $BACKGROUND_COLOR;
@@ -55,12 +53,22 @@
   padding: 10px;
 }
 
-.about-timeline-left {
-
+.about-content-column {
+  display: flex;
+  margin-bottom: 10px;
 }
 
-.about-content-wrapper {
+.about-content-sub-column {
+  display: flex;
+  align-items: center;
+}
 
+.about-content-main-text {
+  font-family: 'Raleway';
+  font-weight: 100;
+  font-size: 18px;
+  color: $BACKGROUND_COLOR;
+  width: 120px;
 }
 
 .about-content-text {
@@ -73,13 +81,7 @@
 
 .about-content-subtext {
   font-family: 'Raleway';
+  font-size: 13px;
   color: $BACKGROUND_COLOR;
-}
-
-.about-timeline-bar {
-
-}
-
-.about-timeline-dot {
-
+  margin-right: 8px;
 }

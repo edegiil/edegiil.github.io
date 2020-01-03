@@ -32,7 +32,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Raleway:100,400,700', 'ZCOOL QingKe HuangYou:100,400,700'],
+          families: ['Raleway:100,400,700', 'ZCOOL QingKe HuangYou:100,400,700', 'Jua:400'],
         },
       },
     },

@@ -27,3 +27,10 @@ body {
   height: calc(100% - 80px);
   padding: 0px;
 }
+
+.background-logo {
+  position: absolute;
+  right: -200px;
+  z-index: 999;
+  opacity: 0.4;
+}

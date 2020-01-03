@@ -3,6 +3,8 @@ import React from 'react';
 
 import Header from 'components/Header';
 
+import logo from 'images/logo.png';
+
 import './styles.scss';
 
 const withLayout = (Component: React.Component) => ({ title, width }) => () => {
@@ -11,6 +13,7 @@ const withLayout = (Component: React.Component) => ({ title, width }) => () => {
       <>
         <Header location={title} />
         <div className={!width ? 'layout-wrapper' : `layout-wrapper-${width}`}>
+          <img src={logo} className='background-logo'/>
           <Component />
         </div>
       </>

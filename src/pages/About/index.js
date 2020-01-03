@@ -23,21 +23,18 @@ class About extends React.Component {
             <div className='about-content-box'>
               <div className='about-title'>학력</div>
               <div className='about-content'>
-                <div className='about-timeline-left'>
-                  <div className='about-content-wrapper'>
-                    <div className='about-content-text'>영동고등학교</div>
-                  </div>
-                  <div className='about-content-wrapper'>
-                    <div className='about-content-text'>경북대학교, 전자공학</div>
-                  </div>
+                <div className='about-content-column'>
+                  <div className='about-content-main-text'>영동고등학교</div>
+                  <div className='about-content-text'>2012. 3 ~ 2015. 2</div>
                 </div>
-                <div className='about-timeline-bar'>
-                  <div className='about-timeline-dot' />
-                  <div className='about-timeline-dot' />
-                </div>
-                <div className='about-timeline-right'>
-                  <div className='about-content-text'>12. 03 ~ 15. 02</div>
-                  <div className='about-content-text'>15. 03 ~</div>
+                <div className='about-content-column'>
+                  <div className='about-content-main-text'>경북대학교</div>
+                  <div className='about-content-text-box'>
+                    <div className='about-content-sub-column'>
+                      <div className='about-content-subtext'>전자공학</div>
+                      <div className='about-content-text'>2015. 3 ~ </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -57,22 +54,22 @@ class About extends React.Component {
             <div className='about-content-box'>
               <div className='about-title'>경력</div>
               <div className='about-content'>
-                <div className='about-timeline-left'>
-                  <div className='about-content-wrapper'>
-                    <div className='about-content-text'>아일토스</div>
-                    <div className='about-content-subtext'>Developer</div>
+                <div className='about-content-column'>
+                  <div className='about-content-main-text'>아일토스</div>
+                  <div className='about-content-text-box'>
+                    <div className='about-content-sub-column'>
+                      <div className='about-content-subtext'>개발자</div>
+                      <div className='about-content-text'>2018. 8 ~ 2018. 12</div>
+                    </div>
+                    <div className='about-content-sub-column'>
+                      <div className='about-content-subtext'>Technical Leader</div>
+                      <div className='about-content-text'>2019. 1 ~ 2019. 12</div>
+                    </div>
+                    <div className='about-content-sub-column'>
+                      <div className='about-content-subtext'>개발자</div>
+                      <div className='about-content-text'>2020. 1 ~ </div>
+                    </div>
                   </div>
-                  <div className='about-content-wrapper'>
-                    <div className='about-content-subtext'>Technical Leader</div>
-                  </div>
-                </div>
-                <div className='about-timeline-bar'>
-                  <div className='about-timeline-dot' />
-                  <div className='about-timeline-dot' />
-                </div>
-                <div className='about-timeline-right'>
-                  <div className='about-content-text'>18. 08 ~ 19. 01</div>
-                  <div className='about-content-text'>19. 01 ~ </div>
                 </div>
               </div>
             </div>
