@@ -25,6 +25,7 @@ class About extends React.Component {
               <div className='about-content'>
                 <div className='about-content-column'>
                   <div className='about-content-main-text'>영동고등학교</div>
+                  <div className='about-content-subtext' />
                   <div className='about-content-text'>2012. 3 ~ 2015. 2</div>
                 </div>
                 <div className='about-content-column'>
