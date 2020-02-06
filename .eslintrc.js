@@ -31,5 +31,6 @@ module.exports = {
     'jsx-a11y/no-static-element-interactions': 0,
     'no-alert': 0,
     'camelcase': 0,
+    'react/jsx-curly-brace-presence': 0,
   },
 };

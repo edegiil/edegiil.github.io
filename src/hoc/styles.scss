@@ -10,6 +10,7 @@ body {
   height: 100%;
   width: 100%;
   background-color: $BACKGROUND_COLOR;
+  overflow-x: hidden;
 }
 
 #___gatsby, #gatsby-focus-wrapper {
