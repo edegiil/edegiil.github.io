@@ -30,6 +30,14 @@
   flex: 1,
 }
 
+.devlog-list-title {
+  padding: 0 10px;
+  margin-bottom: 20px;
+  font-family: 'ZCOOL QingKe HuangYou';
+  font-size: 25px;
+  color: $MAIN_COLOR;
+}
+
 .devlog-post-wrapper {
   display: flex;
   width: 85%;

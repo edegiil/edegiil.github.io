@@ -14,7 +14,10 @@ class Devlog extends React.Component<any> {
     };
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    const { list } = this.props;
+    this.setState({ category: Object.keys(list)[0] });
+  }
 
   handleCategory = (category) => () => this.setState({ category });
 
@@ -38,6 +41,7 @@ class Devlog extends React.Component<any> {
             }
           </div>
           <div className='devlog-list-wrapper'>
+            <div className='devlog-list-title'>{category}</div>
             {
               !list[category]
                 ? undefined
