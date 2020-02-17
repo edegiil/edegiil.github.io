@@ -8,19 +8,17 @@ import logo from 'images/logo.png';
 import './styles.scss';
 
 const withLayout = (Component: React.Component) => ({ title, width }) => () => {
-  const HOC = () => {
-    return (
-      <>
-        <Header location={title} />
-        <div className={!width ? 'layout-wrapper' : `layout-wrapper-${width}`}>
-          <img src={logo} className='background-logo'/>
-          <Component />
-        </div>
-      </>
-    )
-  }
+  const HOC = () => (
+    <>
+      <Header location={title} />
+      <div className={!width ? 'layout-wrapper' : `layout-wrapper-${width}`}>
+        <img src={logo} className='background-logo' alt='background-logo' />
+        <Component />
+      </div>
+    </>
+  );
 
   return <HOC />;
-}
+};
 
 export default withLayout;
