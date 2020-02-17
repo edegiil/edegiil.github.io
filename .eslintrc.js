@@ -32,5 +32,6 @@ module.exports = {
     'no-alert': 0,
     'camelcase': 0,
     'react/jsx-curly-brace-presence': 0,
+    'global-require': 0,
   },
 };

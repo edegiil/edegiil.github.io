@@ -3,7 +3,6 @@ import { Link } from 'gatsby';
 
 import withLayout from 'hoc/withLayout';
 
-import Layout from 'components/layout';
 import SEO from 'components/seo';
 
 import './styles.scss';
@@ -25,7 +24,7 @@ class IndexPage extends React.Component {
           <div className='index-main-wrapper'>
             <div className='index-design-bar' />
             <div className='index-main-name'>Wingtree</div>
-            <div className='index-main-description'>개발자</div>
+            {/* <div className='index-main-description'>개발자</div> */}
             {/* <div className='index-main-description'>스타트업 하는 사람</div> */}
           </div>
         </div>
