@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
 import withLayout from 'hoc/withLayout';
 
@@ -46,7 +47,7 @@ class Devlog extends React.Component<any> {
               !list[category]
                 ? undefined
                 : list[category].map((v, i) => (
-                  <div className='devlog-post-wrapper' key={String(i)}>
+                  <Link to='/Post/abc' className='devlog-post-wrapper' key={String(i)}>
                     <img className='devlog-post-image' alt='post' src={v.img_source} />
                     <div className='devlog-post-text-wrapper'>
                       <div className='devlog-post-text-title-wrapper'>
@@ -57,7 +58,7 @@ class Devlog extends React.Component<any> {
                         {v.content_summary}
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ))
             }
           </div>
