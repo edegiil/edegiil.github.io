@@ -7,13 +7,13 @@ import logo from 'images/logo.png';
 
 import './styles.scss';
 
-const withLayout = (Component: React.Component) => ({ title, width }) => () => {
+const withLayout = (Component: React.Component) => ({ title, width }) => ({ data }) => {
   const HOC = () => (
     <>
       <Header location={title} />
       <div className={!width ? 'layout-wrapper' : `layout-wrapper-${width}`}>
         <img src={logo} className='background-logo' alt='background-logo' />
-        <Component />
+        <Component data={data} />
       </div>
     </>
   );

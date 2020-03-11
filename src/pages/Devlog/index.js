@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 
 import withLayout from 'hoc/withLayout';
 
@@ -25,7 +25,7 @@ class Devlog extends React.Component<any> {
   render() {
     const { handleCategory } = this;
     const { category } = this.state;
-    const { list } = this.props;
+    const { list, data } = this.props;
     return (
       <>
         <SEO title='Devlog' />
@@ -47,7 +47,7 @@ class Devlog extends React.Component<any> {
               !list[category]
                 ? undefined
                 : list[category].map((v, i) => (
-                  <Link to='/Post/abc' className='devlog-post-wrapper' key={String(i)}>
+                  <Link to={`Devlog/${category}/${v.title}`} className='devlog-post-wrapper' key={String(i)}>
                     <img className='devlog-post-image' alt='post' src={v.img_source} />
                     <div className='devlog-post-text-wrapper'>
                       <div className='devlog-post-text-title-wrapper'>
@@ -68,11 +68,29 @@ class Devlog extends React.Component<any> {
   }
 }
 
+export const query = graphql`
+  {
+    allMarkdownRemark {
+      edges {
+        node {
+          id
+          frontmatter {
+            category
+            date
+            path
+            title
+          }
+        }
+      }
+    }
+  }
+`;
+
 Devlog.defaultProps = {
   list: {
     javascript: [
       {
-        title: 'ES6란?',
+        title: 'ES6란 무엇인가',
         date_created: '2020. 1. 6',
         content_summary: 'ES6는 ECMA 2018이라고도 하며',
         img_source: '',
