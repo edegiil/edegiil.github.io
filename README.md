@@ -7,4 +7,4 @@ Devlog portfolio
 `sass`
 
 ## log
-2020. 3. 11 - initial deploy
+2020.3.11 - initial deploy
