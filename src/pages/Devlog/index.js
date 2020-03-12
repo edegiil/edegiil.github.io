@@ -44,7 +44,9 @@ const Devlog = ({ data }: any) => {
                 const { title, date, path, summary, thumbnail } = v.node.frontmatter;
                 return (
                   <Link to={path} className='devlog-post-wrapper' key={String(i)}>
-                    <img className='devlog-post-image' alt='post' src={thumbnail} />
+                    <div className='devlog-post-image-wrapper'>
+                      <img className='devlog-post-image' alt='post' src={thumbnail} />
+                    </div>
                     <div className='devlog-post-text-wrapper'>
                       <div className='devlog-post-text-title-wrapper'>
                         <div className='devlog-post-text-title'>{title}</div>

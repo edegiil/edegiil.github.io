@@ -46,10 +46,19 @@
   text-decoration: none;
 }
 
-.devlog-post-image {
+.devlog-post-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: $MAIN_COLOR;
   width: 200px;
   height: 130px;
+}
+
+.devlog-post-image {
+  background-color: $MAIN_COLOR;
+  max-width: 200px;
+  max-height: 130px;
 }
 
 .devlog-post-text-wrapper {
