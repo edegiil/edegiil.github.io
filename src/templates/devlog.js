@@ -1,6 +1,6 @@
 // @flow
 import React, { useEffect } from 'react';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 
 import withLayout from 'hoc/withLayout';
 
@@ -34,7 +34,15 @@ const Post = ({ data }: { data: Data }) => {
       <div className='post-wrapper'>
         <div className='post-main-wrapper'>
           <div className='post-header'>
-            <div className='post-header-category'>{category}</div>
+            <div className='post-header-back-wrapper'>
+              <Link to='/Devlog'>
+                <div className='post-header-category-back' />
+              </Link>
+              <Link to='/Devlog' className='post-header-category-back-text'>뒤로가기</Link>
+            </div>
+            <div className='post-header-category'>
+              <div className='post-header-category-text'>{category}</div>
+            </div>
             <div className='post-header-title-wrapper'>
               <div className='post-header-title'>{title}</div>
               <div className='post-header-date'>{date_created}</div>

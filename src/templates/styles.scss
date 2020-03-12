@@ -16,15 +16,41 @@
 .post-header {
   display: flex;
   flex-direction: column;
-  margin-top: 40px;
+  margin-top: 10px;
 }
 
 .post-header-category {
+  display: flex;
+  align-items: center;
   width: 100%;
   border-bottom: 2px solid $MAIN_COLOR;
   padding-bottom: 20px;
+}
+
+.post-header-back-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.post-header-category-back {
+  width: 25px;
+  height: 30px;
+  background-image: url('../images/back.svg');
+  background-repeat: no-repeat;
+  background-size: 20px 30px;
+}
+
+.post-header-category-back-text {
+  font-size: 15px;
+  font-weight: 100;
+  color: $MAIN_COLOR;
+  text-decoration: none;
+}
+
+.post-header-category-text {
   font-family: 'ZCOOL QingKe HuangYou';
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 100;
   color: $MAIN_COLOR;
 }
