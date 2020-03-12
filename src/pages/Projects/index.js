@@ -25,16 +25,17 @@ class Projects extends React.Component {
 
   render() {
     const { showDetailImage, openLink } = this;
-    const default_image_url = 'https://drive.google.com/uc?id=1EjNE3vC1Z47vpwivH7-L-dyo88o5munv';
+    // const default_image_url = 'https://drive.google.com/uc?id=1EjNE3vC1Z47vpwivH7-L-dyo88o5munv';
+    const playpick_image_url = 'https://drive.google.com/uc?id=16YIEYZh4toCHhMTsjSTaLU_UXjMWhHyu';
     const m_tree_url = 'https://drive.google.com/uc?id=1vxvaKCv-n_uAXJyCEUIpvkZZh8Twh77n';
-    const busyless_url = 'https://drive.google.com/uc?id=1l6qZX5eQp_Vh6AJyx_aLICKdjNjT5wet';
+    const busyless_url = 'https://drive.google.com/uc?id=1cYkoaEZa9aNHL9l7ohEUIgWIQDp3Volg';
     return (
       <>
         <SEO title='Projects' />
         <div className='projects-wrapper'>
           <div className='project-wrapper'>
             <div className='project-image-wrapper'>
-              <img className='project-image' alt='project' src={default_image_url} onClick={showDetailImage(default_image_url)} />
+              <img className='project-image' alt='project' src={playpick_image_url} onClick={showDetailImage(playpick_image_url)} />
             </div>
             <div className='project-content'>
               <div className='project-title'>
