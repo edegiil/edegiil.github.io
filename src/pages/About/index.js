@@ -56,6 +56,19 @@ class About extends React.Component {
                 <div className='about-title'>경력</div>
                 <div className='about-content'>
                   <div className='about-content-column'>
+                    <div className='about-content-main-text'>경북대동아리 MIRO</div>
+                    <div className='about-content-text-box'>
+                      <div className='about-content-sub-column'>
+                        <div className='about-content-subtext'>회원</div>
+                        <div className='about-content-text'>2018. 3 ~ 2018. 7</div>
+                      </div>
+                      <div className='about-content-sub-column'>
+                        <div className='about-content-subtext'>운영진</div>
+                        <div className='about-content-text'>2018. 8 ~ 2018. 12</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='about-content-column'>
                     <div className='about-content-main-text'>아일토스</div>
                     <div className='about-content-text-box'>
                       <div className='about-content-sub-column'>
