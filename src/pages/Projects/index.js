@@ -55,7 +55,7 @@ class Projects extends React.Component {
                   <div className='project-content-title-design-bar' />
                 </div>
                 <div className='project-content-text'>
-                  { 'ver2. 리팩토링\n프론트엔드\n백엔드\n쇼핑몰 크롤러' }
+                  { 'ver2. 리팩토링, 프론트엔드, 백엔드, 쇼핑몰 크롤러' }
                 </div>
               </div>
             </div>
