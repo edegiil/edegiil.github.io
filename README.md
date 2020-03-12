@@ -7,5 +7,5 @@ Devlog portfolio
 
 
 ## Update Log
-`v1.0.0` - 2019.1.27 <br/>
+`v1.0.0` - 2020.3.11 <br/>
 Initiate Devlog
