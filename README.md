@@ -15,3 +15,6 @@
 ## Contributor
 
 *  [wingtree](https://wingtree.github.io) (electropark917@gmail.com)
+
+***
+[프로젝트 기획안](https://github.com/wingtree/wingtree.github.io/blob/develop/project/project.md)
