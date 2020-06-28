@@ -77,11 +77,16 @@ class About extends React.Component {
                       </div>
                       <div className='about-content-sub-column'>
                         <div className='about-content-subtext'>Technical Leader</div>
-                        <div className='about-content-text'>2019. 1 ~ 2019. 12</div>
+                        <div className='about-content-text'>2019. 1 ~ 2020. 1</div>
                       </div>
+                    </div>
+                  </div>
+                  <div className='about-content-column'>
+                    <div className='about-content-main-text'>씨드업</div>
+                    <div className='about-content-text-box'>
                       <div className='about-content-sub-column'>
                         <div className='about-content-subtext'>개발자</div>
-                        <div className='about-content-text'>2020. 1</div>
+                        <div className='about-content-text'>2020. 5 ~ </div>
                       </div>
                     </div>
                   </div>
@@ -109,6 +114,14 @@ class About extends React.Component {
                   <div className='about-main-stack-info-wrapper'>
                     <div className='about-main-stack-info-title'>React & React Native</div>
                     <div className='about-main-stack-info-text'>웹 프론트엔드 SPA 라이브러리 & 모바일 크로스플랫폼 프레임워크</div>
+                  </div>
+                </div>
+                <div className='marginer' />
+                <div className='about-content-stack-box'>
+                  <img className='about-main-stack-img' alt='stack-img' src={require('../../../res/flutter.png')} />
+                  <div className='about-main-stack-info-wrapper'>
+                    <div className='about-main-stack-info-title'>Flutter</div>
+                    <div className='about-main-stack-info-text'>모바일 크로스플랫폼 프레임워크</div>
                   </div>
                 </div>
               </div>
@@ -143,8 +156,16 @@ class About extends React.Component {
                 <div className='about-content-stack-box'>
                   <img className='about-stack-img' alt='stack-img' src={require('../../../res/firebase.png')} />
                   <div className='about-stack-info-wrapper'>
-                    <div className='about-stack-info-title'>Firebase</div>
-                    <div className='about-stack-info-text'>구글의 모바일 및 웹 어플리케이션 개발 플랫폼</div>
+                    <div className='about-stack-info-title'>Google Firebase</div>
+                    <div className='about-stack-info-text'>모바일 및 웹 어플리케이션 개발 플랫폼</div>
+                  </div>
+                </div>
+                <div className='marginer' />
+                <div className='about-content-stack-box'>
+                  <img className='about-stack-img' alt='stack-img' src={require('../../../res/gcp.png')} />
+                  <div className='about-stack-info-wrapper'>
+                    <div className='about-stack-info-title'>Google Cloud Platform</div>
+                    <div className='about-stack-info-text'>클라우드 플랫폼</div>
                   </div>
                 </div>
                 <div className='marginer' />
