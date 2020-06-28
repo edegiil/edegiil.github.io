@@ -1,0 +1,93 @@
+@import '../../configs/color.scss';
+
+.projects-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.project-wrapper {
+  display: flex;
+  padding: 40px 0px;
+}
+
+.project-image-wrapper {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  padding: 0 10px;
+}
+
+.project-image {
+  cursor: pointer;
+  max-width: calc(100vw / 3);
+  // min-width: 400px;
+  width: auto;
+  max-height: 300px;
+}
+
+.project-content {
+  flex: 1;
+  padding: 0 10px;
+}
+
+.project-title {
+  display: flex;
+  align-items: baseline;
+}
+
+.project-count {
+  font-family: 'ZCOOL QingKe HuangYou';
+  font-size: 20px;
+  color: $MAIN_COLOR;
+  margin-right: 10px;
+}
+
+.project-title-text {
+  font-family: 'Noto Sans KR';
+  font-size: 25px;
+  font-weight: 700;
+  color: $MAIN_COLOR;
+  cursor: pointer;
+}
+
+.project-content-wrapper {
+  padding: 20px;
+}
+
+.project-content-title-wrapper {
+
+}
+
+.project-content-title-text {
+  font-family: 'Noto Sans KR';
+  font-size: 20px;
+  font-weight: 100;
+  color: $MAIN_COLOR;
+}
+
+.project-content-title-design-bar {
+  height: 3px;
+  width: 30px;
+  background-color: $MAIN_COLOR;
+  margin: 5px 0;
+}
+
+.project-content-text {
+  font-family: 'Noto Sans KR';
+  font-size: 15px;
+  font-weight: 100;
+  color: $MAIN_COLOR;
+  padding-top: 15px;
+  padding-bottom: 25px;
+}
+
+.project-divider {
+  height: 5px;
+  width: 100px;
+  background-color: $MAIN_COLOR;
+  margin-left: calc(50vw - 50px);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

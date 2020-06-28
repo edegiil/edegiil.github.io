@@ -1,0 +1,37 @@
+@import '../configs/color.scss';
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-color: $BACKGROUND_COLOR;
+  overflow-x: hidden;
+}
+
+#___gatsby, #gatsby-focus-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.layout-wrapper {
+  max-width: 960px;
+  padding: 0px 1.0875rem 1.45rem;
+}
+
+.layout-wrapper-full {
+  width: 100%;
+  height: calc(100% - 80px);
+  padding: 0px;
+}
+
+.background-logo {
+  position: absolute;
+  right: -200px;
+  z-index: 999;
+  opacity: 0.4;
+}

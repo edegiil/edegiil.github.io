@@ -1,0 +1,86 @@
+@import '../configs/color.scss';
+
+.post-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.post-main-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100vw * 0.6;
+}
+
+.post-header {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.post-header-category {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-bottom: 2px solid $MAIN_COLOR;
+  padding-bottom: 20px;
+}
+
+.post-header-back-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.post-header-category-back {
+  width: 25px;
+  height: 30px;
+  background-image: url('../images/back.svg');
+  background-repeat: no-repeat;
+  background-size: 20px 30px;
+}
+
+.post-header-category-back-text {
+  font-size: 15px;
+  font-weight: 100;
+  color: $MAIN_COLOR;
+  text-decoration: none;
+}
+
+.post-header-category-text {
+  font-family: 'ZCOOL QingKe HuangYou';
+  font-size: 25px;
+  font-weight: 100;
+  color: $MAIN_COLOR;
+}
+
+.post-header-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+}
+
+.post-header-title {
+  font-family: 'Raleway';
+  font-size: 25px;
+  font-weight: 100;
+  color: $MAIN_COLOR;
+}
+
+.post-header-date {
+  font-family: 'Raleway';
+  font-size: 16px;
+}
+
+.post-content-wrapper {
+  padding: 20px 38px;
+}
+
+.post-content {
+  font-family: 'Raleway';
+  font-size: 16px;
+  font-weight: 100;
+  color: $MAIN_COLOR;
+}
