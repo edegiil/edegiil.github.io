@@ -50,7 +50,8 @@
     "start": "yarn run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests!\"",
-    "deploy": "gatsby build && gh-pages -d public -b master"
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d public"
   },
   "repository": {
     "type": "git",
