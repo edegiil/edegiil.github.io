@@ -4,9 +4,9 @@
 * 포트폴리오 관리
 
 ## 개발 스택
-* gatsbyJS : v2.16.0
-* ReactJS : v16.10.2
-* sass : v4.12.0
+* GatsbyJS : v2.25.3
+* ReactJS : v16.12.0
+* Styled Component : v5.2.1
 * Github Pages
 
 ## Changelog
