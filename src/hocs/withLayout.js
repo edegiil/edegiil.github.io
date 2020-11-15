@@ -1,16 +1,17 @@
 import React from 'react';
 
 import Header from 'components/header';
+import Layout from '../components/layout';
 
-function withHeader({Child, props}) {
+function withLayout({Child, props}) {
   return function Page() {
     return (
-      <React.Fragment>
+      <Layout>
         <Header />
         <Child />
-      </React.Fragment>
+      </Layout>
     );
   };
 }
 
-export default withHeader;
+export default withLayout;

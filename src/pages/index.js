@@ -1,9 +1,14 @@
 import React from 'react';
 
+import withLayout from 'hocs/withLayout';
+
 function Home() {
   return (
-    <div>Wingtree Devlog 2.0</div>
+    <React.Fragment>
+      <div>Wingtree Devlog 2.0</div>
+    </React.Fragment>
   );
 }
 
-export default Home;
+
+export default withLayout({Child: Home});
