@@ -10,6 +10,8 @@ const HeaderBlock = styled.header`
   box-sizing: border-box;
   justify-content: flex-end;
   align-items: center;
+  position: absolute;
+  z-index: 5;
 `;
 
 const LocalizationButtonGroup = styled.div`
@@ -22,7 +24,7 @@ const LocalizationButtonGroup = styled.div`
 
 const LocalizationButton = styled.button`
   color: ${(props) => props.theme.MAIN_COLOR};
-  font-size ${(props) => props.theme.NORMAL_SIZE}
+  font-size ${(props) => props.theme.NORMAL_SIZE};
 `;
 
 const Divider = styled.div`

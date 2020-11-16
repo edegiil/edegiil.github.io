@@ -2,6 +2,8 @@ import React from 'react';
 import {createGlobalStyle} from 'styled-components';
 import {Helmet} from 'react-helmet';
 
+import Header from 'components/header';
+
 import Theme from 'configs/theme';
 
 const GlobalStyle = createGlobalStyle`
@@ -43,6 +45,7 @@ function Layout({children}) {
           <title>wingtree.github.io</title>
         </Helmet>
         <GlobalStyle />
+        <Header />
         {children}
       </Theme>
     </React.Fragment>
