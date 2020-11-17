@@ -83,6 +83,7 @@ function Header() {
   }, []);
 
   const menu_items = [
+    {name: '입구', path: ''},
     {name: '소개', path: 'about'},
     {name: '프로젝트', path: 'project'},
     {name: 'Dev.log', path: 'devlog'},
