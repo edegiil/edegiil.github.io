@@ -33,10 +33,15 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+
+  a {
+    color: ${(props) => props.theme.MAIN_COLOR};
+    text-decoration: none;
+  }
 `;
 
 
-function Layout({children}) {
+function Layout({children, props}) {
   return (
     <React.Fragment>
       <Theme>

@@ -1,5 +1,6 @@
 import React, {useState, useCallback} from 'react';
 import styled from 'styled-components';
+import {Link} from 'gatsby';
 
 import menu_icon from 'assets/icons/menu.svg';
 
@@ -108,7 +109,9 @@ function Header() {
 
                   return (
                     <MenuItem key={String(i)} current={current}>
-                      {menu.name}
+                      <Link to={`/${menu.path}`}>
+                        {menu.name}
+                      </Link>
                       {
                         current && <MenuDecoration />
                       }

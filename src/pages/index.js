@@ -30,11 +30,11 @@ const SubTitle = styled.div`
 `;
 
 function Home(props) {
-  const {path, data} = props;
+  const {data} = props;
   const background_image = data.file.childImageSharp.fluid;
 
   return (
-    <Layout path={path}>
+    <Layout props={props}>
       <BackgroundImage fluid={background_image}>
         <Background>
           <TitleGroup>
