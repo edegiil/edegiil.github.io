@@ -21,8 +21,6 @@ const TitleGroup = styled.div`
 
 const Title = styled.h1`
   font-weight: 100;
-  font-size: ${(props) => props.theme.GIANT_SIZE};
-  color: ${(props) => props.theme.MAIN_COLOR};
   margin: 0;
 `;
 

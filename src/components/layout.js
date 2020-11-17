@@ -19,6 +19,7 @@ const GlobalStyle = createGlobalStyle`
   div {
     font-size: ${(props) => props.theme.NORMAL_SIZE};
     color: ${(props) => props.theme.MAIN_COLOR};
+    box-sizing: border-box;
   }
 
   button {
@@ -37,6 +38,22 @@ const GlobalStyle = createGlobalStyle`
   a {
     color: ${(props) => props.theme.MAIN_COLOR};
     text-decoration: none;
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    color: ${(props) => props.theme.MAIN_COLOR};
+  }
+  h1 {
+    font-size: ${(props) => props.theme.GIANT_SIZE};
+  }
+  h2 {
+    font-size: ${(props) => props.theme.HUGE_SIZE};
+  }
+  h3 {
+    font-size: ${(props) => props.theme.BIG_SIZE};
+  }
+  h4 {
+    font-size: ${(props) => props.theme.NORMAL_SIZE};
   }
 `;
 
