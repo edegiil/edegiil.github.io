@@ -58,7 +58,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 
-function Layout({children, props}) {
+function Layout({children}) {
   return (
     <React.Fragment>
       <Theme>

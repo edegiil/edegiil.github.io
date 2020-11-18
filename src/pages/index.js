@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import {graphql} from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 
-import Layout from 'components/layout';
-
 const Background = styled.div`
   display: flex;
   height: 100vh;
@@ -32,16 +30,14 @@ function Home(props) {
   const background_image = data.file.childImageSharp.fluid;
 
   return (
-    <Layout props={props}>
-      <BackgroundImage fluid={background_image}>
-        <Background>
-          <TitleGroup>
-            <Title>WINGTREE</Title>
-            <SubTitle>개발자의 공간</SubTitle>
-          </TitleGroup>
-        </Background>
-      </BackgroundImage>
-    </Layout>
+    <BackgroundImage fluid={background_image}>
+      <Background>
+        <TitleGroup>
+          <Title>WINGTREE</Title>
+          <SubTitle>개발자의 공간</SubTitle>
+        </TitleGroup>
+      </Background>
+    </BackgroundImage>
   );
 }
 

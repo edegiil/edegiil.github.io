@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Layout from 'components/layout';
 import AboutElement from 'components/aboutElement';
 
 import contents from '../../data/contents';
@@ -51,56 +50,54 @@ const ContentBoxTitle = styled.h3`
 
 function Home(props) {
   return (
-    <Layout props={props}>
-      <Background>
-        <TitleGroup>
-          <Title>소개</Title>
-          <SubTitle>1996년 생. 대구광역시 출생. 스타트업 개발자</SubTitle>
-        </TitleGroup>
-        <Contents>
-          <ContentBox>
-            <ContentBoxTitle>교육</ContentBoxTitle>
-            {
-              contents.about.educations.map((data, i) => {
-                return (
-                  <AboutElement data={data} />
-                );
-              })
-            }
-          </ContentBox>
-          <ContentBox>
-            <ContentBoxTitle>활동</ContentBoxTitle>
-            {
-              contents.about.careers.map((data, i) => {
-                return (
-                  <AboutElement data={data} />
-                );
-              })
-            }
-          </ContentBox>
-          <ContentBox>
-            <ContentBoxTitle>관심분야</ContentBoxTitle>
-            {
-              contents.about.interests.map((data, i) => {
-                return (
-                  <AboutElement data={data} />
-                );
-              })
-            }
-          </ContentBox>
-          <ContentBox>
-            <ContentBoxTitle>기술스택</ContentBoxTitle>
-            {
-              contents.about.tech_stacks.map((data, i) => {
-                return (
-                  <AboutElement data={data} />
-                );
-              })
-            }
-          </ContentBox>
-        </Contents>
-      </Background>
-    </Layout>
+    <Background>
+      <TitleGroup>
+        <Title>소개</Title>
+        <SubTitle>1996년 생. 대구광역시 출생. 스타트업 개발자</SubTitle>
+      </TitleGroup>
+      <Contents>
+        <ContentBox>
+          <ContentBoxTitle>교육</ContentBoxTitle>
+          {
+            contents.about.educations.map((data, i) => {
+              return (
+                <AboutElement data={data} />
+              );
+            })
+          }
+        </ContentBox>
+        <ContentBox>
+          <ContentBoxTitle>활동</ContentBoxTitle>
+          {
+            contents.about.careers.map((data, i) => {
+              return (
+                <AboutElement data={data} />
+              );
+            })
+          }
+        </ContentBox>
+        <ContentBox>
+          <ContentBoxTitle>관심분야</ContentBoxTitle>
+          {
+            contents.about.interests.map((data, i) => {
+              return (
+                <AboutElement data={data} />
+              );
+            })
+          }
+        </ContentBox>
+        <ContentBox>
+          <ContentBoxTitle>기술스택</ContentBoxTitle>
+          {
+            contents.about.tech_stacks.map((data, i) => {
+              return (
+                <AboutElement data={data} />
+              );
+            })
+          }
+        </ContentBox>
+      </Contents>
+    </Background>
   );
 }
 
