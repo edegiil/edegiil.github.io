@@ -6,6 +6,9 @@ import Header from 'components/header';
 
 import Theme from 'configs/theme';
 
+import 'fontsource-noto-sans-kr';
+import 'fontsource-montserrat';
+
 const GlobalStyle = createGlobalStyle`
   html body {
     margin: 0;
@@ -20,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: ${(props) => props.theme.NORMAL_SIZE};
     color: ${(props) => props.theme.MAIN_COLOR};
     box-sizing: border-box;
+    font-family: 'Noto Sans KR'
   }
 
   button {
@@ -45,6 +49,8 @@ const GlobalStyle = createGlobalStyle`
   }
   h1 {
     font-size: ${(props) => props.theme.GIANT_SIZE};
+    font-family: 'Montserrat';
+    font-weight: 100;
   }
   h2 {
     font-size: ${(props) => props.theme.HUGE_SIZE};

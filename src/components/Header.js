@@ -26,6 +26,7 @@ const LocalizationButtonGroup = styled.div`
 const LocalizationButton = styled.button`
   color: ${(props) => props.theme.MAIN_COLOR};
   font-size ${(props) => props.theme.NORMAL_SIZE};
+  font-family: 'Montserrat';
 `;
 
 const Divider = styled.div`
