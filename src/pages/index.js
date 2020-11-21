@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import {graphql} from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 
+import CopyRightStatement from 'components/copyRightStatement';
+
 const Background = styled.div`
   display: flex;
   height: 100vh;
@@ -37,6 +39,7 @@ function Home(props) {
           <SubTitle>개발자의 공간</SubTitle>
         </TitleGroup>
       </Background>
+      <CopyRightStatement />
     </BackgroundImage>
   );
 }
