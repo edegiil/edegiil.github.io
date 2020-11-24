@@ -39,7 +39,8 @@ const ContentBox = styled.div`
   display: grid;
   row-gap: 16px;
   align-content: start;
-  width: 230px;
+  width: 20%;
+  min-width: 230px;
   margin-bottom: 32px;
 `;
 
