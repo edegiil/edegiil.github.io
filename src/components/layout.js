@@ -32,6 +32,9 @@ const GlobalStyle = createGlobalStyle`
     background-color: transparent;
     outline: none;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   ul {

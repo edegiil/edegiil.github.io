@@ -28,10 +28,10 @@ const DescriptionText = styled.p`
   margin: 0;
 `;
 
-function AboutElement({data}) {
+function AboutElement({data, openModal}) {
   const {title, descriptions} = data;
   return (
-    <Container>
+    <Container onClick={openModal}>
       <Title>{title}</Title>
       <DescriptionGroup>
         {

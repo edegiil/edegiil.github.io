@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState, useCallback} from 'react';
 import styled from 'styled-components';
 
 import AboutElement from 'components/aboutElement';
+import AboutModal from 'components/aboutModal';
 
 import contents from '../../data/contents';
 
@@ -50,8 +51,17 @@ const ContentBoxTitle = styled.h3`
 `;
 
 function Home(props) {
+  const [modal_status, setModalStatus] = useState(false);
+
+  const handleModal = useCallback(() => {
+    setModalStatus((state) => !state);
+  }, []);
+
   return (
     <Background>
+      {
+        modal_status && <AboutModal closeModal={handleModal} />
+      }
       <TitleGroup>
         <Title>소개</Title>
         <SubTitle>1996년 생. 대구광역시 출생. 스타트업 개발자</SubTitle>
@@ -62,7 +72,7 @@ function Home(props) {
           {
             contents.about.educations.map((data, i) => {
               return (
-                <AboutElement data={data} />
+                <AboutElement data={data} openModal={handleModal} />
               );
             })
           }
