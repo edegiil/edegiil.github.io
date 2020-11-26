@@ -37,7 +37,7 @@ function AboutElement({data, openModal}) {
         {
           descriptions.map((description, i) => {
             return (
-              <Description>
+              <Description key={String(i)}>
                 <DescriptionText>{description.main}</DescriptionText>
                 <DescriptionText>{description.time}</DescriptionText>
               </Description>

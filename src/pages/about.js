@@ -52,15 +52,35 @@ const ContentBoxTitle = styled.h3`
 
 function Home(props) {
   const [modal_status, setModalStatus] = useState(false);
+  const [modal_data, setModalData] = useState({});
 
-  const handleModal = useCallback(() => {
-    setModalStatus((state) => !state);
+  const handleModalClose = useCallback(() => {
+    setModalStatus(false);
+  }, []);
+
+  const handleModalOpen = useCallback((data) => () => {
+    const {title, descriptions, link, detail} = data;
+    const recent_description = descriptions[descriptions.length - 1];
+    const subtitle = `${recent_description.main} ${recent_description.time || ''}`;
+
+    setModalStatus(true);
+    setModalData({
+      title,
+      subtitle,
+      link,
+      detail,
+    });
   }, []);
 
   return (
     <Background>
       {
-        modal_status && <AboutModal closeModal={handleModal} />
+        modal_status && (
+          <AboutModal
+            closeModal={handleModalClose}
+            data={modal_data}
+          />
+        )
       }
       <TitleGroup>
         <Title>소개</Title>
@@ -72,7 +92,11 @@ function Home(props) {
           {
             contents.about.educations.map((data, i) => {
               return (
-                <AboutElement data={data} openModal={handleModal} />
+                <AboutElement
+                  key={String(i)}
+                  data={data}
+                  openModal={handleModalOpen(data)}
+                />
               );
             })
           }
@@ -82,7 +106,11 @@ function Home(props) {
           {
             contents.about.careers.map((data, i) => {
               return (
-                <AboutElement data={data} />
+                <AboutElement
+                  key={String(i)}
+                  data={data}
+                  openModal={handleModalOpen(data)}
+                />
               );
             })
           }
@@ -92,7 +120,11 @@ function Home(props) {
           {
             contents.about.interests.map((data, i) => {
               return (
-                <AboutElement data={data} />
+                <AboutElement
+                  key={String(i)}
+                  data={data}
+                  openModal={handleModalOpen(data)}
+                />
               );
             })
           }
@@ -102,7 +134,11 @@ function Home(props) {
           {
             contents.about.tech_stacks.map((data, i) => {
               return (
-                <AboutElement data={data} />
+                <AboutElement
+                  key={String(i)}
+                  data={data}
+                  openModal={handleModalOpen(data)}
+                />
               );
             })
           }

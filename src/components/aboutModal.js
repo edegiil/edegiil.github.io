@@ -62,8 +62,8 @@ const CloseButton = styled.button`
   font-size: ${(props) => props.theme.NORMAL_SIZE};
 `;
 
-function AboutModal(props) {
-  const {closeModal, title, subtitle, link, content} = props;
+function AboutModal({closeModal, data}) {
+  const {title, subtitle, link, detail} = data;
 
   const handleLink = useCallback(() => {
     window.open(link);
@@ -83,7 +83,7 @@ function AboutModal(props) {
             )
           }
         </SubtitleGroup>
-        <Content>{content}</Content>
+        <Content>{detail}</Content>
         <CloseButton onClick={closeModal}>닫기</CloseButton>
       </Modal>
     </Background>
