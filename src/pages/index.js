@@ -35,7 +35,7 @@ function Home(props) {
     <BackgroundImage fluid={background_image}>
       <Background>
         <TitleGroup>
-          <Title>WINGTREE</Title>
+          <Title>MERAK</Title>
           <SubTitle>개발자의 공간</SubTitle>
         </TitleGroup>
       </Background>

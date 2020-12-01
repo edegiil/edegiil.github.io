@@ -73,7 +73,7 @@ function Layout({children}) {
       <Theme>
         <Helmet>
           <meta charSet='utf-8' />
-          <title>wingtree.github.io</title>
+          <title>merak.github.io</title>
         </Helmet>
         <GlobalStyle />
         <Header />

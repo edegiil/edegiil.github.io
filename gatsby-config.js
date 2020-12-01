@@ -7,9 +7,9 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: 'wingtree.github.io',
+    title: 'merak.github.io',
     siteUrl: 'https://wingtree.github.io',
-    description: 'wingtree의 개발자 블로그입니다.',
+    description: 'Merak의 개발자 블로그입니다.',
   },
   plugins: [
     'gatsby-plugin-styled-components',
