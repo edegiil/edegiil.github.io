@@ -1,9 +1,9 @@
 {
-  "name": "wingtree.github.io",
+  "name": "edegil.github.io",
   "private": false,
-  "description": "wingtree devlog",
+  "description": "edegil devlog",
   "version": "2.0.0",
-  "author": "wingtree <electropark917@gmail.com>",
+  "author": "edegil <electropark917@gmail.com>",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
@@ -42,9 +42,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wingtree/wingtree.github.io"
+    "url": "https://github.com/edegiI/edegil.github.io"
   },
   "bugs": {
-    "url": "https://github.com/wingtree/wingtree.github.io/issues"
+    "url": "https://github.com/edegil/edegil.github.io/issues"
   }
 }

@@ -7,17 +7,17 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: 'merak.github.io',
-    siteUrl: 'https://wingtree.github.io',
-    description: 'Merak의 개발자 블로그입니다.',
+    title: 'edegiI.github.io',
+    siteUrl: 'https://edegiI.github.io',
+    description: 'Edegil의 개발자 블로그입니다.',
   },
   plugins: [
     'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'wingtree.github.io',
-        short_name: 'wingtree',
+        name: 'edegiI.github.io',
+        short_name: 'edegil',
         start_url: '/',
         background_color: '#16171b',
         theme_color: '#16171b',
