@@ -3,7 +3,7 @@ function parseCopyRightString() {
 
   const year_term = this_year === 2020 ? '2020' : `2020 - ${this_year}`;
 
-  return `@${year_term} wingtree`;
+  return `@${year_term} edegil`;
 }
 
 export default parseCopyRightString;

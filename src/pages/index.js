@@ -5,6 +5,8 @@ import BackgroundImage from 'gatsby-background-image';
 
 import CopyRightStatement from 'components/copyRightStatement';
 
+import 'configs/typography.css';
+
 const Background = styled.div`
   display: flex;
   height: 100vh;
@@ -22,6 +24,7 @@ const TitleGroup = styled.div`
 const Title = styled.h1`
   font-weight: 100;
   margin: 0;
+  font-family: 'Sindarin', sans-serif;
 `;
 
 const SubTitle = styled.div`
@@ -35,8 +38,8 @@ function Home(props) {
     <BackgroundImage fluid={background_image}>
       <Background>
         <TitleGroup>
-          <Title>MERAK</Title>
-          <SubTitle>개발자의 공간</SubTitle>
+          <Title>3G2E7G5</Title>
+          <SubTitle>seven stars</SubTitle>
         </TitleGroup>
       </Background>
       <CopyRightStatement />

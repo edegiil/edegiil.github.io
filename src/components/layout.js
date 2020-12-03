@@ -73,7 +73,7 @@ function Layout({children}) {
       <Theme>
         <Helmet>
           <meta charSet='utf-8' />
-          <title>edegiI.github.io</title>
+          <title>edegiil.github.io</title>
         </Helmet>
         <GlobalStyle />
         <Header />

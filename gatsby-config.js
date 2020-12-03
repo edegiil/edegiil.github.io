@@ -7,8 +7,8 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: 'edegiI.github.io',
-    siteUrl: 'https://edegiI.github.io',
+    title: 'edegiil.github.io',
+    siteUrl: 'https://edegiil.github.io',
     description: 'Edegil의 개발자 블로그입니다.',
   },
   plugins: [
@@ -16,7 +16,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'edegiI.github.io',
+        name: 'edegiil.github.io',
         short_name: 'edegil',
         start_url: '/',
         background_color: '#16171b',
