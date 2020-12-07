@@ -44,6 +44,7 @@ const Subtitle = styled.div`
 `;
 
 const Link = styled.button`
+  margin-left: 12px;
 `;
 
 const Icon = styled.img`
