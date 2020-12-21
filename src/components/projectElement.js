@@ -10,6 +10,7 @@ const Container = styled.div`
 const ContentGroup = styled.div`
   display: flex;
   flex-direction: column;
+  width: 400px;
 `;
 
 const Title = styled.h3`
@@ -30,24 +31,56 @@ const DescriptionText = styled.p`
   margin-bottom: 8px;
 `;
 
-const Image = styled.img`
+const ImageGroup = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 200px;
+  margin-left: 24px;
+`;
 
+const Image = styled.img`
+  max-width: 350px;
+  max-height: 200px;
 `;
 
 function ProjectElement(props) {
-  const {index, title, subtitle, platform, time, stacks} = props;
+  const {index, title, subtitle, platform, time, stacks, image} = props;
 
   return (
     <Container>
       <ContentGroup>
-        <Title>01_플레이픽</Title>
-        <Subtitle>코디 결정장애 해소를 위한 플랫폼</Subtitle>
-        <DescriptionText>WEB 2018.8 ~ 2019.3</DescriptionText>
-        <DescriptionText>React | ExpressJS | MongoDB | Firebase</DescriptionText>
+        <Title>{`${index}_${title}`}</Title>
+        <Subtitle>{subtitle}</Subtitle>
+        <DescriptionText>{`${platform} ${time}`}</DescriptionText>
+        <DescriptionText>
+          {
+            stacks.map((stack, i) => {
+              let string = stack;
+              if (stacks.length - 1 !== i) {
+                string = string + ' | ';
+              }
+              return string;
+            })
+          }
+        </DescriptionText>
       </ContentGroup>
-      <Image />
+      <ImageGroup>
+        <Image src={image} />
+      </ImageGroup>
     </Container>
   );
 }
+
+ProjectElement.defaultProps = {
+  index: '01',
+  title: '플레이픽',
+  subtitle: '코디 결정장애를 해결하기 위한 플랫폼',
+  platform: 'APP',
+  time: ' 2018.8 ~ 2019.3',
+  stacks: ['React Native', 'ExpressJS', 'Firebase'],
+  image: `https://pbs.twimg.com/media/EdDlUzOVAAAGsnc?format=jpg&name=4096x4096`,
+};
 
 export default ProjectElement;
