@@ -73,14 +73,4 @@ function ProjectElement(props) {
   );
 }
 
-ProjectElement.defaultProps = {
-  index: '01',
-  title: '플레이픽',
-  subtitle: '코디 결정장애를 해결하기 위한 플랫폼',
-  platform: 'APP',
-  time: ' 2018.8 ~ 2019.3',
-  stacks: ['React Native', 'ExpressJS', 'Firebase'],
-  image: `https://pbs.twimg.com/media/EdDlUzOVAAAGsnc?format=jpg&name=4096x4096`,
-};
-
 export default ProjectElement;

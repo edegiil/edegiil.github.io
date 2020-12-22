@@ -38,7 +38,11 @@ function Proejct() {
         <Title>프로젝트</Title>
       </TitleGroup>
       <Main>
-        <ProjectElement />
+        {
+          contents.project.map((project) => {
+            return <ProjectElement {...project} />;
+          })
+        }
       </Main>
     </Background>
   );
