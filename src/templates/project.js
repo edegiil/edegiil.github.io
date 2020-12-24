@@ -1,21 +1,45 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Background = styled.div``;
+const Background = styled.div`
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  padding: 81px 0;
+  flex-direction: column;
+  align-items: center;
+`;
 
-const Nav = styled.div``;
+const Nav = styled.div`
+  width: 900px;
+  margin-bottom: 4px;
+`;
 
-const TitleGroup = styled.div``;
+const TitleGroup = styled.div`
+  display: flex;
+  align-items: center;
+  width: 900px;
+  margin-bottom: 24px;
+`;
 
-const Title = styled.h2``;
+const Title = styled.h2`
+  margin: 0;
+`;
 
 const Link = styled.img``;
 
-const InfoGroup = styled.div``;
+const InfoGroup = styled.div`
+  width: 900px;
+  margin-bottom: 32px;
+`;
 
-const Subtitle = styled.h3``;
+const Subtitle = styled.h3`
+  margin: 0;
+`;
 
-const InfoText = styled.div``;
+const InfoText = styled.div`
+  margin: 0;
+`;
 
 const ContentWrapper = styled.main``;
 
@@ -41,10 +65,12 @@ function ProjectTemplate({data}) {
 }
 
 ProjectTemplate.defaultProps = {
-  title: '헤리티지 모니터',
-  subtitle: '문화재 관리 시스템',
-  platform: 'WEB',
-  time: '2020.5 ~ 2021.3',
+  data: {
+    title: '헤리티지 모니터',
+    subtitle: '문화재 관리 시스템',
+    platform: 'WEB',
+    time: '2020.5 ~ 2021.3',
+  },
 };
 
 export default ProjectTemplate;
