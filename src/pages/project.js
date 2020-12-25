@@ -26,9 +26,10 @@ const Title = styled.h2`
 `;
 
 const Main = styled.main`
-  display: flex;
+  display: grid;
   flex-direction: column;
   width: 900px;
+  row-gap: 16px;
 `;
 
 function Proejct() {
