@@ -33,7 +33,20 @@ module.exports = {
         path: path.join(__dirname, 'src', 'assets', 'images'),
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'data',
+        path: path.join(__dirname, 'data'),
+      },
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        gfm: true,
+      },
+    },
   ],
 };

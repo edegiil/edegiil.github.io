@@ -23,7 +23,8 @@ const GlobalStyle = createGlobalStyle`
     font-size: ${(props) => props.theme.NORMAL_SIZE};
     color: ${(props) => props.theme.MAIN_COLOR};
     box-sizing: border-box;
-    font-family: 'Noto Sans KR'
+    font-family: 'Noto Sans KR';
+    line-height: 1.75rem;
   }
 
   button {
@@ -63,6 +64,18 @@ const GlobalStyle = createGlobalStyle`
   }
   h4 {
     font-size: ${(props) => props.theme.NORMAL_SIZE};
+  }
+
+  code {
+    background-color: ${(props) => props.theme.DARK_COLOR};
+    padding: 2px 4px;
+    border-radius: 3px;
+  }
+
+  li {
+    list-style: inside;
+    text-indent: -1.5rem;
+    padding-left: 1.5rem;
   }
 `;
 
