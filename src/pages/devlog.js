@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-import {Link} from 'gatsby';
+import {Link, graphql} from 'gatsby';
 
 const Background = styled.div`
   display: flex;
@@ -81,17 +81,21 @@ const PostSubtitle = styled.h4`
   margin-bottom: 8px;
 `;
 
-const PostSummary = styled.p`
-  margin: 0;
-  margin-bottom: 8px;
-`;
-
 const PostDateCreated = styled.p`
   margin: 0;
 `;
 
-function Devlog(props) {
-  const {list} = props;
+function Devlog({data}) {
+  const {distinct, group} = data.allMarkdownRemark;
+
+  const [category, setCategory] = useState(group[0].fieldValue);
+  const [list, setList] = useState([]);
+
+  useEffect(() => {
+    setList(group.filter((v) => v.fieldValue === category)[0].edges);
+  }, [category, group]);
+
+  const handleCategory = (v) => () => setCategory(v);
   return (
     <Background>
       <ContentSection>
@@ -99,23 +103,31 @@ function Devlog(props) {
           <Title>DEV.Log</Title>
         </TitleGroup>
         <Filter>
-          <FilterElement>에세이(2)</FilterElement>
-          <FilterElement>자바스크립트(1)</FilterElement>
-          <FilterElement>React(1)</FilterElement>
+          {
+            distinct.map((key, i) => {
+              return (
+                <FilterElement
+                  key={String(key)}
+                  onClick={handleCategory(key)}
+                >
+                  {`${key}(${group[i].totalCount})`}
+                </FilterElement>
+              );
+            })
+          }
         </Filter>
         <Main>
           {
-            list.map((v, i) => {
-              const {category, title, subtitle, summary, date_created, thumbnail} = v;
+            list && list.map((v, i) => {
+              const {category, title, summary, date_created, thumbnail, path} = v.node.frontmatter;
               return (
-                <Link to='/'>
+                <Link to={`/${path}`}>
                   <Post>
                     <Thumbnail src={thumbnail || undefined} />
                     <PostInfoSection>
                       <PostCategory>{`#${category}`}</PostCategory>
                       <PostTitle>{title}</PostTitle>
-                      <PostSubtitle>{subtitle}</PostSubtitle>
-                      <PostSummary>{summary}</PostSummary>
+                      <PostSubtitle>{summary}</PostSubtitle>
                       <PostDateCreated>{date_created}</PostDateCreated>
                     </PostInfoSection>
                   </Post>
@@ -129,25 +141,28 @@ function Devlog(props) {
   );
 }
 
-Devlog.defaultProps = {
-  list: [
-    {
-      category: '에세이',
-      title: '내가 무엇을 아는가? 내가 무엇을 모르는가?',
-      subtitle: '개발 메타인지',
-      summary: 'Dan Abramov의 어쩌고 저쩌고',
-      date_created: '2020.3.8',
-      thumbnail: '',
-    },
-    {
-      category: '에세이',
-      title: '내가 무엇을 아는가? 내가 무엇을 모르는가?',
-      subtitle: '개발 메타인지',
-      summary: 'Dan Abramov의 어쩌고 저쩌고',
-      date_created: '2020.3.8',
-      thumbnail: '',
-    },
-  ],
-};
+export const query = graphql`
+  {
+    allMarkdownRemark {
+      distinct(field: frontmatter___category)
+      group(field: frontmatter___category) {
+        edges {
+          node {
+            frontmatter {
+              path
+              category
+              date_created
+              title
+              summary
+              thumbnail
+            }
+          }
+        }
+        fieldValue
+        totalCount
+      }
+    }
+  }
+`;
 
 export default Devlog;
