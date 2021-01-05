@@ -6,7 +6,7 @@ import back_icon from 'assets/icons/back.svg';
 
 const Background = styled.div`
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   padding: 81px 0;
   flex-direction: column;
