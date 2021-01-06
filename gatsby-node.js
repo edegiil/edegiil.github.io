@@ -26,6 +26,7 @@ exports.createPages = async ({graphql, actions, reporter}) => {
             node {
               frontmatter {
                 path
+                type
               }
             }
           }
@@ -46,7 +47,7 @@ exports.createPages = async ({graphql, actions, reporter}) => {
     console.log(type, path);
     createPage({
       path,
-      component: blogPostTemplate,
+      component: type === 'devlog' ? blogPostTemplate : projectTemplate,
       // In your blog post template's graphql query, you can use path
       // as a GraphQL variable to query for data from the markdown file.
       context: {
