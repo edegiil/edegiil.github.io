@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
+import {graphql} from 'gatsby';
 
 const Background = styled.div`
   display: flex;
@@ -44,7 +45,12 @@ const InfoText = styled.div`
 const ContentWrapper = styled.main``;
 
 function ProjectTemplate({data}) {
-  const {title, subtitle, platform, time} = data;
+  const {html, frontmatter} = data.markdownRemark;
+  const {title, summary, time, platform} = frontmatter;
+
+  useEffect(() => {
+    document.getElementById('content').innerHTML = html;
+  });
 
   return (
     <Background>
@@ -54,23 +60,26 @@ function ProjectTemplate({data}) {
         <Link />
       </TitleGroup>
       <InfoGroup>
-        <Subtitle>{subtitle}</Subtitle>
+        <Subtitle>{summary}</Subtitle>
         <InfoText>{`${platform} | ${time}`}</InfoText>
       </InfoGroup>
-      <ContentWrapper>
-
-      </ContentWrapper>
+      <ContentWrapper id='content' />
     </Background>
   );
 }
 
-ProjectTemplate.defaultProps = {
-  data: {
-    title: '헤리티지 모니터',
-    subtitle: '문화재 관리 시스템',
-    platform: 'WEB',
-    time: '2020.5 ~ 2021.3',
-  },
-};
+export const query = graphql`
+  query($path: String!) {
+    markdownRemark(frontmatter: {path: {eq: $path}}) {
+      html
+      frontmatter {
+        title
+        summary
+        time
+        platform
+      }
+    }
+  }
+`;
 
 export default ProjectTemplate;
