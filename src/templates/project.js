@@ -49,6 +49,8 @@ const Title = styled.h2`
 
 const ProjectLink = styled.img`
   cursor: pointer;
+  width: 30px;
+  height: 30px;
 `;
 
 const InfoGroup = styled.div`
@@ -79,6 +81,8 @@ function ProjectTemplate({data}) {
   const handleLink = useCallback(() => {
     window.open(link);
   }, [link]);
+
+  console.log(link);
 
   return (
     <Background>
