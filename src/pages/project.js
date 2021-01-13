@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import {graphql} from 'gatsby';
 
 import ProjectElement from 'components/projectElement';
-
-import contents from '../../data/contents';
 
 const Background = styled.div`
   display: flex;
@@ -17,7 +16,7 @@ const Background = styled.div`
 const TitleGroup = styled.div`
   display: flex;
   flex-direction: column;
-  width: 900px;
+  width: 800px;
 `;
 
 const Title = styled.h2`
@@ -28,11 +27,13 @@ const Title = styled.h2`
 const Main = styled.main`
   display: grid;
   flex-direction: column;
-  width: 900px;
+  width: 800px;
   row-gap: 16px;
 `;
 
-function Proejct() {
+function Proejct({data}) {
+  const {edges} = data.allMarkdownRemark;
+  console.log(edges);
   return (
     <Background>
       <TitleGroup>
@@ -40,7 +41,8 @@ function Proejct() {
       </TitleGroup>
       <Main>
         {
-          contents.project.map((project) => {
+          edges.map(({node}) => {
+            const project = node.frontmatter;
             return <ProjectElement {...project} />;
           })
         }
@@ -48,5 +50,25 @@ function Proejct() {
     </Background>
   );
 }
+
+export const query = graphql`
+  {
+    allMarkdownRemark(filter: {frontmatter: {type: {eq: "project"}}}) {
+      edges {
+        node {
+          frontmatter {
+            title
+            tech
+            platform
+            summary
+            thumbnail
+            time
+            path
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default Proejct;

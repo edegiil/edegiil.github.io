@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Link} from 'gatsby';
 
 const Container = styled.div`
   display: flex;
@@ -46,19 +47,22 @@ const Image = styled.img`
 `;
 
 function ProjectElement(props) {
-  const {index, title, subtitle, platform, time, stacks, image} = props;
+  const {title, summary, platform, time, tech, thumbnail, path} = props;
+  const tech_list = tech.split(',');
 
   return (
     <Container>
       <ContentGroup>
-        <Title>{`${index}_${title}`}</Title>
-        <Subtitle>{subtitle}</Subtitle>
+        <Link to={`/${path}`}>
+          <Title>{title}</Title>
+        </Link>
+        <Subtitle>{summary}</Subtitle>
         <DescriptionText>{`${platform} ${time}`}</DescriptionText>
         <DescriptionText>
           {
-            stacks.map((stack, i) => {
+            tech_list.map((stack, i) => {
               let string = stack;
-              if (stacks.length - 1 !== i) {
+              if (tech_list.length - 1 !== i) {
                 string = string + ' | ';
               }
               return string;
@@ -67,7 +71,7 @@ function ProjectElement(props) {
         </DescriptionText>
       </ContentGroup>
       <ImageGroup>
-        <Image src={image} />
+        <Image src={thumbnail} />
       </ImageGroup>
     </Container>
   );
