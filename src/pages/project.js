@@ -53,7 +53,10 @@ function Proejct({data}) {
 
 export const query = graphql`
   {
-    allMarkdownRemark(filter: {frontmatter: {type: {eq: "project"}}}) {
+    allMarkdownRemark(
+      filter: {frontmatter: {type: {eq: "project"}}},
+      sort: {fields: frontmatter___title, order: ASC}
+    ) {
       edges {
         node {
           frontmatter {

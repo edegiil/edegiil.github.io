@@ -143,7 +143,7 @@ function Devlog({data}) {
 
 export const query = graphql`
   {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: {order: DESC, fields: frontmatter___date_created}) {
       distinct(field: frontmatter___category)
       group(field: frontmatter___category) {
         edges {
