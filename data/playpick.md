@@ -10,3 +10,11 @@ tech: "React,ExpressJS,MongoDB,Firebase"
 link: "https://playpick.me"
 ---
 
+## 프로젝트에 대한 이야기
+코디 결정장애를 해결하기 위해 여러 대중을 상대로 투표를 받을 수 있는 모바일 어플리케이션
+
+
+## 개발한 기능은?
+
+
+## 프로젝트하면서 겪은 문제와 해결방법
