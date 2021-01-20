@@ -71,7 +71,9 @@ function ProjectElement(props) {
         </DescriptionText>
       </ContentGroup>
       <ImageGroup>
-        <Image src={thumbnail} />
+        {
+          thumbnail && <Image src={thumbnail} />
+        }
       </ImageGroup>
     </Container>
   );
