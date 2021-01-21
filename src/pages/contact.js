@@ -12,6 +12,7 @@ const Background = styled.div`
 
 const Text = styled.h2`
   font-weight: 100;
+  cursor: pointer;
 `;
 
 function Contact() {

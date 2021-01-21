@@ -8,6 +8,7 @@ const Statement = styled.div`
   z-index: 10;
   bottom: 8px;
   right: 8px;
+  font-weight: 100;
 `;
 
 const Highlight = styled.span`

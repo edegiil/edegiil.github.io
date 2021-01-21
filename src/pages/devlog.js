@@ -4,7 +4,7 @@ import {Link, graphql} from 'gatsby';
 
 const Background = styled.div`
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   padding: 81px 0;
   flex-direction: column;
@@ -38,7 +38,9 @@ const Filter = styled.div`
   padding-bottom: 12px;
 `;
 
-const FilterElement = styled.div``;
+const FilterElement = styled.div`
+  cursor: pointer;
+`;
 
 const Main = styled.main`
   display: grid;
@@ -60,6 +62,15 @@ const Thumbnail = styled.img`
   background-color: ${(props) => props.theme.DARK_COLOR};
 `;
 
+const EmptyImage = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 360px;
+  height: 210px;
+  background-color: ${(props) => props.theme.DARK_COLOR};
+`;
+
 const PostInfoSection = styled.div`
   display: flex;
   flex-direction: column;
@@ -74,28 +85,41 @@ const PostTitle = styled.h3`
 
 const PostCategory = styled.h4`
   margin: 0;
+  font-weight: 100;
 `;
 
 const PostSubtitle = styled.h4`
   margin: 0;
   margin-bottom: 8px;
+  font-weight: 100;
 `;
 
 const PostDateCreated = styled.p`
   margin: 0;
+  font-weight: 100;
 `;
 
 function Devlog({data}) {
   const {distinct, group} = data.allMarkdownRemark;
 
-  const [category, setCategory] = useState(group[0].fieldValue);
+  const [category, setCategory] = useState(undefined);
   const [list, setList] = useState([]);
 
   useEffect(() => {
-    setList(group.filter((v) => v.fieldValue === category)[0].edges);
+    if (category) {
+      setList(group.filter((v) => v.fieldValue === category)[0].edges);
+    } else {
+      const categories = group.map((v, i) => {
+        return v.edges;
+      });
+      const all_posts = categories.reduce((prev, curr) => prev.concat(curr));
+      setList(all_posts);
+    }
   }, [category, group]);
 
   const handleCategory = (v) => () => setCategory(v);
+  const clearCategory = () => setCategory(undefined);
+
   return (
     <Background>
       <ContentSection>
@@ -103,6 +127,7 @@ function Devlog({data}) {
           <Title>DEV.Log</Title>
         </TitleGroup>
         <Filter>
+          <FilterElement onClick={clearCategory}>전체</FilterElement>
           {
             distinct.map((key, i) => {
               return (
@@ -121,9 +146,13 @@ function Devlog({data}) {
             list && list.map((v, i) => {
               const {category, title, summary, date_created, thumbnail, path} = v.node.frontmatter;
               return (
-                <Link to={`/${path}`}>
+                <Link to={`/${path}`} key={String(i)}>
                   <Post>
-                    <Thumbnail src={thumbnail || undefined} />
+                    {
+                      thumbnail ?
+                        <Thumbnail src={thumbnail} /> :
+                        <EmptyImage>No Image</EmptyImage>
+                    }
                     <PostInfoSection>
                       <PostCategory>{`#${category}`}</PostCategory>
                       <PostTitle>{title}</PostTitle>

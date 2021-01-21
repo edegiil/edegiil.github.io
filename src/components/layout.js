@@ -7,6 +7,8 @@ import Header from 'components/header';
 import Theme from 'configs/theme';
 
 import 'fontsource-noto-sans-kr';
+import 'fontsource-noto-sans-kr/700.css';
+import 'fontsource-noto-sans-kr/100.css';
 import 'fontsource-montserrat';
 
 const GlobalStyle = createGlobalStyle`
@@ -50,6 +52,7 @@ const GlobalStyle = createGlobalStyle`
 
   h1, h2, h3, h4, h5, h6, p {
     color: ${(props) => props.theme.MAIN_COLOR};
+    font-weight: 400;
   }
   h1 {
     font-size: ${(props) => props.theme.GIANT_SIZE};

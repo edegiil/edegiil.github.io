@@ -41,6 +41,7 @@ const SubtitleGroup = styled.div`
 
 const Subtitle = styled.div`
   color: ${(props) => props.theme.DARK_COLOR};
+  font-weight: 400;
 `;
 
 const Link = styled.button`
@@ -56,7 +57,9 @@ const Content = styled.p`
   width: 100%;
   color: ${(props) => props.theme.DARK_COLOR};
   margin: 0;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
+  font-weight: 100;
+  white-space: pre-line;
 `;
 
 const CloseButton = styled.button`
@@ -84,7 +87,9 @@ function AboutModal({closeModal, data}) {
             )
           }
         </SubtitleGroup>
-        <Content>{detail}</Content>
+        {
+          detail && <Content>{detail}</Content>
+        }
         <CloseButton onClick={closeModal}>닫기</CloseButton>
       </Modal>
     </Background>

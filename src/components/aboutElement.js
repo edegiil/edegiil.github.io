@@ -8,6 +8,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.h4`
+  font-weight: 400;
   margin: 0;
 `;
 

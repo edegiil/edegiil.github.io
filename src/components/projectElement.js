@@ -23,6 +23,7 @@ const Title = styled.h3`
 const Subtitle = styled.h4`
   margin: 0;
   margin-bottom: 8px;
+  font-weight: 400;
 `;
 
 const DescriptionText = styled.p`

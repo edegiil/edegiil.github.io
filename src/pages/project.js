@@ -6,7 +6,7 @@ import ProjectElement from 'components/projectElement';
 
 const Background = styled.div`
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   padding: 81px 0;
   flex-direction: column;
@@ -33,7 +33,7 @@ const Main = styled.main`
 
 function Proejct({data}) {
   const {edges} = data.allMarkdownRemark;
-  console.log(edges);
+
   return (
     <Background>
       <TitleGroup>
@@ -41,9 +41,9 @@ function Proejct({data}) {
       </TitleGroup>
       <Main>
         {
-          edges.map(({node}) => {
+          edges.map(({node}, i) => {
             const project = node.frontmatter;
-            return <ProjectElement {...project} />;
+            return <ProjectElement {...project} key={String(i)} />;
           })
         }
       </Main>

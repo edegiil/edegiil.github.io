@@ -53,10 +53,11 @@ const Category = styled.div`
 const Subtitle = styled.h3`
   margin: 0;
   margin-bottom: 8px;
+  font-weight: 100;
 `;
 
 const DateCreated = styled.div`
-  font-weight: bold;
+  font-weight: 100;
 `;
 
 const Content = styled.main`

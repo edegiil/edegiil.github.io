@@ -45,6 +45,7 @@ const TitleGroup = styled.div`
 const Title = styled.h2`
   margin: 0;
   margin-right: 8px;
+  font-weight: 400;
 `;
 
 const ProjectLink = styled.img`
@@ -55,11 +56,12 @@ const ProjectLink = styled.img`
 
 const InfoGroup = styled.div`
   width: 900px;
-  margin-bottom: 32px;
+  margin-bottom: 8px;
 `;
 
 const Subtitle = styled.h3`
   margin: 0;
+  font-weight: 100;
 `;
 
 const InfoText = styled.div`
@@ -81,8 +83,6 @@ function ProjectTemplate({data}) {
   const handleLink = useCallback(() => {
     window.open(link);
   }, [link]);
-
-  console.log(link);
 
   return (
     <Background>
