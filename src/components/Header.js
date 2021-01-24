@@ -13,6 +13,13 @@ const HeaderBlock = styled.header`
   align-items: center;
   position: absolute;
   z-index: 5;
+
+  @media ${(props) => props.theme.mobile} {
+    padding: 24px 24px;
+  }
+  @media ${(props) => props.theme.tablet} {
+    padding: 24px 30px;
+  }
 `;
 
 const LocalizationButtonGroup = styled.div`

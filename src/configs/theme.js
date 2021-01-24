@@ -18,6 +18,9 @@ const theme = {
   BIG_SIZE: '1.5rem', // 24px
   HUGE_SIZE: '2rem', // 32px
   GIANT_SIZE: '2.5rem', // 40px
+  // responsive
+  mobile: `(max-width: 500px)`,
+  tablet: `(max-width: 1200px)`,
 };
 
 function Theme({children}) {
