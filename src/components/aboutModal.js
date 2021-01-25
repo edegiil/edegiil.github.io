@@ -23,6 +23,10 @@ const Modal = styled.div`
   align-items: center;
   background-color: ${(props) => props.theme.BRIGHT_COLOR};
   border-radius: 5px;
+  @media ${(props) => props.theme.mobile} {
+    width: 300px;
+    padding: 14px 18px;
+  }
 `;
 
 const Title = styled.h3`
