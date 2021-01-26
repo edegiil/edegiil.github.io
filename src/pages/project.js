@@ -11,12 +11,18 @@ const Background = styled.div`
   padding: 81px 0;
   flex-direction: column;
   align-items: center;
+  @media ${(props) => props.theme.mobile} {
+    padding-bottom: 40px;
+  }
 `;
 
 const TitleGroup = styled.div`
   display: flex;
   flex-direction: column;
   width: 800px;
+  @media ${(props) => props.theme.mobile} {
+    width: 350px;
+  }
 `;
 
 const Title = styled.h2`
@@ -29,6 +35,10 @@ const Main = styled.main`
   flex-direction: column;
   width: 800px;
   row-gap: 16px;
+  @media ${(props) => props.theme.mobile} {
+    width: 350px;
+    row-gap: 24px;
+  }
 `;
 
 function Proejct({data}) {

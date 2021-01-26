@@ -18,6 +18,10 @@ const TitleGroup = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 7%;
+  @media ${(props) => props.theme.mobile} {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 `;
 
 const Title = styled.h2`
@@ -34,6 +38,10 @@ const Contents = styled.main`
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 24px 7%;
+  @media ${(props) => props.theme.mobile} {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 `;
 
 const ContentBox = styled.div`
