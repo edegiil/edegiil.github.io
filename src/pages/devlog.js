@@ -16,12 +16,18 @@ const ContentSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  @media ${(props) => props.theme.mobile} {
+    width: 350px;
+  }
 `;
 
 const TitleGroup = styled.div`
   display: flex;
   flex-direction: column;
   width: 900px;
+  @media ${(props) => props.theme.mobile} {
+    width: 350px;
+  }
 `;
 
 const Title = styled.h2`
@@ -48,18 +54,28 @@ const Main = styled.main`
   width: 900px;
   row-gap: 16px;
   margin-top: 16px;
+  @media ${(props) => props.theme.mobile} {
+    width: 350px;
+  }
 `;
 
 const Post = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  @media ${(props) => props.theme.mobile} {
+    flex-direction: column;
+  }
 `;
 
 const Thumbnail = styled.img`
   width: 360px;
   height: 210px;
   background-color: ${(props) => props.theme.DARK_COLOR};
+  @media ${(props) => props.theme.mobile} {
+    width: 350px;
+    height: 201px;
+  }
 `;
 
 const EmptyImage = styled.div`
@@ -69,6 +85,10 @@ const EmptyImage = styled.div`
   width: 360px;
   height: 210px;
   background-color: ${(props) => props.theme.DARK_COLOR};
+  @media ${(props) => props.theme.mobile} {
+    width: 350px;
+    height: 201px;
+  }
 `;
 
 const PostInfoSection = styled.div`
@@ -76,11 +96,17 @@ const PostInfoSection = styled.div`
   flex-direction: column;
   align-items: flex-start;
   margin-left: 24px;
+  @media ${(props) => props.theme.mobile} {
+    margin-left: 4px;
+  }
 `;
 
 const PostTitle = styled.h3`
   margin: 0;
   margin-bottom: 16px;
+  @media ${(props) => props.theme.mobile} {
+    margin-bottom: 8px;
+  }
 `;
 
 const PostCategory = styled.h4`
