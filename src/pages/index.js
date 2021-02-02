@@ -1,9 +1,9 @@
 import React, {useState, useCallback} from 'react';
 import styled from 'styled-components';
 import {graphql} from 'gatsby';
-import BackgroundImage from 'gatsby-background-image';
 
 import CopyRightStatement from 'components/copyRightStatement';
+import BackgroundLayout from 'components/backgroundLayout';
 
 import 'configs/typography.css';
 
@@ -37,18 +37,15 @@ const Title = styled.h1`
 const SubTitle = styled.div`
 `;
 
-function Home(props) {
+function Home({data}) {
   const [title_hover_state, setTitleHoverState] = useState(false);
-
-  const {data} = props;
-  const background_image = data.file.childImageSharp.fluid;
 
   const handleTitleHover = useCallback(() => {
     setTitleHoverState((s) => !s);
   }, []);
 
   return (
-    <BackgroundImage fluid={background_image}>
+    <BackgroundLayout image={data.file.childImageSharp.fluid}>
       <Background>
         <TitleGroup>
           <Title
@@ -62,7 +59,7 @@ function Home(props) {
         </TitleGroup>
       </Background>
       <CopyRightStatement />
-    </BackgroundImage>
+    </BackgroundLayout>
   );
 }
 

@@ -12,12 +12,11 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "predeploy": "yarn build",
     "deploy": "gh-pages -d public"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.11.1",
-    "clipboard": "^2.0.6",
     "fontsource-montserrat": "^3.0.9",
     "fontsource-noto-sans-kr": "^3.0.9",
     "gatsby": "^2.25.3",

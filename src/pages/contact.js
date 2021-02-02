@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Clipboard from 'clipboard';
 
 const Background = styled.div`
   display: flex;
@@ -12,7 +11,6 @@ const Background = styled.div`
 
 const Text = styled.h2`
   font-weight: 100;
-  cursor: pointer;
   @media ${(props) => props.theme.tablet} {
     font-size: ${(props) => props.theme.HUGE_SIZE};
   }
@@ -22,15 +20,6 @@ const Text = styled.h2`
 `;
 
 function Contact() {
-  const clipboard = new Clipboard('#contact-email');
-
-  clipboard.on('success', () => {
-    alert('이메일이 클립보드에 복사되었습니다.');
-  });
-  clipboard.on('error', () => {
-    alert('다시 시도해주세요');
-  });
-
   return (
     <Background>
       <Text
