@@ -11,16 +11,12 @@ const theme = {
   // breakpoints
   mobile: '(max-width: 480px)',
   tablet: '(max-width: 960px)',
-  desktop: '(min-width: 961px)',
   // font sizes
   NORMAL_SIZE: '1rem', // 16px
   SMALL_SIZE: '0.75rem', // 12px
   BIG_SIZE: '1.5rem', // 24px
   HUGE_SIZE: '2rem', // 32px
   GIANT_SIZE: '2.5rem', // 40px
-  // responsive
-  mobile: `(max-width: 500px)`,
-  tablet: `(max-width: 1200px)`,
 };
 
 function Theme({children}) {

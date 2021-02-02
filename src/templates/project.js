@@ -19,6 +19,12 @@ const ContentBox = styled.section`
   flex-direction: column;
   align-items: flex-start;
   width: 900px;
+  @media ${(props) => props.theme.tablet} {
+    width: 500px;
+  }
+  @media ${(props) => props.theme.mobile} {
+    width: 350px;
+  }
 `;
 
 const NavGroup = styled.div`
@@ -40,6 +46,12 @@ const TitleGroup = styled.div`
   align-items: center;
   width: 900px;
   margin-bottom: 24px;
+  @media ${(props) => props.theme.tablet} {
+    width: 500px;
+  }
+  @media ${(props) => props.theme.mobile} {
+    width: 350px;
+  }
 `;
 
 const Title = styled.h2`
@@ -57,6 +69,12 @@ const ProjectLink = styled.img`
 const InfoGroup = styled.div`
   width: 900px;
   margin-bottom: 8px;
+  @media ${(props) => props.theme.tablet} {
+    width: 500px;
+  }
+  @media ${(props) => props.theme.mobile} {
+    width: 350px;
+  }
 `;
 
 const Subtitle = styled.h3`
@@ -70,6 +88,12 @@ const InfoText = styled.div`
 
 const ContentWrapper = styled.main`
   width: 900px;
+  @media ${(props) => props.theme.tablet} {
+    width: 500px;
+  }
+  @media ${(props) => props.theme.mobile} {
+    width: 350px;
+  }
 `;
 
 function ProjectTemplate({data}) {

@@ -13,6 +13,12 @@ const Background = styled.div`
 const Text = styled.h2`
   font-weight: 100;
   cursor: pointer;
+  @media ${(props) => props.theme.tablet} {
+    font-size: ${(props) => props.theme.HUGE_SIZE};
+  }
+  @media ${(props) => props.theme.mobile} {
+    font-size: ${(props) => props.theme.BIG_SIZE};
+  }
 `;
 
 function Contact() {

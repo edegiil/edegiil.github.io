@@ -18,6 +18,12 @@ const ContentBox = styled.section`
   flex-direction: column;
   align-items: flex-start;
   width: 900px;
+  @media ${(props) => props.theme.tablet} {
+    width: 500px;
+  }
+  @media ${(props) => props.theme.mobile} {
+    width: 350px;
+  }
 `;
 
 const NavGroup = styled.div`
@@ -39,6 +45,13 @@ const TitleGroup = styled.div`
   flex-direction: row;
   align-items: baseline;
   margin-bottom: 16px;
+  @media ${(props) => props.theme.tablet} {
+    width: 500px;
+    flex-direction: column;
+  }
+  @media ${(props) => props.theme.mobile} {
+    width: 350px;
+  }
 `;
 
 const Title = styled.h2`
@@ -62,6 +75,12 @@ const DateCreated = styled.div`
 
 const Content = styled.main`
   width: 900px;
+  @media ${(props) => props.theme.tablet} {
+    width: 500px;
+  }
+  @media ${(props) => props.theme.mobile} {
+    width: 350px;
+  }
 `;
 
 function DevlogTemplate({data}) {

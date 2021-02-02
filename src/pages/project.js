@@ -20,6 +20,9 @@ const TitleGroup = styled.div`
   display: flex;
   flex-direction: column;
   width: 800px;
+  @media ${(props) => props.theme.tablet} {
+    width: 500px;
+  }
   @media ${(props) => props.theme.mobile} {
     width: 350px;
   }
@@ -35,6 +38,10 @@ const Main = styled.main`
   flex-direction: column;
   width: 800px;
   row-gap: 16px;
+  @media ${(props) => props.theme.tablet} {
+    width: 500px;
+    row-gap: 24px;
+  }
   @media ${(props) => props.theme.mobile} {
     width: 350px;
     row-gap: 24px;
