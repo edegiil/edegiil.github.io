@@ -1,12 +1,13 @@
-import React, {useEffect} from 'react';
-import {graphql, Link} from 'gatsby';
+import React, {useCallback, useEffect} from 'react';
 import styled from 'styled-components';
+import {graphql, Link} from 'gatsby';
 
 import back_icon from 'assets/icons/back.svg';
+import link_icon from 'assets/icons/link.svg';
 
 const Background = styled.div`
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
   width: 100vw;
   padding: 81px 0;
   flex-direction: column;
@@ -42,12 +43,11 @@ const Icon = styled.img`
 
 const TitleGroup = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  margin-bottom: 16px;
+  align-items: center;
+  width: 900px;
+  margin-bottom: 24px;
   @media ${(props) => props.theme.tablet} {
     width: 500px;
-    flex-direction: column;
   }
   @media ${(props) => props.theme.mobile} {
     width: 350px;
@@ -56,24 +56,37 @@ const TitleGroup = styled.div`
 
 const Title = styled.h2`
   margin: 0;
+  margin-right: 8px;
+  font-weight: 400;
 `;
 
-const Category = styled.div`
-  margin: 0;
-  font-weight: 100;
+const ProjectLink = styled.img`
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+`;
+
+const InfoGroup = styled.div`
+  width: 900px;
+  margin-bottom: 8px;
+  @media ${(props) => props.theme.tablet} {
+    width: 500px;
+  }
+  @media ${(props) => props.theme.mobile} {
+    width: 350px;
+  }
 `;
 
 const Subtitle = styled.h3`
   margin: 0;
-  margin-bottom: 8px;
   font-weight: 100;
 `;
 
-const DateCreated = styled.div`
-  font-weight: 100;
+const InfoText = styled.div`
+  margin: 0;
 `;
 
-const Content = styled.main`
+const ContentWrapper = styled.main`
   width: 900px;
   @media ${(props) => props.theme.tablet} {
     width: 500px;
@@ -83,18 +96,22 @@ const Content = styled.main`
   }
 `;
 
-function DevlogTemplate({data}) {
+function ProjectTemplate({data}) {
   const {html, frontmatter} = data.markdownRemark;
-  const {category, title, summary, date_created, date_updated} = frontmatter;
+  const {title, summary, time, platform, link} = frontmatter;
 
   useEffect(() => {
-    document.getElementById('content').innerHTML = html;
+    document.getElementById('content-project').innerHTML = html;
   });
+
+  const handleLink = useCallback(() => {
+    window.open(link);
+  }, [link]);
 
   return (
     <Background>
       <ContentBox>
-        <Link to='/devlog' replace>
+        <Link to='/project' replace>
           <NavGroup>
             <Icon src={back_icon} />
             <NavText>돌아가기</NavText>
@@ -102,35 +119,34 @@ function DevlogTemplate({data}) {
         </Link>
         <TitleGroup>
           <Title>{title}</Title>
-          <Category>{category}</Category>
+          {
+            link &&
+            <ProjectLink src={link_icon} onClick={handleLink} />
+          }
         </TitleGroup>
-        <Subtitle>{summary}</Subtitle>
-        <DateCreated>{`작성일자 : ${date_created}`}</DateCreated>
-        {
-          date_updated && (
-            <DateCreated>{`최종수정 : ${date_updated}`}</DateCreated>
-          )
-        }
-        <Content id='content' />
+        <InfoGroup>
+          <Subtitle>{summary}</Subtitle>
+          <InfoText>{`${platform} | ${time}`}</InfoText>
+        </InfoGroup>
+        <ContentWrapper id='content-project' />
       </ContentBox>
     </Background>
   );
-};
+}
 
 export const query = graphql`
   query($path: String!) {
     markdownRemark(frontmatter: {path: {eq: $path}}) {
       html
       frontmatter {
-        path
-        category
         title
         summary
-        date_created
-        date_updated
+        time
+        platform
+        link
       }
     }
   }
 `;
 
-export default DevlogTemplate;
+export default ProjectTemplate;

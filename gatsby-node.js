@@ -1,21 +1,32 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
 const path = require('path');
+exports.onCreateWebpackConfig = ({actions}) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        components: path.resolve(__dirname, 'src/components'),
+        pages: path.resolve(__dirname, 'src/pages'),
+        templates: path.resolve(__dirname, 'src/templates'),
+        configs: path.resolve(__dirname, 'src/configs'),
+        hocs: path.resolve(__dirname, 'src/hocs'),
+        assets: path.resolve(__dirname, 'src/assets'),
+        utils: path.resolve(__dirname, 'src/utils'),
+      },
+    },
+  });
+};
 
-exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions;
+exports.createPages = async ({graphql, actions, reporter}) => {
+  const {createPage} = actions;
   // Query for markdown nodes to use in creating pages.
   const result = await graphql(
     `
       {
-        allMarkdownRemark(limit: 1000) {
+        allMarkdownRemark(limit: 100) {
           edges {
             node {
               frontmatter {
                 path
+                type
               }
             }
           }
@@ -30,15 +41,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
   // Create pages for each markdown file.
   const blogPostTemplate = path.resolve('src/templates/devlog.js');
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    const url = node.frontmatter.path;
+  const projectTemplate = path.resolve('src/templates/project.js');
+  result.data.allMarkdownRemark.edges.forEach(({node}) => {
+    const {path, type} = node.frontmatter;
+    console.log(type, path);
     createPage({
-      path: url,
-      component: blogPostTemplate,
+      path,
+      component: type === 'devlog' ? blogPostTemplate : projectTemplate,
       // In your blog post template's graphql query, you can use path
       // as a GraphQL variable to query for data from the markdown file.
       context: {
-        path: url,
+        path,
       },
     });
   });
@@ -48,10 +61,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 const replacePath = (url) => (url === '/' ? url : url.replace(/\/$/, ''));
 // Implement the Gatsby API “onCreatePage”. This is
 // called after every page is created.
-exports.onCreatePage = ({ page, actions }) => {
-  const { createPage, deletePage } = actions;
+exports.onCreatePage = ({page, actions}) => {
+  const {createPage, deletePage} = actions;
 
-  const oldPage = { ...page };
+  const oldPage = {...page};
   // Remove trailing slash unless page is /
   // eslint-disable-next-line no-param-reassign
   page.path = replacePath(page.path);
@@ -61,5 +74,3 @@ exports.onCreatePage = ({ page, actions }) => {
     createPage(page);
   }
 };
-
-// You can delete this file if you're not using it

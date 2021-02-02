@@ -1,45 +1,52 @@
+/**
+ * Configure your Gatsby site with this file.
+ *
+ * See: https://www.gatsbyjs.com/docs/gatsby-config/
+ */
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
-    title: 'wingtree devlog',
-    description: 'wingtree devlog',
-    author: '@wingtree',
+    title: 'edegiil.github.io',
+    siteUrl: 'https://edegiil.github.io',
+    description: 'Edegil의 개발자 블로그입니다.',
   },
   plugins: [
+    'gatsby-plugin-styled-components',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'edegiil.github.io',
+        short_name: 'edegil',
+        start_url: '/',
+        background_color: '#16171b',
+        theme_color: '#16171b',
+        display: 'standalone',
+        icon: 'src/assets/favicon.png',
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'data',
-        path: `${__dirname}/data`,
+        name: 'images',
+        path: path.join(__dirname, 'src', 'assets', 'images'),
       },
     },
-    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'data',
+        path: path.join(__dirname, 'data'),
+      },
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: 'gatsby-transformer-remark',
       options: {
-        name: 'wingtree.github.io',
-        short_name: 'wingtree',
-        start_url: '/',
-        background_color: '#d8d8d8',
-        theme_color: '#505050',
-        display: 'minimal-ui',
-        icon: 'src/images/favicon.png',
+        gfm: true,
       },
     },
-    'gatsby-plugin-sass',
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        google: {
-          families: ['Raleway:100,400,700', 'ZCOOL QingKe HuangYou:100,400,700', 'Jua:400', 'Noto Sans KR: 100, 400, 700'],
-        },
-      },
-    },
-    'gatsby-plugin-flow',
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // 'gatsby-plugin-offline',
   ],
 };
