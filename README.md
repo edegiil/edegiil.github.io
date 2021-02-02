@@ -15,6 +15,8 @@
 
 2020.11.14 - ver 2.0.0 kick off
 
+2021.2.2 - ver 2.0.0 출시
+
 ***
 ### 기획안
 [Ver.1](https://github.com/wingtree/wingtree.github.io/blob/develop/project/ver1.md)
