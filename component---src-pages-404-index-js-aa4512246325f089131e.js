@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{"4Daz":function(e,a,t){"use strict";t.r(a);var n=t("q1tI"),c=t.n(n),l=t("Wbzz"),r=t("vrFN");t("zjk2");a.default=function(){return c.a.createElement("div",{className:"page404-wrapper"},c.a.createElement(r.a,{title:"404: Not found"}),c.a.createElement("div",{className:"page404-title"},"404"),c.a.createElement("div",{className:"page404-content"},"존재하지 않는 페이지입니다."),c.a.createElement(l.Link,{to:"/",className:"page404-link"},"돌아가기"))}}}]);
-//# sourceMappingURL=component---src-pages-404-index-js-aa4512246325f089131e.js.map
