@@ -1,5 +1,5 @@
 ---
-path: "project/mtree"
+path: "project/peacemain"
 title: "06__피스메인 홈페이지"
 type: "project"
 summary: "피스메인 동아리 모집 페이지"
