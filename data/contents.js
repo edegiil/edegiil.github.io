@@ -140,16 +140,20 @@ const contents = {
     ],
     tech_stacks: [
       {
-        title: 'Javascript',
+        title: 'Javascript, Typescript',
         descriptions: [
           {
-            main: '주력언어',
+            main: '자바스크립트',
             time: '2018.3',
+          },
+          {
+            main: '타입스크립트',
+            time: '2021.2',
           },
         ],
         detail:
-        ` 웹 부터, Express를 이용한 서버, React Native를 이용한 앱, Electron을 이용한 데스크탑 앱, Tensorflow.js를 이용한 머신러닝까지
-          못하는게 없는 언어.
+        ` 웹부터, Express를 이용한 서버, React Native를 이용한 앱, Electron을 이용한 데스크탑 앱, Tensorflow.js를 이용한 머신러닝까지
+          못하는게 없는 언어. 타입스크립트를 쓰니까 예상치 못한 에러를 잡을 수 있다.
         `,
       },
       {
