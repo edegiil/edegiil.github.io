@@ -36,4 +36,4 @@ function Main(): React.FC {
 
 ```
 이상하게 잘 안됐다. `React.FC`를 사용하지 않고 그냥 컴포넌트에 타입을 적지말라는 글도 있었는데, 타입적으라는 경고창이 거슬려서 찾던 중 `React.ReactElement`를 적용했는데, 잘 되더라.
-이게 맞는지는 찾아봐야한다 이제.
+`React.ReactNode`와 `React.ReactElement`의 차이점에 대해서 이 기회에 알게 되었다.
