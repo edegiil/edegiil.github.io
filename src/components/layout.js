@@ -80,6 +80,16 @@ const GlobalStyle = createGlobalStyle`
     text-indent: -1.5rem;
     padding-left: 1.5rem;
   }
+
+  pre {
+    background-color: ${(props) => props.theme.DARK_COLOR};
+    padding: 12px 16px;
+    border-radius: 8px;
+
+    code {
+      color: white;
+    }
+  }
 `;
 
 
