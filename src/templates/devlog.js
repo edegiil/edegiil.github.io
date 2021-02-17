@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {graphql, Link} from 'gatsby';
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 import back_icon from 'assets/icons/back.svg';
 
@@ -80,6 +80,10 @@ const Content = styled.main`
   }
   @media ${(props) => props.theme.mobile} {
     width: 350px;
+  }
+  img {
+    max-width: 100%;
+    max-height: 400px;
   }
 `;
 

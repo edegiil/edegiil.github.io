@@ -94,6 +94,10 @@ const ContentWrapper = styled.main`
   @media ${(props) => props.theme.mobile} {
     width: 350px;
   }
+  img {
+    max-width: 100%;
+    max-height: 400px;
+  }
 `;
 
 function ProjectTemplate({data}) {
