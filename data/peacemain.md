@@ -9,6 +9,7 @@ platform: "WEB"
 tech: "React,Typescript,Styled-Component,Express"
 link: "https://peacemain-club.github.io/"
 ---
+![플레이픽](https://drive.google.com/uc?export=download&id=16YIEYZh4toCHhMTsjSTaLU_UXjMWhHyu)
 
 ### 프로젝트에 대한 이야기
 갑자기 삘받아 웹 개발 스터디를 모집해보고 싶었다. 그냥 모집하는 거 보다는 웹을 직접 만들어서 그걸로 사람을 모집한다면 좀 더 웹 개발 스터디의 차별성을 강화하고, 정체성을 살릴 수 있을 것 같았다.
@@ -16,7 +17,7 @@ link: "https://peacemain-club.github.io/"
 
 새로운 기술도 사용해서 추가를 해보려고 했는데, 이번엔 타입스크립트를 적용해보았다.
 
-프론트엔드에 바로 파이어베이스 연결해서 할 수도 있었지만, 그냥 간단하게 Express로 API 서버를 만들어서 붙였다.
+프론트엔드에 바로 파이어베이스 연결해서 할 수도 있었지만, 나중에 다른 기능들을 추가하기 위해서 간단하게 Express로 API 서버를 만들어서 붙였다.
 
 ### 개발한 기능은?
 * 동아리 모집 소개페이지
@@ -24,7 +25,7 @@ link: "https://peacemain-club.github.io/"
 
 ### 사용한 기술 스택
 * React: 웹은 리액트
-* Typescript: CRA에 타입스크립트 설정이 있어서, 그걸로 진행했다. npm 모듈부터 타입을 다운받았어야 했는데, 확실히 Flow보다는 사용하기 쉬운 것 같다. 타입 체킹이 되는 것은 크게 효용을 못느꼈지만 어떤 parameter를 안 적었는지와 같은 오류를 찾아주는 건 확실히 자바스크립트보다 좋았다.
+* Typescript: CRA에 타입스크립트 설정이 있어서, 그걸로 진행했다. npm으로 모듈의 타입도 다운받았어야 했는데, 확실히 Flow보다는 사용하기 쉬운 것 같다. 타입 체킹이 되는 것은 크게 효용을 못느꼈지만 어떤 parameter를 안 적었는지와 같은 오류를 찾아주는 건 확실히 자바스크립트보다 좋았다.
 * Styled-Component: 두번째로 사용해보는데, 좀 더 모듈화를 진행해보려고 했는데, 시간 때문에 못해봤다. 다음 프로젝트때는 어떻게 모듈화를 할 수 있을지 고민해서 해봐야겠다.
 
 ### 프로젝트하면서 겪은 문제와 해결방법
