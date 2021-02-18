@@ -8,6 +8,7 @@ time: "2019.2 ~ 2019.4"
 platform: "WEB"
 tech: "React,Firebase"
 link: "https://m-tree.club/"
+repository: ""
 ---
 ![mtree](https://drive.google.com/uc?export=download&id=1vxvaKCv-n_uAXJyCEUIpvkZZh8Twh77n)
 
@@ -27,7 +28,7 @@ React의 Life Cycle에 대해서 알아야 했고, 이 액션은 언제 실행�
 * Redux : 이때 까지도 어떻게 작동하는지 하나도 이해가 안됐다. 그냥 전 프로젝트 하면서 나온 코드 변환만 조금 시켰다.
 * Firebase
 
-### 프로젝트하면서 겪은 문제와 해결방법
+### 프로젝트하면서 겪은 이슈와 해결방법
 그냥 간단하게 만들려고 했던 토이 프로젝트라 크게 기술적으로 문제가 생기고 그러지는 않았다. 다만 원래 한 두명이서 하던 개발을 사람이 늘어 4명이 하게 되니 협업에 문제가 발생했다.
 
 마크업의 범위가 어디까지 인지, 어떤 데이터들을 보내고 받을지와 같은 문제를 처음엔 협업을 해본사람이 아무도 없어서 그냥 막 만들었다.

@@ -8,6 +8,7 @@ time: "2019.5 ~ 2019.9"
 platform: "WEB,APP"
 tech: "React,Firebase,MongoDB"
 link: "https://m-tree.club/"
+repository: ""
 ---
 ![비지리스](https://drive.google.com/uc?export=download&id=1cYkoaEZa9aNHL9l7ohEUIgWIQDp3Volg)
 
@@ -34,7 +35,7 @@ link: "https://m-tree.club/"
 * Google Cloud Platform
 * Cheerio : k-스타트업 홈페이지에 지원사업마다 url이 바로 안나와서 찾는데 애먹었다.
 
-### 프로젝트하면서 겪은 문제와 해결방법
+### 프로젝트하면서 겪은 이슈와 해결방법
 모바일 어플리케이션의 업데이트는 비용이 웹 어플리케이션의 업데이트 비용보다 시간적이나 효용성 측면에서 많이 발생했다. 그래서 업데이트가 빈번하게 발생할 수 있는 몇가지 기능은 웹뷰로 구현했다.
 
 웹뷰를 구성하는 중에 웹뷰 안의 웹과 모바일 어플리케이션 간의 통신을 해야했는데, 제대로 안되는 경우가 있었다. 모바일 앱에서 웹뷰로 데이터를 넘기는 건 쉬웠지만 웹뷰 안의 웹에서 모바일 어플리케이션으로는 잘 되지 않았다.
