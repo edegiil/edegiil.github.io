@@ -4,6 +4,7 @@ import {graphql, Link} from 'gatsby';
 
 import back_icon from 'assets/icons/back.svg';
 import link_icon from 'assets/icons/link.svg';
+import github_icon from 'assets/icons/github.svg';
 
 const Background = styled.div`
   display: flex;
@@ -58,12 +59,16 @@ const Title = styled.h2`
   margin: 0;
   margin-right: 8px;
   font-weight: 400;
+  @media ${(props) => props.theme.tablet} {
+    font-size: ${(props) => props.theme.BIG_SIZE}
+  }
 `;
 
 const ProjectLink = styled.img`
   cursor: pointer;
   width: 30px;
   height: 30px;
+  margin-left: 8px;
 `;
 
 const InfoGroup = styled.div`
@@ -80,6 +85,9 @@ const InfoGroup = styled.div`
 const Subtitle = styled.h3`
   margin: 0;
   font-weight: 100;
+  @media ${(props) => props.theme.tablet} {
+    font-size: ${(props) => props.theme.NORMAL_SIZE}
+  }
 `;
 
 const InfoText = styled.div`
@@ -96,13 +104,13 @@ const ContentWrapper = styled.main`
   }
   img {
     max-width: 100%;
-    max-height: 400px;
+    max-height: 1200px;
   }
 `;
 
 function ProjectTemplate({data}) {
   const {html, frontmatter} = data.markdownRemark;
-  const {title, summary, time, platform, link} = frontmatter;
+  const {title, summary, time, platform, link, repository} = frontmatter;
 
   useEffect(() => {
     document.getElementById('content-project').innerHTML = html;
@@ -111,6 +119,10 @@ function ProjectTemplate({data}) {
   const handleLink = useCallback(() => {
     window.open(link);
   }, [link]);
+
+  const handleRepositoryLink = useCallback(() => {
+    window.open(repository);
+  }, [repository]);
 
   return (
     <Background>
@@ -126,6 +138,10 @@ function ProjectTemplate({data}) {
           {
             link &&
             <ProjectLink src={link_icon} onClick={handleLink} />
+          }
+          {
+            repository &&
+            <ProjectLink src={github_icon} onClick={handleRepositoryLink} />
           }
         </TitleGroup>
         <InfoGroup>
@@ -148,6 +164,7 @@ export const query = graphql`
         time
         platform
         link
+        repository
       }
     }
   }
