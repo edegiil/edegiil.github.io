@@ -10,6 +10,7 @@ tech: "React,Google Cloud Platform,Naver Cloud Platform,MySQL,Express"
 link: "https://ceedup.com"
 repository: ""
 ---
+![피스메인](https://drive.google.com/uc?export=download&id=1inGQ6pY8Vfr7C-qASERsmlhdNFejblKr)
 
 ### 프로젝트에 대한 이야기
 AioT 디바이스 기반 문화재 통합 관리 솔루션
@@ -29,12 +30,10 @@ AioT 디바이스 기반 문화재 통합 관리 솔루션
 
 이제 서비스를 개발해야했는데, 이미 정의되어있던 서비스 요구사항을 읽어보고 내가 가지고 있는 기술 스택을 총동원해서 자바스크립트 베이스로 모든 스택을 결정했다.
 
-* 프론트엔드는 SPA ReactJS
-
+* 프론트엔드는 SPA ReactJS<br/>
   서비스 자체가 웹 어플리케이션의 형태라 굳이 NextJS나 Gatsby 처럼 정적 페이지로 만들 필요성을 느끼지 못했다. TDD를 하려고 마음먹어서 적용을 하려고 했는데, 프론트엔드는 눈으로 직접 보고 테스트 할 수 있어서 테스트 할 필요성을 느끼지 못했다.
 
-* 백엔드는 ExpressJS 기반의 API 서버와 Google Cloud Platform
-
+* 백엔드는 ExpressJS 기반의 API 서버와 Google Cloud Platform<br/>
   실시간으로 데이터를 확인할 수 있도록 해야하는 게 있어서 그 부분은 Firestore의 실시간 기능을 사용하기로 했다. TDD는 여기에 적용하려고 했는데, 백엔드는 하나하나 POSTMAN으로 테스트하고 있을 시간이 없어서, jest와 supertest를 사용해서 API 개발을 TDD 방식으로 진행해봤다. 확실히 코드 리팩토링할 때 편했다.
 
 모두 자바스크립트 베이스로 해서 혼자 개발하는 특성상 생산성이 괜찮았던 것 같다.
