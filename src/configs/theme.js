@@ -3,7 +3,7 @@ import {ThemeProvider} from 'styled-components';
 
 const theme = {
   // colors
-  MAIN_COLOR: 'hsl(0, 0%, 54%)',
+  MAIN_COLOR: 'hsl(0, 0%, 76%)',
   DARK_COLOR: 'hsl(0, 0%, 26%)',
   BRIGHT_COLOR: 'hsl(0, 0%, 77%)',
   BACKGROUND_COLOR: 'hsl(228, 10%, 10%)',
