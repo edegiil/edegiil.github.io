@@ -17,7 +17,7 @@ const ContentSection = styled.section`
   flex-direction: column;
   align-items: flex-start;
   @media ${(props) => props.theme.tablet} {
-    width: 500px;
+    width: 350px;
   }
   @media ${(props) => props.theme.mobile} {
     width: 350px;
@@ -29,7 +29,7 @@ const TitleGroup = styled.div`
   flex-direction: column;
   width: 900px;
   @media ${(props) => props.theme.tablet} {
-    width: 500px;
+    width: 350px;
   }
   @media ${(props) => props.theme.mobile} {
     width: 350px;
@@ -61,7 +61,7 @@ const Main = styled.main`
   row-gap: 16px;
   margin-top: 16px;
   @media ${(props) => props.theme.tablet} {
-    width: 500px;
+    width: 350px;
   }
   @media ${(props) => props.theme.mobile} {
     width: 350px;

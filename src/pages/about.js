@@ -12,15 +12,19 @@ const Background = styled.div`
   width: 100vw;
   padding: 81px 0;
   flex-direction: column;
+  align-items: center;
 `;
 
 const TitleGroup = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 7%;
+  width: 900px;
+  @media ${(props) => props.theme.tablet} {
+    width: 100%;
+    padding: 0 5%;
+  }
   @media ${(props) => props.theme.mobile} {
-    margin-left: 5%;
-    margin-right: 5%;
+    padding: 0 5%;
   }
 `;
 
@@ -37,10 +41,15 @@ const Contents = styled.main`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 24px 7%;
+  width: 900px;
+  box-sizing: border-box;
+  padding: 24px 0;
+  @media ${(props) => props.theme.tablet} {
+    width: 100%;
+    padding: 24px 5%;
+  }
   @media ${(props) => props.theme.mobile} {
-    padding-left: 5%;
-    padding-right: 5%;
+    padding: 24px 5%;
   }
 `;
 
@@ -48,9 +57,15 @@ const ContentBox = styled.div`
   display: grid;
   row-gap: 16px;
   align-content: start;
-  width: 20%;
+  width: 45%;
   min-width: 230px;
   margin-bottom: 32px;
+  @media ${(props) => props.theme.tablet} {
+    width: 45%;
+  }
+  @media ${(props) => props.theme.mobile} {
+    width: 100%;
+  }
 `;
 
 const ContentBoxTitle = styled.h3`

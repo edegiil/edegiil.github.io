@@ -11,6 +11,7 @@ const theme = {
   // breakpoints
   mobile: '(max-width: 480px)',
   tablet: '(max-width: 960px)',
+  laptop: '(max-width: 1440px)',
   // font sizes
   NORMAL_SIZE: '1rem', // 16px
   SMALL_SIZE: '0.75rem', // 12px

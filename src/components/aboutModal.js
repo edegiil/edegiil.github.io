@@ -25,7 +25,7 @@ const Modal = styled.div`
   border-radius: 5px;
   @media ${(props) => props.theme.mobile} {
     width: 300px;
-    padding: 14px 18px;
+    padding: 20px 22px;
   }
 `;
 
@@ -62,7 +62,7 @@ const Content = styled.p`
   color: ${(props) => props.theme.DARK_COLOR};
   margin: 0;
   margin-bottom: 16px;
-  font-weight: 100;
+  font-weight: 400;
   white-space: pre-line;
 `;
 
