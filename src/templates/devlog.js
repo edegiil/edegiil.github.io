@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {graphql, Link} from 'gatsby';
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 
 import back_icon from 'assets/icons/back.svg';
 
