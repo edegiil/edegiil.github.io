@@ -7,7 +7,7 @@ thumbnail: ""
 time: "2019.5 ~ 2019.9"
 platform: "WEB,APP"
 tech: "React,Firebase,MongoDB"
-link: "https://m-tree.club/"
+link: ""
 repository: ""
 ---
 ![비지리스](https://drive.google.com/uc?export=download&id=1cYkoaEZa9aNHL9l7ohEUIgWIQDp3Volg)
