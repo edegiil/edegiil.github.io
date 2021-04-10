@@ -49,7 +49,7 @@ const Main = styled.main`
 `;
 
 function Proejct({data}) {
-  const {edges} = data.allMarkdownRemark;
+  const {edges} = data.allMdx;
 
   return (
     <Background>
@@ -70,7 +70,7 @@ function Proejct({data}) {
 
 export const query = graphql`
   {
-    allMarkdownRemark(
+    allMdx(
       filter: {frontmatter: {type: {eq: "project"}}},
       sort: {fields: frontmatter___title, order: ASC}
     ) {

@@ -1,6 +1,9 @@
 import React from 'react';
 import {createGlobalStyle} from 'styled-components';
 import {Helmet} from 'react-helmet';
+import {
+  defineCustomElements as deckDeckGoHighlightElement,
+} from '@deckdeckgo/highlight-code/dist/loader';
 
 import Header from 'components/header';
 
@@ -10,6 +13,9 @@ import 'fontsource-noto-sans-kr';
 import 'fontsource-noto-sans-kr/700.css';
 import 'fontsource-noto-sans-kr/100.css';
 import 'fontsource-montserrat';
+import '@fontsource/source-code-pro';
+
+deckDeckGoHighlightElement();
 
 const GlobalStyle = createGlobalStyle`
   html body {
@@ -92,6 +98,22 @@ const GlobalStyle = createGlobalStyle`
     code {
       color: white;
     }
+  }
+
+  deckgo-highlight-code {
+    --deckgo-highlight-code-font-family: 'Source Code Pro';
+    --deckgo-highlight-code-border-radius: 5px;
+    --deckgo-highlight-code-background: ${(props) => props.theme.CODE_BLOCK_COLOR};
+    --deckgo-highlight-code-padding: 20px 24px;
+    --deckgo-highlight-code-line-height: 1.5rem;
+    --deckgo-highlight-code-token-operator: #d6d6d6;
+    --deckgo-highlight-code-token-comment: #005c0b;
+    --deckgo-highlight-code-token-punctuation: #b95bbd;
+    --deckgo-highlight-code-token-property: #8aa6ed;
+    --deckgo-highlight-code-token-selector: #dbb742;
+    --deckgo-highlight-code-token-atrule: #6a87cc;
+    --deckgo-highlight-code-token-function: #f5e371;
+    --deckgo-highlight-code-token-regex: #ff5269;
   }
 `;
 

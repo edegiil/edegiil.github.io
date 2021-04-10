@@ -8,6 +8,7 @@ const theme = {
   BRIGHT_COLOR: 'hsl(0, 0%, 77%)',
   BACKGROUND_COLOR: 'hsl(228, 10%, 10%)',
   HIGHLIGHT: 'hsl(0, 78%, 18%)',
+  CODE_BLOCK_COLOR: 'hsl(228, 0%, 0%)',
   // breakpoints
   mobile: '(max-width: 480px)',
   tablet: '(max-width: 960px)',

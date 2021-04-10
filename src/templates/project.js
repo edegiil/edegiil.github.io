@@ -1,6 +1,7 @@
-import React, {useCallback, useEffect} from 'react';
+import React, {useCallback} from 'react';
 import styled from 'styled-components';
 import {graphql, Link} from 'gatsby';
+import {MDXRenderer} from 'gatsby-plugin-mdx';
 
 import back_icon from 'assets/icons/back.svg';
 import link_icon from 'assets/icons/link.svg';
@@ -20,6 +21,7 @@ const ContentBox = styled.section`
   flex-direction: column;
   align-items: flex-start;
   width: 900px;
+  padding-bottom: 24px;
   @media ${(props) => props.theme.tablet} {
     width: 500px;
   }
@@ -109,12 +111,8 @@ const ContentWrapper = styled.main`
 `;
 
 function ProjectTemplate({data}) {
-  const {html, frontmatter} = data.markdownRemark;
+  const {body, frontmatter} = data.mdx;
   const {title, summary, time, platform, link, repository} = frontmatter;
-
-  useEffect(() => {
-    document.getElementById('content-project').innerHTML = html;
-  });
 
   const handleLink = useCallback(() => {
     window.open(link);
@@ -148,7 +146,9 @@ function ProjectTemplate({data}) {
           <Subtitle>{summary}</Subtitle>
           <InfoText>{`${platform} | ${time}`}</InfoText>
         </InfoGroup>
-        <ContentWrapper id='content-project' />
+        <ContentWrapper>
+          <MDXRenderer>{body}</MDXRenderer>
+        </ContentWrapper>
       </ContentBox>
     </Background>
   );
@@ -156,8 +156,8 @@ function ProjectTemplate({data}) {
 
 export const query = graphql`
   query($path: String!) {
-    markdownRemark(frontmatter: {path: {eq: $path}}) {
-      html
+    mdx(frontmatter: {path: {eq: $path}}) {
+      body
       frontmatter {
         title
         summary
