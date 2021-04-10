@@ -1,6 +1,7 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {graphql, Link} from 'gatsby';
 import styled from 'styled-components';
+import {MDXRenderer} from 'gatsby-plugin-mdx';
 
 import back_icon from 'assets/icons/back.svg';
 
@@ -88,12 +89,8 @@ const Content = styled.main`
 `;
 
 function DevlogTemplate({data}) {
-  const {html, frontmatter} = data.markdownRemark;
+  const {body, frontmatter} = data.mdx;
   const {category, title, summary, date_created, date_updated} = frontmatter;
-
-  useEffect(() => {
-    document.getElementById('content').innerHTML = html;
-  });
 
   return (
     <Background>
@@ -115,7 +112,9 @@ function DevlogTemplate({data}) {
             <DateCreated>{`최종수정 : ${date_updated}`}</DateCreated>
           )
         }
-        <Content id='content' />
+        <Content>
+          <MDXRenderer>{body}</MDXRenderer>
+        </Content>
       </ContentBox>
     </Background>
   );
@@ -123,8 +122,8 @@ function DevlogTemplate({data}) {
 
 export const query = graphql`
   query($path: String!) {
-    markdownRemark(frontmatter: {path: {eq: $path}}) {
-      html
+    mdx(frontmatter: {path: {eq: $path}}) {
+      body
       frontmatter {
         path
         category

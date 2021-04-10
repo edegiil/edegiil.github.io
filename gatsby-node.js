@@ -21,7 +21,7 @@ exports.createPages = async ({graphql, actions, reporter}) => {
   const result = await graphql(
     `
       {
-        allMarkdownRemark(limit: 100) {
+        allMdx(limit: 100) {
           edges {
             node {
               frontmatter {
@@ -42,7 +42,7 @@ exports.createPages = async ({graphql, actions, reporter}) => {
   // Create pages for each markdown file.
   const blogPostTemplate = path.resolve('src/templates/devlog.js');
   const projectTemplate = path.resolve('src/templates/project.js');
-  result.data.allMarkdownRemark.edges.forEach(({node}) => {
+  result.data.allMdx.edges.forEach(({node}) => {
     const {path, type} = node.frontmatter;
     console.log(type, path);
     createPage({

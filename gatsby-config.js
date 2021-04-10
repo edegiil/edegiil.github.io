@@ -1,10 +1,3 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/gatsby-config/
- */
-const path = require('path');
-
 module.exports = {
   siteMetadata: {
     title: 'edegiil.github.io',
@@ -13,40 +6,59 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-image',
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        name: 'edegiil.github.io',
-        short_name: 'edegil',
-        start_url: '/',
-        background_color: '#16171b',
-        theme_color: '#16171b',
-        display: 'standalone',
-        icon: 'src/assets/favicon.png',
+        trackingId: 'G-BPJQ569JDT',
       },
     },
     'gatsby-plugin-react-helmet',
     {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'src/assets/favicon.png',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        extensions: [`.md`, `.mdx`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-highlight-code`,
+            options: {
+              terminal: 'none',
+            },
+          },
+        ],
+      },
+    },
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: path.join(__dirname, 'src', 'assets', 'images'),
+        path: './src/assets/images/',
       },
+      __key: 'images',
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'pages',
+        path: './src/pages/',
+      },
+      __key: 'pages',
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'data',
-        path: path.join(__dirname, 'data'),
+        path: './data/',
       },
-    },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        gfm: true,
-      },
+      __key: 'datas',
     },
   ],
 };

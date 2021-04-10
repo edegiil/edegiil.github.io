@@ -72,6 +72,8 @@ const Post = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  padding-bottom: 16px;
+  border-bottom: 1px solid ${(props) => props.theme.DARK_COLOR};
   @media ${(props) => props.theme.tablet} {
     flex-direction: column;
   }
@@ -150,7 +152,7 @@ const PostDateCreated = styled.p`
 `;
 
 function Devlog({data}) {
-  const {distinct, group} = data.allMarkdownRemark;
+  const {distinct, group} = data.allMdx;
 
   const [category, setCategory] = useState(undefined);
   const [list, setList] = useState([]);
@@ -222,7 +224,7 @@ function Devlog({data}) {
 
 export const query = graphql`
   {
-    allMarkdownRemark(sort: {order: DESC, fields: frontmatter___date_created}) {
+    allMdx(sort: {order: DESC, fields: frontmatter___date_created}) {
       distinct(field: frontmatter___category)
       group(field: frontmatter___category) {
         edges {

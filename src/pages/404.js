@@ -21,7 +21,7 @@ const Subtitle = styled.h4`
   margin-bottom: 20px;
 `;
 
-function _404() {
+const NotFoundPage = () => {
   return (
     <Container>
       <Title>404</Title>
@@ -29,6 +29,6 @@ function _404() {
       <Link to='/'>입구로 돌아가기</Link>
     </Container>
   );
-}
+};
 
-export default _404;
+export default NotFoundPage;
