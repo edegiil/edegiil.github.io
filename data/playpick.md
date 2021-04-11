@@ -51,6 +51,8 @@ NodeJS와 Cheerio를 사용해서 만들어보라는 대표의 말에 Cherrio에
 * Firebase : MongoDB를 사용하다가 이게 사용하기는 더 편해서 Firestore로 중간에 갈아탔다. 처음엔 AWS 사용했는데, 구글이 문서가 훨씬 잘되있는 것 같다.
 * Cheerio : 쇼핑몰마다 html에서 필요한 데이터를 다르게 해주는게 불편했다.
 
+![Stacks](https://user-images.githubusercontent.com/35324795/114304147-9d8b5880-9b0c-11eb-9086-c6d9a71dba08.png)
+
 ### 프로젝트하면서 겪은 이슈와 해결방법
 좀 오래되어 기억이 정확하게 나지는 않는다.
 

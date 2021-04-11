@@ -29,6 +29,8 @@ repository: "https://github.com/peacemain-club/peacemain-club.github.io"
 * Typescript: CRA에 타입스크립트 설정이 있어서, 그걸로 진행했다. npm으로 모듈의 타입도 다운받았어야 했는데, 확실히 Flow보다는 사용하기 쉬운 것 같다. 타입 체킹이 되는 것은 크게 효용을 못느꼈지만 어떤 parameter를 안 적었는지와 같은 오류를 찾아주는 건 확실히 자바스크립트보다 좋았다.
 * Styled-Component: 두번째로 사용해보는데, 좀 더 모듈화를 진행해보려고 했는데, 시간 때문에 못해봤다. 다음 프로젝트때는 어떻게 모듈화를 할 수 있을지 고민해서 해봐야겠다.
 
+![Stacks](https://user-images.githubusercontent.com/35324795/114304152-9fedb280-9b0c-11eb-81fc-815ccf85b928.png)
+
 ### 프로젝트하면서 겪은 이슈와 해결방법
 하루짜리 간단한 프로젝트라 크게 문제는 없었다. 다만 타입스크립트를 적용할 때에 React.FC가 Functional Component의 타입인줄 알고 아래와 같이 했었는데,
 ```tsx

@@ -35,6 +35,8 @@ repository: ""
 * Google Cloud Platform
 * Cheerio : k-스타트업 홈페이지에 지원사업마다 url이 바로 안나와서 찾는데 애먹었다.
 
+![Stacks](https://user-images.githubusercontent.com/35324795/114304149-9ebc8580-9b0c-11eb-9a92-9f09fc39e6cf.png)
+
 ### 프로젝트하면서 겪은 이슈와 해결방법
 모바일 어플리케이션의 업데이트는 비용이 웹 어플리케이션의 업데이트 비용보다 시간적이나 효용성 측면에서 많이 발생했다. 그래서 업데이트가 빈번하게 발생할 수 있는 몇가지 기능은 웹뷰로 구현했다.
 

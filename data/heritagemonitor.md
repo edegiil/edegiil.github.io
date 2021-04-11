@@ -62,6 +62,8 @@ GCP로 이미 상당한 부분이 개발이 된 상태라 GCP를 대체할 수 �
 * Jest, Supertest : API 테스트를 위해 사용. GCP 문서에는 mocha를 사용하던데, 뭔가 Jest에 꽂혀서 Jest를 사용했다.
 * Socket.io : 플랫폼에 구애받지 않도록 Socket.io를 선택
 
+![Stacks](https://user-images.githubusercontent.com/35324795/114304151-9f551c00-9b0c-11eb-8b6e-dc6c5c754edc.png)
+
 ### 프로젝트하면서 겪은 이슈와 해결방법
 펌웨어 개발자들과 협업을 하면서 발생한 문제 중 가장 크리티컬한 문제가 있었는데,
 
