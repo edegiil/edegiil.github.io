@@ -224,7 +224,7 @@ function Devlog({data}) {
 
 export const query = graphql`
   {
-    allMdx(sort: {order: DESC, fields: frontmatter___date_created}) {
+    allMdx(sort: {order: DESC, fields: frontmatter___path}) {
       distinct(field: frontmatter___category)
       group(field: frontmatter___category) {
         edges {
