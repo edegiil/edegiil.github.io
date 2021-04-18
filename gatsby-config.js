@@ -8,9 +8,14 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-image',
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: 'G-BPJQ569JDT',
+        trackingIds: [
+          "G-BPJQ569JDT", // Google Analytics / GA
+        ],
+        pluginConfig: {
+          head: true,
+        },
       },
     },
     'gatsby-plugin-react-helmet',
