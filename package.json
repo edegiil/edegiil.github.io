@@ -1,6 +1,6 @@
 {
   "name": "edegiil.github.io",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "private": false,
   "description": "edegiil devlog",
   "author": "edegiil <electropark917@gmail.com>",
@@ -51,9 +51,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/edegiI/edegil.github.io"
+    "url": "https://github.com/edegiil/edegiil.github.io"
   },
   "bugs": {
-    "url": "https://github.com/edegil/edegil.github.io/issues"
+    "url": "https://github.com/edegiil/edegiil.github.io/issues"
   }
 }
