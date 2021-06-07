@@ -31,6 +31,12 @@ Edegil의 프론트엔드 개발자 블로그.
   - 블로그 pagination 적용
   - SEO 적용
 
+# 디자인 프로토타입
+
+디자인을 위해서 Figma를 사용하고 있습니다.
+
+> [Figma 디자인 프로로타입 보러가기](https://www.figma.com/file/BFRiyGeFtAe8r1gogxAz3u/edegiil.github.io?node-id=0%3A1)
+
 # 이슈 리포트
 
 혹시라도 블로그를 보다가 이상한 점이 있다면 GitHub의 [이슈탭](https://github.com/edegiil/edegiil.github.io/issues)을 사용해서 **신고**해주세요!
