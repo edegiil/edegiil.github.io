@@ -21,11 +21,11 @@ const Wrap = styled.div`
   align-items: center;
 `;
 
-function Layout({children, hasHeader}) {
+function Layout({children, withHeader}) {
   return (
     <React.Fragment>
       <Theme>
-        {hasHeader && <Header />}
+        {withHeader && <Header />}
         <Wrap>
           {children}
         </Wrap>

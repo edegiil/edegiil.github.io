@@ -3,14 +3,15 @@ import styled from 'styled-components';
 
 import AboutElement from 'components/aboutElement';
 import AboutModal from 'components/aboutModal';
+import Layout from 'components/layout';
 
 import contents from '../../data/contents';
 
-const Background = styled.div`
+const Main = styled.main`
   display: flex;
   min-height: 100vh;
-  width: 100vw;
-  padding: 81px 0;
+  width: 800px;
+  padding: 100px 0;
   flex-direction: column;
   align-items: center;
 `;
@@ -96,78 +97,80 @@ function Home(props) {
   }, []);
 
   return (
-    <Background>
-      {
-        modal_status && (
-          <AboutModal
-            closeModal={handleModalClose}
-            data={modal_data}
-          />
-        )
-      }
-      <TitleGroup>
-        <Title>소개</Title>
-        <SubTitle>1996년 생. 대구광역시 출생. 스타트업 개발자</SubTitle>
-      </TitleGroup>
-      <Contents>
-        <ContentBox>
-          <ContentBoxTitle>교육</ContentBoxTitle>
-          {
-            contents.about.educations.map((data, i) => {
-              return (
-                <AboutElement
-                  key={String(i)}
-                  data={data}
-                  openModal={handleModalOpen(data)}
-                />
-              );
-            })
-          }
-        </ContentBox>
-        <ContentBox>
-          <ContentBoxTitle>활동</ContentBoxTitle>
-          {
-            contents.about.careers.map((data, i) => {
-              return (
-                <AboutElement
-                  key={String(i)}
-                  data={data}
-                  openModal={handleModalOpen(data)}
-                />
-              );
-            })
-          }
-        </ContentBox>
-        <ContentBox>
-          <ContentBoxTitle>관심분야</ContentBoxTitle>
-          {
-            contents.about.interests.map((data, i) => {
-              return (
-                <AboutElement
-                  key={String(i)}
-                  data={data}
-                  openModal={handleModalOpen(data)}
-                />
-              );
-            })
-          }
-        </ContentBox>
-        <ContentBox>
-          <ContentBoxTitle>기술스택</ContentBoxTitle>
-          {
-            contents.about.tech_stacks.map((data, i) => {
-              return (
-                <AboutElement
-                  key={String(i)}
-                  data={data}
-                  openModal={handleModalOpen(data)}
-                />
-              );
-            })
-          }
-        </ContentBox>
-      </Contents>
-    </Background>
+    <Layout withHeader>
+      <Main>
+        {
+          modal_status && (
+            <AboutModal
+              closeModal={handleModalClose}
+              data={modal_data}
+            />
+          )
+        }
+        <TitleGroup>
+          <Title>소개</Title>
+          <SubTitle>1996년 생. 대구광역시 출생. 스타트업 개발자</SubTitle>
+        </TitleGroup>
+        <Contents>
+          <ContentBox>
+            <ContentBoxTitle>교육</ContentBoxTitle>
+            {
+              contents.about.educations.map((data, i) => {
+                return (
+                  <AboutElement
+                    key={String(i)}
+                    data={data}
+                    openModal={handleModalOpen(data)}
+                  />
+                );
+              })
+            }
+          </ContentBox>
+          <ContentBox>
+            <ContentBoxTitle>활동</ContentBoxTitle>
+            {
+              contents.about.careers.map((data, i) => {
+                return (
+                  <AboutElement
+                    key={String(i)}
+                    data={data}
+                    openModal={handleModalOpen(data)}
+                  />
+                );
+              })
+            }
+          </ContentBox>
+          <ContentBox>
+            <ContentBoxTitle>관심분야</ContentBoxTitle>
+            {
+              contents.about.interests.map((data, i) => {
+                return (
+                  <AboutElement
+                    key={String(i)}
+                    data={data}
+                    openModal={handleModalOpen(data)}
+                  />
+                );
+              })
+            }
+          </ContentBox>
+          <ContentBox>
+            <ContentBoxTitle>기술스택</ContentBoxTitle>
+            {
+              contents.about.tech_stacks.map((data, i) => {
+                return (
+                  <AboutElement
+                    key={String(i)}
+                    data={data}
+                    openModal={handleModalOpen(data)}
+                  />
+                );
+              })
+            }
+          </ContentBox>
+        </Contents>
+      </Main>
+    </Layout>
   );
 }
 
