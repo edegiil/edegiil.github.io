@@ -2,3 +2,18 @@
   font-family: "Sindarin";
   src: url('../assets/fonts/tngan.ttf');
 }
+
+@font-face {
+  font-family: "Half-Elven";
+  src: url('../assets/fonts/halfelven.ttf');
+}
+@font-face {
+  font-family: "Half-Elven";
+  src: url('../assets/fonts/halfelvenbold.ttf');
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Half-Elven";
+  src: url('../assets/fonts/halfelvencond.ttf');
+  font-weight: 100;
+}

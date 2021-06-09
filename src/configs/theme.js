@@ -2,6 +2,8 @@ import React from 'react';
 import {ThemeProvider} from 'styled-components';
 import {createGlobalStyle} from 'styled-components';
 
+import 'configs/typography.css';
+
 const theme = {
   // colors
   MAIN_COLOR: 'hsl(0, 0%, 76%)',

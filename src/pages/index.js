@@ -4,9 +4,9 @@ import {graphql, Link} from 'gatsby';
 
 import Layout from 'components/layout';
 import Footer from 'components/footer';
-import BackgroundLayout from 'components/backgroundLayout';
 
-import 'configs/typography.css';
+import ring_of_power_left from 'assets/images/the_ring_of_power_left.png';
+import ring_of_power_right from 'assets/images/the_ring_of_power_right.png';
 
 const Main = styled.main`
   display: flex;
@@ -30,10 +30,8 @@ const TitleWrapper = styled.div`
   column-gap: 16px;
 `;
 
-const TitleDecorator = styled.div`
+const TitleDecorator = styled.img`
   width: 50px;
-  height: 0.5px;
-  background-color: ${props => props.theme.MAIN_COLOR};
 `;
 
 const Title = styled.h3`
@@ -60,6 +58,7 @@ const NavGroup = styled.nav`
 
 const NavButton = styled(Link)`
   font-size: ${props => props.theme.NORMAL_SIZE};
+  font-family: 'Half-Elven', sans-serif;
 `;
 
 function Home({data}) {
@@ -74,7 +73,7 @@ function Home({data}) {
       <Main>
         <TitleGroup>
           <TitleWrapper>
-            <TitleDecorator />
+            <TitleDecorator src={ring_of_power_left} alt='ring_of_power_left' />
             <Title
               onMouseEnter={handleTitleHover}
               onMouseOut={handleTitleHover}
@@ -82,7 +81,7 @@ function Home({data}) {
             >
               {title_hover_state ? 'EDEGIL' : '3G2E7G5'}
             </Title>
-            <TitleDecorator />
+            <TitleDecorator src={ring_of_power_right} alt='ring_of_power_left' />
           </TitleWrapper>
           <SubTitle>seven stars</SubTitle>
         </TitleGroup>
