@@ -60,10 +60,10 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'data',
-        path: './data/',
+        name: 'posts',
+        path: './posts/',
       },
-      __key: 'datas',
+      __key: 'posts',
     },
   ],
 };
