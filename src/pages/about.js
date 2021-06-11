@@ -5,7 +5,7 @@ import AboutElement from 'components/aboutElement';
 import Layout from 'components/layout';
 import Footer from 'components/footer';
 
-import contents from '../../data/contents';
+import contents from 'configs/aboutContent';
 
 const Main = styled.main`
   display: grid;
