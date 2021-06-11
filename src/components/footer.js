@@ -10,8 +10,8 @@ const GITHUB_LINK = 'https://github.com/edegiil';
 const FooterWrapper = styled.footer`
   position: absolute;
   z-index: 10;
-  left: 0px;
-  bottom: 0px;
+  left: 0;
+  bottom: 0;
   width: 100vw;
   height: 40px;
   display: flex;
