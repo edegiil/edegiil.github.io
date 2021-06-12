@@ -12,6 +12,7 @@ const HeaderBlock = styled.header`
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 10;
 
   @media ${(props) => props.theme.mobile} {
     padding: 24px 24px;
