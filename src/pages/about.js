@@ -10,6 +10,7 @@ import contents from 'configs/aboutContent';
 const Main = styled.main`
   display: grid;
   row-gap: 36px;
+  box-sizing: border-box;
   min-height: 100vh;
   width: 800px;
   padding: 128px 0 50px;

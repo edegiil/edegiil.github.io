@@ -2,117 +2,84 @@ import React from 'react';
 import styled from 'styled-components';
 import {Link} from 'gatsby';
 
-const Container = styled.div`
+const Container = styled(Link)`
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  @media ${(props) => props.theme.tablet} {
-    flex-direction: column;
-  }
-  @media ${(props) => props.theme.mobile} {
-    flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 260px;
+  height: 260px;
+  background-color: ${props => props.theme.DARK_COLOR};
+  border-radius: 20px;
+  background-image: url(${props => props.backgroundImage});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  transition: all 0.5s ease;
+
+  &:hover {
+    transform: scale(1.02);
   }
 `;
 
-const ContentGroup = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 400px;
-  @media ${(props) => props.theme.tablet} {
-    width: 500px;
-  }
-  @media ${(props) => props.theme.mobile} {
-    width: 350px;
-  }
+const BackgroundImage = styled.div`
+  position: absolute;
+  z-index: 0;
+  width: 260px;
+  height: 260px;
+  border-radius: 20px;
+  background-image: url(${props => props.url});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px);
 `;
 
 const Title = styled.h3`
-  font-weight: 200;
   margin: 0;
-  margin-bottom: 16px;
-  @media ${(props) => props.theme.tablet} {
-    margin-bottom: 8px;
-  }
-  @media ${(props) => props.theme.mobile} {
-    margin-bottom: 8px;
-  }
+  text-shadow: 0px 0px 3px ${props => props.theme.MAIN_COLOR};
+  color: ${props => props.theme.DARK_COLOR};
+  z-index: 1;
 `;
 
-const Subtitle = styled.h4`
-  margin: 0;
-  margin-bottom: 8px;
-  font-weight: 400;
-  @media ${(props) => props.theme.tablet} {
-    margin: 0;
-  }
-  @media ${(props) => props.theme.mobile} {
-    margin: 0;
-  }
+const Status = styled.div`
+  font-size: ${props => props.theme.SMALL_SIZE};
+  line-height: 1.25rem;
+  color: ${props => props.theme.DARK_COLOR};
+  text-shadow: 0px 0px 3px ${props => props.theme.MAIN_COLOR};
+  z-index: 1;
 `;
 
-const DescriptionText = styled.p`
-  font-size: ${(props) => props.theme.SMALL_SIZE};
-  font-weight: 100;
-  margin: 0;
-  margin-bottom: 8px;
-  @media ${(props) => props.theme.tablet} {
-    margin: 0;
-  }
-  @media ${(props) => props.theme.mobile} {
-    margin: 0;
-  }
+const Summary = styled.div`
+  font-size: ${props => props.theme.SMALL_SIZE};
+  line-height: 1.25rem;
+  color: ${props => props.theme.DARK_COLOR};
+  text-shadow: 0px 0px 3px ${props => props.theme.MAIN_COLOR};
+  z-index: 1;
 `;
 
-const ImageGroup = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 350px;
-  height: 200px;
-  margin-left: 24px;
-  @media ${(props) => props.theme.tablet} {
-    margin: 0;
-    margin-top: 16px;
-  }
-  @media ${(props) => props.theme.mobile} {
-    margin: 0;
-    margin-top: 16px;
-  }
-`;
-
-const Image = styled.img`
-  max-width: 350px;
-  max-height: 200px;
+const Time = styled.div`
+  font-size: ${props => props.theme.SMALL_SIZE};
+  line-height: 1rem;
+  position: absolute;
+  z-index: 1;
+  bottom: 16px;
+  color: ${props => props.theme.DARK_COLOR};
+  text-shadow: 0px 0px 3px ${props => props.theme.MAIN_COLOR};
 `;
 
 function ProjectElement(props) {
-  const {title, summary, platform, time, tech, thumbnail, path} = props;
-  const tech_list = tech.split(',');
+  const {title, status, summary, time, thumbnail, path} = props;
 
   return (
-    <Container>
-      <ContentGroup>
-        <Link to={`/${path}`}>
-          <Title>{title}</Title>
-        </Link>
-        <Subtitle>{summary}</Subtitle>
-        <DescriptionText>{`${platform} ${time}`}</DescriptionText>
-        <DescriptionText>
-          {
-            tech_list.map((stack, i) => {
-              let string = stack;
-              if (tech_list.length - 1 !== i) {
-                string = string + ' | ';
-              }
-              return string;
-            })
-          }
-        </DescriptionText>
-      </ContentGroup>
-      {
-        thumbnail && <ImageGroup><Image src={thumbnail} /></ImageGroup>
-      }
+    <Container to={path}>
+      <BackgroundImage url={thumbnail} />
+      <Title>{title}</Title>
+      <Status>{status}</Status>
+      <Summary>{summary}</Summary>
+      <Time>{time}</Time>
     </Container>
   );
 }

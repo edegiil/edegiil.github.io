@@ -2,18 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 import {graphql} from 'gatsby';
 
+import Layout from 'components/layout';
+import Footer from 'components/footer';
 import ProjectElement from 'components/projectElement';
 
-const Background = styled.div`
-  display: flex;
+const Main = styled.main`
+  display: grid;
+  row-gap: 36px;
+  box-sizing: border-box;
   min-height: 100vh;
-  width: 100vw;
-  padding: 81px 0;
+  width: 800px;
+  padding: 128px 0 50px;
   flex-direction: column;
   align-items: center;
-  @media ${(props) => props.theme.mobile} {
-    padding-bottom: 40px;
-  }
+  align-content: start;
 `;
 
 const TitleGroup = styled.div`
@@ -21,30 +23,32 @@ const TitleGroup = styled.div`
   flex-direction: column;
   width: 800px;
   @media ${(props) => props.theme.tablet} {
-    width: 500px;
+    width: 100%;
+    padding: 0 5%;
   }
   @media ${(props) => props.theme.mobile} {
-    width: 350px;
+    padding: 0 5%;
   }
 `;
 
 const Title = styled.h2`
-  font-weight: 100;
-  margin-top: 0;
+  font-family: 'Half-Elven', sans-serif;
+  font-weight: bold;
+  margin: 0;
 `;
 
-const Main = styled.main`
+const Content = styled.div`
   display: grid;
-  flex-direction: column;
+  gap: 10px;
+  align-content: start;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(3, 1fr);
   width: 800px;
-  row-gap: 16px;
   @media ${(props) => props.theme.tablet} {
-    width: 500px;
-    row-gap: 24px;
+    width: 45%;
   }
   @media ${(props) => props.theme.mobile} {
-    width: 350px;
-    row-gap: 24px;
+    width: 100%;
   }
 `;
 
@@ -52,19 +56,31 @@ function Proejct({data}) {
   const {edges} = data.allMdx;
 
   return (
-    <Background>
-      <TitleGroup>
-        <Title>프로젝트</Title>
-      </TitleGroup>
+    <Layout withHeader>
       <Main>
-        {
-          edges.map(({node}, i) => {
-            const project = node.frontmatter;
-            return <ProjectElement {...project} key={String(i)} />;
-          })
-        }
+        <TitleGroup>
+          <Title>PROJECT</Title>
+        </TitleGroup>
+        <Content>
+          {
+            edges.map((project) => {
+              const {title, status, summary, time, path, thumbnail} = project?.node?.frontmatter;
+              return (
+                <ProjectElement
+                  title={title}
+                  status={'CLOSED'}
+                  summary={summary}
+                  time={time}
+                  path={path}
+                  thumbnail={thumbnail}
+                />
+              );
+            })
+          }
+        </Content>
       </Main>
-    </Background>
+      <Footer />
+    </Layout>
   );
 }
 
@@ -72,7 +88,7 @@ export const query = graphql`
   {
     allMdx(
       filter: {frontmatter: {type: {eq: "project"}}},
-      sort: {fields: frontmatter___title, order: ASC}
+      sort: {fields: frontmatter___time, order: ASC}
     ) {
       edges {
         node {
