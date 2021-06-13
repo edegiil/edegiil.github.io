@@ -3,90 +3,104 @@ import styled from 'styled-components';
 import {graphql, Link} from 'gatsby';
 import {MDXRenderer} from 'gatsby-plugin-mdx';
 
+import Layout from 'components/layout';
+import Footer from 'components/footer';
+
 import back_icon from 'assets/icons/back.svg';
 import link_icon from 'assets/icons/link.svg';
 import github_icon from 'assets/icons/github.svg';
 
-const Background = styled.div`
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  padding: 81px 0;
+const Main = styled.main`
+  display: grid;
+  row-gap: 36px;
+  box-sizing: border-box;
+  min-height: 100vh;
+  width: 800px;
+  padding: 128px 0 50px;
   flex-direction: column;
   align-items: center;
+  align-content: start;
 `;
 
-const ContentBox = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 900px;
-  padding-bottom: 24px;
-  @media ${(props) => props.theme.tablet} {
-    width: 500px;
-  }
-  @media ${(props) => props.theme.mobile} {
-    width: 350px;
-  }
-`;
-
-const NavGroup = styled.div`
+const NavGroup = styled(Link)`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 16px;
+  width: fit-content;
 `;
 
 const NavText = styled.div``;
 
-const Icon = styled.img`
+const NavIcon = styled.img`
   width: 30px;
   height: 30px;
 `;
 
-const TitleGroup = styled.div`
+const TitleGroup = styled.section`
   display: flex;
-  align-items: center;
-  width: 900px;
-  margin-bottom: 24px;
+  flex-direction: column;
+  justify-content: center;
+  width: 800px;
+  height: 250px;
   @media ${(props) => props.theme.tablet} {
     width: 500px;
   }
   @media ${(props) => props.theme.mobile} {
     width: 350px;
   }
+
+  &::after {
+    content: '';
+    background-color: ${props => props.theme.DARK_COLOR};
+    background-image: url(${props => props.backgroundImage});
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.5);
+    overflow: hidden;
+    width: 100vw;
+    height: 250px;
+    z-index: -1;
+    left: 0;
+    position: absolute;
+  }
 `;
 
-const Title = styled.h2`
+const Upside = styled.div`
+  margin-bottom: 32px;
+`;
+
+const Title = styled.div`
+  display: flex;
+  align-items: center;
   margin: 0;
   margin-right: 8px;
-  font-weight: 400;
   @media ${(props) => props.theme.tablet} {
     font-size: ${(props) => props.theme.BIG_SIZE}
   }
 `;
 
-const ProjectLink = styled.img`
-  cursor: pointer;
-  width: 30px;
-  height: 30px;
-  margin-left: 8px;
+const TitleText = styled.h2`
+  margin: 0;
 `;
 
-const InfoGroup = styled.div`
-  width: 900px;
-  margin-bottom: 8px;
-  @media ${(props) => props.theme.tablet} {
-    width: 500px;
-  }
-  @media ${(props) => props.theme.mobile} {
-    width: 350px;
-  }
+const TitleLink = styled.a`
+  height: 20px;
+  margin-left: 16px;
 `;
 
-const Subtitle = styled.h3`
+const LinkIcon = styled.img`
+  width: 20px;
+  height: 20px;
+`;
+
+const Downside = styled.div`
+`;
+
+const Subtitle = styled.div`
   margin: 0;
   font-weight: 100;
+  font-size: ${props => props.theme.BIG_SIZE};
   @media ${(props) => props.theme.tablet} {
     font-size: ${(props) => props.theme.NORMAL_SIZE}
   }
@@ -94,10 +108,11 @@ const Subtitle = styled.h3`
 
 const InfoText = styled.div`
   margin: 0;
+  line-height: 1.25rem;
 `;
 
-const ContentWrapper = styled.main`
-  width: 900px;
+const Content = styled.section`
+  width: 800px;
   @media ${(props) => props.theme.tablet} {
     width: 500px;
   }
@@ -112,45 +127,47 @@ const ContentWrapper = styled.main`
 
 function ProjectTemplate({data}) {
   const {body, frontmatter} = data.mdx;
-  const {title, summary, time, platform, link, repository} = frontmatter;
-
-  const handleLink = useCallback(() => {
-    window.open(link);
-  }, [link]);
-
-  const handleRepositoryLink = useCallback(() => {
-    window.open(repository);
-  }, [repository]);
+  const {title, summary, time, platform, link, repository, thumbnail} = frontmatter;
 
   return (
-    <Background>
-      <ContentBox>
-        <Link to='/project' replace>
-          <NavGroup>
-            <Icon src={back_icon} />
-            <NavText>돌아가기</NavText>
-          </NavGroup>
-        </Link>
-        <TitleGroup>
-          <Title>{title}</Title>
-          {
-            link &&
-            <ProjectLink src={link_icon} onClick={handleLink} />
-          }
-          {
-            repository &&
-            <ProjectLink src={github_icon} onClick={handleRepositoryLink} />
-          }
+    <Layout withHeader>
+      <Main>
+        <NavGroup to='/project' replace>
+          <NavIcon src={back_icon} alt='goback' />
+          <NavText>돌아가기</NavText>
+        </NavGroup>
+        <TitleGroup backgroundImage={thumbnail}>
+          <Upside>
+            <Title>
+              <TitleText>
+                {title}
+              </TitleText>
+              {
+                repository &&
+                <TitleLink target='_blank' rel='noreferrer noopener' href={repository}>
+                  <LinkIcon src={github_icon} />
+                </TitleLink>
+              }
+              {
+                link &&
+                <TitleLink target='_blank' rel='noreferrer noopener' href={link}>
+                  <LinkIcon src={link_icon} />
+                </TitleLink>
+              }
+            </Title>
+            <Subtitle>{summary}</Subtitle>
+          </Upside>
+          <Downside>
+            <InfoText>{time}</InfoText>
+            <InfoText>{platform}</InfoText>
+          </Downside>
         </TitleGroup>
-        <InfoGroup>
-          <Subtitle>{summary}</Subtitle>
-          <InfoText>{`${platform} | ${time}`}</InfoText>
-        </InfoGroup>
-        <ContentWrapper>
+        <Content>
           <MDXRenderer>{body}</MDXRenderer>
-        </ContentWrapper>
-      </ContentBox>
-    </Background>
+        </Content>
+      </Main>
+      <Footer />
+    </Layout>
   );
 }
 
@@ -165,6 +182,7 @@ export const query = graphql`
         platform
         link
         repository
+        thumbnail
       }
     }
   }
