@@ -68,7 +68,7 @@ function Proejct({data}) {
               return (
                 <ProjectElement
                   title={title}
-                  status={'CLOSED'}
+                  status={status}
                   summary={summary}
                   time={time}
                   path={path}
@@ -88,18 +88,17 @@ export const query = graphql`
   {
     allMdx(
       filter: {frontmatter: {type: {eq: "project"}}},
-      sort: {fields: frontmatter___time, order: ASC}
+      sort: {fields: frontmatter___id, order: ASC}
     ) {
       edges {
         node {
           frontmatter {
             title
-            tech
-            platform
+            status
             summary
-            thumbnail
             time
             path
+            thumbnail
           }
         }
       }
