@@ -2,69 +2,53 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import {Link, graphql} from 'gatsby';
 
-const Background = styled.div`
-  display: flex;
+import Layout from 'components/layout';
+import Footer from 'components/footer';
+import DevlogElement from 'components/devlogElement';
+
+const Main = styled.main`
+  display: grid;
+  row-gap: 36px;
+  box-sizing: border-box;
   min-height: 100vh;
-  width: 100vw;
-  padding: 81px 0;
+  width: 800px;
+  padding: 128px 0 50px;
   flex-direction: column;
   align-items: center;
-`;
-
-const ContentSection = styled.section`
-  width: 900px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  @media ${(props) => props.theme.tablet} {
-    width: 350px;
-  }
-  @media ${(props) => props.theme.mobile} {
-    width: 350px;
-  }
+  align-content: start;
 `;
 
 const TitleGroup = styled.div`
   display: flex;
   flex-direction: column;
-  width: 900px;
+  width: 800px;
   @media ${(props) => props.theme.tablet} {
-    width: 350px;
+    width: 100%;
+    padding: 0 5%;
   }
   @media ${(props) => props.theme.mobile} {
-    width: 350px;
+    padding: 0 5%;
   }
 `;
 
 const Title = styled.h2`
-  font-weight: 100;
+  font-family: 'Half-Elven', sans-serif;
+  font-weight: bold;
   margin: 0;
 `;
 
-const Filter = styled.div`
+const Content = styled.div`
   display: grid;
-  grid-auto-flow: column dense;
-  justify-items: end;
-  column-gap: 12px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-`;
-
-const FilterElement = styled.div`
-  cursor: pointer;
-`;
-
-const Main = styled.main`
-  display: grid;
-  flex-direction: column;
-  width: 900px;
-  row-gap: 16px;
-  margin-top: 16px;
+  gap: 10px;
+  align-content: start;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(3, 1fr);
+  width: 800px;
   @media ${(props) => props.theme.tablet} {
-    width: 350px;
+    width: 45%;
   }
   @media ${(props) => props.theme.mobile} {
-    width: 350px;
+    width: 100%;
   }
 `;
 
@@ -152,7 +136,7 @@ const PostDateCreated = styled.p`
 `;
 
 function Devlog({data}) {
-  const {distinct, group} = data.allMdx;
+  const {group} = data?.allMdx;
 
   const [category, setCategory] = useState(undefined);
   const [list, setList] = useState([]);
@@ -173,58 +157,40 @@ function Devlog({data}) {
   const clearCategory = () => setCategory(undefined);
 
   return (
-    <Background>
-      <ContentSection>
+    <Layout withHeader>
+      <Main>
         <TitleGroup>
-          <Title>DEV.Log</Title>
+          <Title>DEV.log</Title>
         </TitleGroup>
-        <Filter>
-          <FilterElement onClick={clearCategory}>전체</FilterElement>
-          {
-            distinct.map((key, i) => {
-              return (
-                <FilterElement
-                  key={String(key)}
-                  onClick={handleCategory(key)}
-                >
-                  {`${key}(${group[i].totalCount})`}
-                </FilterElement>
-              );
-            })
-          }
-        </Filter>
-        <Main>
+        <Content>
           {
             list && list.map((v, i) => {
               const {category, title, summary, date_created, thumbnail, path} = v.node.frontmatter;
               return (
-                <Link to={`/${path}`} key={String(i)}>
-                  <Post>
-                    {
-                      thumbnail ?
-                        <Thumbnail src={thumbnail} /> :
-                        <EmptyImage>No Image</EmptyImage>
-                    }
-                    <PostInfoSection>
-                      <PostCategory>{`#${category}`}</PostCategory>
-                      <PostTitle>{title}</PostTitle>
-                      <PostSubtitle>{summary}</PostSubtitle>
-                      <PostDateCreated>{date_created}</PostDateCreated>
-                    </PostInfoSection>
-                  </Post>
-                </Link>
+                <DevlogElement
+                  key={path}
+                  date_created={date_created}
+                  thumbnail={thumbnail}
+                  path={path}
+                  title={title}
+                  summary={summary}
+                  category={category}
+                />
               );
             })
           }
-        </Main>
-      </ContentSection>
-    </Background>
+        </Content>
+      </Main>
+      <Footer />
+    </Layout>
   );
 }
 
 export const query = graphql`
   {
-    allMdx(sort: {order: DESC, fields: frontmatter___path}) {
+    allMdx(
+      sort: {order: DESC, fields: frontmatter___path}
+    ) {
       distinct(field: frontmatter___category)
       group(field: frontmatter___category) {
         edges {
