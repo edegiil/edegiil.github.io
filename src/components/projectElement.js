@@ -26,7 +26,7 @@ const Container = styled(Link)`
     width: 260px;
     height: 260px;
     border-radius: 20px;
-    background-image: url(${props => props.backgroundImage});
+    background-image: url(${props => props.backgroundimage});
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -69,7 +69,7 @@ function ProjectElement(props) {
   const is_closed = status === 'CLOSED';
 
   return (
-    <Container to={path} backgroundImage={thumbnail}>
+    <Container to={path} backgroundimage={thumbnail}>
       <Title>{title}</Title>
       <Status isClosed={is_closed}>{status}</Status>
       <Summary>{summary}</Summary>

@@ -67,6 +67,7 @@ function Proejct({data}) {
               const {title, status, summary, time, path, thumbnail} = project?.node?.frontmatter;
               return (
                 <ProjectElement
+                  key={path}
                   title={title}
                   status={status}
                   summary={summary}
