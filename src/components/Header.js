@@ -72,7 +72,7 @@ function Header() {
         {
           menu_items.map(({name, path}) => {
             return (
-              <Nav key={path} to={path} activeClassName='current'>{name}</Nav>
+              <Nav key={path} to={path} activeClassName='current' partiallyActive>{name}</Nav>
             )
           })
         }
