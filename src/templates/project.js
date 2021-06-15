@@ -172,8 +172,8 @@ function ProjectTemplate({data}) {
 }
 
 export const query = graphql`
-  query($path: String!) {
-    mdx(frontmatter: {path: {eq: $path}}) {
+  query($directory: String!) {
+    mdx(frontmatter: {path: {eq: $directory}}) {
       body
       frontmatter {
         title

@@ -6,6 +6,8 @@ import Layout from 'components/layout';
 import Footer from 'components/footer';
 import DevlogElement from 'components/devlogElement';
 
+import parseGraphQLToArray from 'utils/parseGraphQLToArray';
+
 const Main = styled.main`
   display: grid;
   row-gap: 36px;
@@ -135,26 +137,22 @@ const PostDateCreated = styled.p`
   font-weight: 100;
 `;
 
-function Devlog({data}) {
-  const {group} = data?.allMdx;
+const PageNav = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 
-  const [category, setCategory] = useState(undefined);
-  const [list, setList] = useState([]);
+const NavButton = styled(Link)`
 
-  useEffect(() => {
-    if (category) {
-      setList(group.filter((v) => v.fieldValue === category)[0].edges);
-    } else {
-      const categories = group.map((v, i) => {
-        return v.edges;
-      });
-      const all_posts = categories.reduce((prev, curr) => prev.concat(curr));
-      setList(all_posts);
-    }
-  }, [category, group]);
+`;
 
-  const handleCategory = (v) => () => setCategory(v);
-  const clearCategory = () => setCategory(undefined);
+function DevlogListTemplate({data, pageContext}) {
+  const list = parseGraphQLToArray(data);
+  const {page_numbers, current_page} = pageContext;
+
+  const prev_page_path = current_page === 2 ? `/devlog` : `/devlog/${current_page - 1}`;
+  const next_page_path = `/devlog/${current_page + 1}`;
 
   return (
     <Layout withHeader>
@@ -165,7 +163,7 @@ function Devlog({data}) {
         <Content>
           {
             list && list.map((v, i) => {
-              const {category, title, summary, date_created, thumbnail, path} = v.node.frontmatter;
+              const {category, title, summary, date_created, thumbnail, path} = v;
               return (
                 <DevlogElement
                   key={path}
@@ -180,6 +178,23 @@ function Devlog({data}) {
             })
           }
         </Content>
+        <PageNav>
+          {
+            current_page === 1 ?
+              <NavButton></NavButton> :
+              <NavButton to={prev_page_path}>
+                이전 페이지
+              </NavButton>
+          }
+          {`${current_page} / ${page_numbers}`}
+          {
+            current_page === page_numbers ?
+              <NavButton></NavButton> :
+              <NavButton to={next_page_path}>
+                다음 페이지
+              </NavButton>
+          }
+        </PageNav>
       </Main>
       <Footer />
     </Layout>
@@ -187,29 +202,27 @@ function Devlog({data}) {
 }
 
 export const query = graphql`
-  {
+  query($limit: Int!, $skip: Int!) {
     allMdx(
       sort: {order: DESC, fields: frontmatter___path}
+      limit: $limit
+      skip: $skip
+      filter: {frontmatter: {type: {eq: "devlog"}}}
     ) {
-      distinct(field: frontmatter___category)
-      group(field: frontmatter___category) {
-        edges {
-          node {
-            frontmatter {
-              path
-              category
-              date_created
-              title
-              summary
-              thumbnail
-            }
+      edges {
+        node {
+          frontmatter {
+            path
+            category
+            date_created
+            title
+            summary
+            thumbnail
           }
         }
-        fieldValue
-        totalCount
       }
     }
-  }
+  }  
 `;
 
-export default Devlog;
+export default DevlogListTemplate;

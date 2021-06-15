@@ -17,7 +17,7 @@ exports.onCreateWebpackConfig = ({actions}) => {
 
 exports.createPages = async ({graphql, actions, reporter}) => {
   const {createPage} = actions;
-  // Query for markdown nodes to use in creating pages.
+
   const devlog = await graphql(
     `
       {
@@ -68,22 +68,41 @@ exports.createPages = async ({graphql, actions, reporter}) => {
       path,
       component: blogPostTemplate,
       context: {
-        path,
+        directory: path,
       },
     });
   });
 
   const projectTemplate = path.resolve('src/templates/project.js');
-  project.data.allMdx.edges.forEach(({node}) => {
+  const projects = project.data.allMdx.edges;
+  projects.forEach(({node}) => {
     const {path} = node.frontmatter;
     createPage({
       path,
       component: projectTemplate,
       context: {
-        path,
+        directory: path,
       },
     });
   });
+
+  const blogListTemplate = path.resolve('src/templates/devlogList.js');
+  const POSTS_PER_PAGE = 12;
+  const page_numbers = Math.ceil(posts.length / POSTS_PER_PAGE);
+
+  for (let i = 0; i < page_numbers; i++) {
+    const path = i === 0 ? '/devlog' : `/devlog/${i + 1}`;
+    createPage({
+      path,
+      component: blogListTemplate,
+      context: {
+        limit: POSTS_PER_PAGE,
+        skip: i * POSTS_PER_PAGE,
+        page_numbers,
+        current_page: i + 1,
+      }
+    });
+  };
 };
 
 // Replacing '/' would result in empty string which is invalid
