@@ -1,5 +1,5 @@
 import React, {useState, useCallback} from 'react';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import {graphql, Link} from 'gatsby';
 
 import Layout from 'components/layout';
@@ -41,7 +41,7 @@ const Title = styled.h3`
   text-align: center;
   font-family: ${(props) => {
     const {isSindarin} = props;
-    return isSindarin ? `'Sindarin', sans-serif` : undefined;
+    return isSindarin ? `'Sindarin', sans-serif` : `'Half-Elven', sans-serif`;
   }};
 `;
 
@@ -56,9 +56,32 @@ const NavGroup = styled.nav`
   column-gap: 32px;
 `;
 
+const shine = keyframes`
+  from {
+    background-position: top left;
+  }
+
+  to {
+    background-position: top right;
+  }
+`
+
 const NavButton = styled(Link)`
   font-size: ${props => props.theme.NORMAL_SIZE};
   font-family: 'Half-Elven', sans-serif;
+
+  &:hover {
+    animation: ${shine} 2s linear infinite;
+    color: #ff9e00;
+    background: linear-gradient(45deg, rgba(255,158,0,1) 25%, rgba(255,0,0,1) 54%, rgba(255,158,0,1) 75%);
+    background-size: 400% 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 0px 8px #ffc900;
+  }
 `;
 
 function Home({data}) {
