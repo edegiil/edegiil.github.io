@@ -24,6 +24,7 @@
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "babel-plugin-styled-components": "^1.12.0",
+    "clipboard": "^2.0.8",
     "fontsource-montserrat": "^3.0.9",
     "fontsource-noto-sans-kr": "^3.0.9",
     "gatsby": "^3.2.1",
