@@ -7,6 +7,8 @@ import Footer from 'components/footer';
 
 import contents from 'configs/aboutContent';
 
+import github_icon from 'assets/icons/github.svg';
+
 const Main = styled.main`
   display: grid;
   row-gap: 36px;
@@ -60,6 +62,16 @@ const ContentTitle = styled.h3`
   margin: 0;
 `;
 
+const LinkAnchor = styled.a`
+  width: 32px;
+  height: 32px;
+  background-image: url(${props => props.backgroundimage});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-right: 12px;
+`;
+
 const List = styled.ul`
 
 `;
@@ -69,6 +81,8 @@ const ListElement = styled.li`
 `;
 
 function Home(props) {
+  const {educations, careers, interests, tech_stacks} = contents.about;
+
   return (
     <Layout withHeader>
       <Main>
@@ -76,6 +90,9 @@ function Home(props) {
           <Title>ABOUT</Title>
           <SubTitle>1996년 생. 대구광역시 출생. 프론트엔드 개발자</SubTitle>
         </TitleGroup>
+        <Content>
+          <LinkAnchor target='_blank' backgroundimage={github_icon} href='https://github.com/edegiil' />
+        </Content>
         <Content>
           <List>
             <ListElement>1일 1커밋 운동과 기술 블로그 운영을 하려고 노력 중</ListElement>
@@ -87,7 +104,7 @@ function Home(props) {
         <Content>
           <ContentTitle>교육</ContentTitle>
           {
-            contents.about.educations.map((data, i) => {
+            educations.map((data, i) => {
               return (
                 <AboutElement
                   key={String(i)}
@@ -100,7 +117,7 @@ function Home(props) {
         <Content>
           <ContentTitle>활동</ContentTitle>
           {
-            contents.about.careers.map((data, i) => {
+            careers.map((data, i) => {
               return (
                 <AboutElement
                   key={String(i)}
@@ -113,7 +130,7 @@ function Home(props) {
         <Content>
           <ContentTitle>관심분야</ContentTitle>
           {
-            contents.about.interests.map((data, i) => {
+            interests.map((data, i) => {
               return (
                 <AboutElement
                   key={String(i)}
@@ -126,7 +143,7 @@ function Home(props) {
         <Content>
           <ContentTitle>기술스택</ContentTitle>
           {
-            contents.about.tech_stacks.map((data, i) => {
+            tech_stacks.map((data, i) => {
               return (
                 <AboutElement
                   key={String(i)}
