@@ -7,6 +7,7 @@ import Footer from 'components/footer';
 import DevlogElement from 'components/devlogElement';
 
 import parseGraphQLToArray from 'utils/parseGraphQLToArray';
+import getNavList from 'utils/getNavList';
 
 const Main = styled.main`
   display: grid;
@@ -138,18 +139,27 @@ const PostDateCreated = styled.p`
 `;
 
 const PageNav = styled.div`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 16px;
+  justify-content: center;
   align-items: center;
 `;
 
 const NavButton = styled(Link)`
+  color: ${props => props.theme.DARK_COLOR};
 
+  &.current {
+    font-weight: bold;
+    color: ${props => props.theme.MAIN_COLOR};
+  }
 `;
 
 function DevlogListTemplate({data, pageContext}) {
   const list = parseGraphQLToArray(data);
   const {page_numbers, current_page} = pageContext;
+
+  const nav_list = getNavList(current_page, page_numbers);
 
   const prev_page_path = current_page === 2 ? `/devlog` : `/devlog/${current_page - 1}`;
   const next_page_path = `/devlog/${current_page + 1}`;
@@ -180,19 +190,12 @@ function DevlogListTemplate({data, pageContext}) {
         </Content>
         <PageNav>
           {
-            current_page === 1 ?
-              <NavButton></NavButton> :
-              <NavButton to={prev_page_path}>
-                이전 페이지
-              </NavButton>
-          }
-          {`${current_page} / ${page_numbers}`}
-          {
-            current_page === page_numbers ?
-              <NavButton></NavButton> :
-              <NavButton to={next_page_path}>
-                다음 페이지
-              </NavButton>
+            nav_list.map((page) => {
+              const path = page !== 1 ? `/devlog/${page}` : `/devlog`;
+              return (
+                <NavButton key={path} to={path} activeClassName='current'>{page}</NavButton>
+              )
+            })
           }
         </PageNav>
       </Main>
