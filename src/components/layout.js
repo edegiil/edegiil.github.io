@@ -20,14 +20,18 @@ const Wrap = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
+  background-image: url(${props => props.backgroundimage});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 `;
 
-function Layout({children, withHeader}) {
+function Layout({children, withHeader, backgroundimage}) {
   return (
     <React.Fragment>
       <Theme>
         {withHeader && <Header />}
-        <Wrap>
+        <Wrap backgroundimage={backgroundimage}>
           {children}
         </Wrap>
       </Theme>

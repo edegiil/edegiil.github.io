@@ -5,6 +5,7 @@ import {graphql, Link} from 'gatsby';
 import Layout from 'components/layout';
 import Footer from 'components/footer';
 
+import background_image from 'assets/images/background.png';
 import ring_of_power_left from 'assets/images/the_ring_of_power_left.png';
 import ring_of_power_right from 'assets/images/the_ring_of_power_right.png';
 
@@ -92,7 +93,7 @@ function Home({data}) {
   }, []);
 
   return (
-    <Layout>
+    <Layout backgroundimage={background_image}>
       <Main>
         <TitleGroup>
           <TitleWrapper>
