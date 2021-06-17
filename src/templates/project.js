@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import {graphql, Link} from 'gatsby';
 import {MDXRenderer} from 'gatsby-plugin-mdx';
@@ -52,8 +52,8 @@ const TitleGroup = styled.section`
 
   &::after {
     content: '';
-    background-color: ${props => props.theme.DARK_COLOR};
-    background-image: url(${props => props.backgroundImage});
+    background-color: ${(props) => props.theme.DARK_COLOR};
+    background-image: url(${(props) => props.backgroundImage});
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -101,7 +101,7 @@ const Downside = styled.div`
 const Subtitle = styled.div`
   margin: 0;
   font-weight: 100;
-  font-size: ${props => props.theme.BIG_SIZE};
+  font-size: ${(props) => props.theme.BIG_SIZE};
   @media ${(props) => props.theme.tablet} {
     font-size: ${(props) => props.theme.NORMAL_SIZE}
   }

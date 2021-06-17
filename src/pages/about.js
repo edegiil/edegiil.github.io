@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import AboutElement from 'components/aboutElement';
@@ -66,7 +66,7 @@ const ContentTitle = styled.h3`
 const LinkAnchor = styled.a`
   width: 32px;
   height: 32px;
-  background-image: url(${props => props.backgroundimage});
+  background-image: url(${(props) => props.backgroundimage});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -78,7 +78,7 @@ const List = styled.ul`
 `;
 
 const ListElement = styled.li`
-  font-weight: ${props => props.highlight ? 'bold' : null};
+  font-weight: ${(props) => props.highlight ? 'bold' : null};
 `;
 
 function Home(props) {
@@ -96,7 +96,11 @@ function Home(props) {
           <SubTitle>1996년 생. 대구광역시 출생. 프론트엔드 개발자</SubTitle>
         </TitleGroup>
         <Content>
-          <LinkAnchor target='_blank' backgroundimage={github_icon} href='https://github.com/edegiil' />
+          <LinkAnchor
+            target='_blank'
+            href='https://github.com/edegiil'
+            backgroundimage={github_icon}
+          />
         </Content>
         <Content>
           <List>

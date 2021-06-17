@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import {Link, graphql} from 'gatsby';
 
@@ -56,89 +56,6 @@ const Content = styled.div`
   }
 `;
 
-const Post = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding-bottom: 16px;
-  border-bottom: 1px solid ${(props) => props.theme.DARK_COLOR};
-  @media ${(props) => props.theme.tablet} {
-    flex-direction: column;
-  }
-  @media ${(props) => props.theme.mobile} {
-    flex-direction: column;
-  }
-`;
-
-const Thumbnail = styled.img`
-  width: 360px;
-  height: 210px;
-  background-color: ${(props) => props.theme.DARK_COLOR};
-  @media ${(props) => props.theme.tablet} {
-    margin-bottom: 8px;
-  }
-  @media ${(props) => props.theme.mobile} {
-    width: 350px;
-    height: 201px;
-  }
-`;
-
-const EmptyImage = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 360px;
-  height: 210px;
-  background-color: ${(props) => props.theme.DARK_COLOR};
-  @media ${(props) => props.theme.tablet} {
-    margin-bottom: 8px;
-  }
-  @media ${(props) => props.theme.mobile} {
-    width: 350px;
-    height: 201px;
-  }
-`;
-
-const PostInfoSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-left: 24px;
-  @media ${(props) => props.theme.tablet} {
-    margin-left: 0;
-  }
-  @media ${(props) => props.theme.mobile} {
-    margin-left: 4px;
-  }
-`;
-
-const PostTitle = styled.h3`
-  margin: 0;
-  margin-bottom: 16px;
-  @media ${(props) => props.theme.tablet} {
-    margin-bottom: 8px;
-  }
-  @media ${(props) => props.theme.mobile} {
-    margin-bottom: 8px;
-  }
-`;
-
-const PostCategory = styled.h4`
-  margin: 0;
-  font-weight: 100;
-`;
-
-const PostSubtitle = styled.h4`
-  margin: 0;
-  margin-bottom: 8px;
-  font-weight: 100;
-`;
-
-const PostDateCreated = styled.p`
-  margin: 0;
-  font-weight: 100;
-`;
-
 const PageNav = styled.div`
   display: grid;
   grid-auto-flow: column;
@@ -148,11 +65,11 @@ const PageNav = styled.div`
 `;
 
 const NavButton = styled(Link)`
-  color: ${props => props.theme.DARK_COLOR};
+  color: ${(props) => props.theme.DARK_COLOR};
 
   &.current {
     font-weight: bold;
-    color: ${props => props.theme.MAIN_COLOR};
+    color: ${(props) => props.theme.MAIN_COLOR};
   }
 `;
 
@@ -161,9 +78,6 @@ function DevlogListTemplate({data, pageContext}) {
   const {page_numbers, current_page} = pageContext;
 
   const nav_list = getNavList(current_page, page_numbers);
-
-  const prev_page_path = current_page === 2 ? `/devlog` : `/devlog/${current_page - 1}`;
-  const next_page_path = `/devlog/${current_page + 1}`;
 
   return (
     <Layout withHeader>
@@ -199,7 +113,7 @@ function DevlogListTemplate({data, pageContext}) {
               const path = page !== 1 ? `/devlog/${page}` : `/devlog`;
               return (
                 <NavButton key={path} to={path} activeClassName='current'>{page}</NavButton>
-              )
+              );
             })
           }
         </PageNav>

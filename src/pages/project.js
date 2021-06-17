@@ -7,6 +7,8 @@ import Footer from 'components/footer';
 import ProjectElement from 'components/projectElement';
 import SEO from 'components/seo';
 
+import parseGraphQLToArray from 'utils/parseGraphQLToArray';
+
 const Main = styled.main`
   display: grid;
   row-gap: 36px;
@@ -54,7 +56,7 @@ const Content = styled.div`
 `;
 
 function Proejct({data}) {
-  const {edges} = data.allMdx;
+  const list = parseGraphQLToArray(data);
 
   return (
     <Layout withHeader>
@@ -68,8 +70,8 @@ function Proejct({data}) {
         </TitleGroup>
         <Content>
           {
-            edges.map((project) => {
-              const {title, status, summary, time, path, thumbnail} = project?.node?.frontmatter;
+            list.map((project) => {
+              const {title, status, summary, time, path, thumbnail} = project;
               return (
                 <ProjectElement
                   key={path}

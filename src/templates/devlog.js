@@ -1,6 +1,6 @@
-import React, {useCallback} from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import {graphql, Link, navigate} from 'gatsby';
+import {graphql, navigate} from 'gatsby';
 import {MDXRenderer} from 'gatsby-plugin-mdx';
 
 import Layout from 'components/layout';
@@ -8,8 +8,6 @@ import Footer from 'components/footer';
 import SEO from 'components/seo';
 
 import back_icon from 'assets/icons/back.svg';
-import link_icon from 'assets/icons/link.svg';
-import github_icon from 'assets/icons/github.svg';
 
 const Main = styled.main`
   display: grid;
@@ -53,8 +51,8 @@ const TitleGroup = styled.section`
 
   &::after {
     content: '';
-    background-color: ${props => props.theme.DARK_COLOR};
-    background-image: url(${props => props.backgroundimage});
+    background-color: ${(props) => props.theme.DARK_COLOR};
+    background-image: url(${(props) => props.backgroundimage});
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -86,23 +84,13 @@ const TitleText = styled.h2`
   margin: 0;
 `;
 
-const TitleLink = styled.a`
-  height: 20px;
-  margin-left: 16px;
-`;
-
-const LinkIcon = styled.img`
-  width: 20px;
-  height: 20px;
-`;
-
 const Downside = styled.div`
 `;
 
 const Subtitle = styled.div`
   margin: 0;
   font-weight: 100;
-  font-size: ${props => props.theme.BIG_SIZE};
+  font-size: ${(props) => props.theme.BIG_SIZE};
   @media ${(props) => props.theme.tablet} {
     font-size: ${(props) => props.theme.NORMAL_SIZE}
   }
@@ -133,7 +121,7 @@ function DevlogTemplate({data}) {
 
   const goBack = () => {
     navigate(-1);
-  }
+  };
 
   return (
     <Layout withHeader>

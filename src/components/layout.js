@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import {defineCustomElements as deckDeckGoHighlightElement} from '@deckdeckgo/highlight-code/dist/loader';
+import {
+  defineCustomElements as deckDeckGoHighlightElement,
+} from '@deckdeckgo/highlight-code/dist/loader';
 
 import Header from 'components/header';
 
@@ -20,7 +22,7 @@ const Wrap = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
-  background-image: url(${props => props.backgroundimage});
+  background-image: url(${(props) => props.backgroundimage});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

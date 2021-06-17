@@ -10,7 +10,7 @@ const Container = styled(Link)`
   position: relative;
   width: 260px;
   height: 260px;
-  background-color: ${props => props.theme.DARK_COLOR};
+  background-color: ${(props) => props.theme.DARK_COLOR};
   border-radius: 20px;
   overflow: hidden;
   transition: all 0.5s ease;
@@ -26,7 +26,7 @@ const Container = styled(Link)`
     width: 260px;
     height: 260px;
     border-radius: 20px;
-    background-image: url(${props => props.backgroundimage});
+    background-image: url(${(props) => props.backgroundimage});
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -36,31 +36,31 @@ const Container = styled(Link)`
 
 const Title = styled.h3`
   margin: 0;
-  color: ${props => props.theme.BRIGHT_COLOR};
+  color: ${(props) => props.theme.BRIGHT_COLOR};
   z-index: 1;
 `;
 
 const Status = styled.div`
-  font-size: ${props => props.theme.SMALL_SIZE};
+  font-size: ${(props) => props.theme.SMALL_SIZE};
   line-height: 1.25rem;
-  color: ${props => props.isClosed ? '#D00000' : '#0AB107'};
+  color: ${(props) => props.isClosed ? '#D00000' : '#0AB107'};
   z-index: 1;
 `;
 
 const Summary = styled.div`
-  font-size: ${props => props.theme.SMALL_SIZE};
+  font-size: ${(props) => props.theme.SMALL_SIZE};
   line-height: 1.25rem;
-  color: ${props => props.theme.BRIGHT_COLOR};
+  color: ${(props) => props.theme.BRIGHT_COLOR};
   z-index: 1;
 `;
 
 const Time = styled.div`
-  font-size: ${props => props.theme.SMALL_SIZE};
+  font-size: ${(props) => props.theme.SMALL_SIZE};
   line-height: 1rem;
   position: absolute;
   z-index: 1;
   bottom: 16px;
-  color: ${props => props.theme.BRIGHT_COLOR};
+  color: ${(props) => props.theme.BRIGHT_COLOR};
 `;
 
 function ProjectElement(props) {

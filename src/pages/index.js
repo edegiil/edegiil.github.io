@@ -1,6 +1,6 @@
 import React, {useState, useCallback} from 'react';
 import styled, {keyframes} from 'styled-components';
-import {graphql, Link} from 'gatsby';
+import {Link} from 'gatsby';
 
 import Layout from 'components/layout';
 import Footer from 'components/footer';
@@ -48,7 +48,7 @@ const Title = styled.h3`
 `;
 
 const SubTitle = styled.div`
-  font-size: ${props => props.theme.TINY_SIZE};
+  font-size: ${(props) => props.theme.TINY_SIZE};
   text-align: center;
 `;
 
@@ -66,16 +66,21 @@ const shine = keyframes`
   to {
     background-position: top right;
   }
-`
+`;
 
 const NavButton = styled(Link)`
-  font-size: ${props => props.theme.NORMAL_SIZE};
+  font-size: ${(props) => props.theme.NORMAL_SIZE};
   font-family: 'Half-Elven', sans-serif;
 
   &:hover {
     animation: ${shine} 2s linear infinite;
     color: #ff9e00;
-    background: linear-gradient(45deg, rgba(255,158,0,1) 25%, rgba(255,0,0,1) 54%, rgba(255,158,0,1) 75%);
+    background: linear-gradient(
+      45deg,
+      rgba(255,158,0,1) 25%,
+      rgba(255,0,0,1) 54%,
+      rgba(255,158,0,1) 75%
+    );
     background-size: 400% 100%;
     background-repeat: no-repeat;
     background-position: 0 0;
@@ -86,7 +91,7 @@ const NavButton = styled(Link)`
   }
 `;
 
-function Home({data}) {
+function Home() {
   const [title_hover_state, setTitleHoverState] = useState(false);
 
   const handleTitleHover = useCallback(() => {
@@ -125,17 +130,5 @@ function Home({data}) {
     </Layout>
   );
 }
-
-export const query = graphql`
-  query {
-    file(relativePath: {eq: "background.png"}) {
-      childImageSharp {
-        fluid(maxWidth: 1920) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`;
 
 export default Home;

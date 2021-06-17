@@ -20,9 +20,9 @@ const FooterWrapper = styled.footer`
 `;
 
 const Statement = styled.div`
-  font-size: ${props => props.theme.TINY_SIZE};
+  font-size: ${(props) => props.theme.TINY_SIZE};
   font-weight: 100;
-  color: ${props => props.theme.DARK_COLOR};
+  color: ${(props) => props.theme.DARK_COLOR};
 `;
 
 const Highlight = styled.span`
@@ -32,7 +32,7 @@ const Highlight = styled.span`
 const Line = styled.div`
   width: 50px;
   height: 0.5px;
-  background-color: ${props => props.theme.DARK_COLOR};
+  background-color: ${(props) => props.theme.DARK_COLOR};
   margin: 0 16px;
 `;
 
@@ -41,7 +41,7 @@ const LinkWrapper = styled.div`
 `;
 
 const Link = styled.button`
-  background-image: url(${props => props.icon});
+  background-image: url(${(props) => props.icon});
   width: 16px;
   height: 16px;
 `;
@@ -49,7 +49,7 @@ const Link = styled.button`
 function Footer() {
   const handleLink = (link) => () => {
     window.open(link);
-  }
+  };
 
   return (
     <FooterWrapper>

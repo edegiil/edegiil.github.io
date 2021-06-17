@@ -22,7 +22,7 @@ const shine = keyframes`
   to {
     background-position: top right;
   }
-`
+`;
 
 const Text = styled.h2`
   font-weight: 100;
@@ -40,7 +40,12 @@ const Text = styled.h2`
     transition: all 0.5s ease;
     animation: ${shine} 2s linear infinite;
     color: #ff9e00;
-    background: linear-gradient(45deg, rgba(255,158,0,1) 25%, rgba(255,0,0,1) 54%, rgba(255,158,0,1) 75%);
+    background: linear-gradient(
+      45deg,
+      rgba(255,158,0,1) 25%,
+      rgba(255,0,0,1) 54%,
+      rgba(255,158,0,1) 75%
+    );
     background-size: 400% 100%;
     background-repeat: no-repeat;
     background-position: 0 0;

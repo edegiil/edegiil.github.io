@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   cursor: pointer;
-  background: ${props => props.theme.DARK_COLOR};
+  background: ${(props) => props.theme.DARK_COLOR};
   padding: 16px 24px;
   border-radius: 20px;
 `;
@@ -39,9 +39,9 @@ const DescriptionText = styled.p`
 `;
 
 const DetailGroup = styled.div`
-  height: ${props => props.height};
+  height: ${(props) => props.height};
   overflow: hidden;
-  margin-top: ${props => props.is_opened ? '12px' : '0'};
+  margin-top: ${(props) => props.is_opened ? '12px' : '0'};
   transition: all 0.5s ease;
 `;
 
@@ -56,7 +56,7 @@ function AboutElement({data}) {
   const accrodion_element = useRef(null);
   const description_element = useRef(null);
   const detail_element = useRef(null);
-  
+
   const {title, descriptions, detail} = data;
   const final_position = descriptions[descriptions.length - 1];
 
@@ -64,15 +64,15 @@ function AboutElement({data}) {
     const description_element_height = description_element.current.clientHeight;
     const detail_element_height = detail_element.current.clientHeight;
     const accordion_content_height = description_element_height + detail_element_height;
-    
+
     if (is_opened) {
       setHeight(`0`);
     } else {
       setHeight(`${accordion_content_height}px`);
     }
 
-    setIsOpened(current => !current);
-  }
+    setIsOpened((current) => !current);
+  };
 
   return (
     <Container onClick={handleAccordion}>
@@ -86,16 +86,16 @@ function AboutElement({data}) {
       <DetailGroup is_opened={is_opened} ref={accrodion_element} height={h}>
         <DescriptionGroup ref={description_element}>
           {
-            descriptions.length > 1
-              ? descriptions.map((description) => {
+            descriptions.length > 1 ?
+              descriptions.map((description) => {
                 return (
                   <Description key={description.main}>
                     <DescriptionText>{description.main}</DescriptionText>
                     <DescriptionText>{description.time}</DescriptionText>
                   </Description>
                 );
-              })
-              : null
+              }) :
+              null
           }
         </DescriptionGroup>
         <Detail ref={detail_element}>

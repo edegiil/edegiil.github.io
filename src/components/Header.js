@@ -38,7 +38,7 @@ const shine = keyframes`
   to {
     background-position: top right;
   }
-`
+`;
 
 const Nav = styled(Link)`
   font-family: 'Half-Elven', sans-serif;
@@ -47,7 +47,12 @@ const Nav = styled(Link)`
     font-weight: bold;
     animation: ${shine} 2s linear infinite;
     color: #ff9e00;
-    background: linear-gradient(45deg, rgba(255,158,0,1) 25%, rgba(255,0,0,1) 54%, rgba(255,158,0,1) 75%);
+    background: linear-gradient(
+      45deg,
+      rgba(255,158,0,1) 25%,
+      rgba(255,0,0,1) 54%,
+      rgba(255,158,0,1) 75%
+    );
     background-size: 400% 100%;
     background-repeat: no-repeat;
     background-position: 0 0;
@@ -73,7 +78,7 @@ function Header() {
           menu_items.map(({name, path}) => {
             return (
               <Nav key={path} to={path} activeClassName='current' partiallyActive>{name}</Nav>
-            )
+            );
           })
         }
       </NavGroup>
