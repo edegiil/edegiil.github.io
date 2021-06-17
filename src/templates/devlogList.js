@@ -5,6 +5,7 @@ import {Link, graphql} from 'gatsby';
 import Layout from 'components/layout';
 import Footer from 'components/footer';
 import DevlogElement from 'components/devlogElement';
+import SEO from 'components/seo';
 
 import parseGraphQLToArray from 'utils/parseGraphQLToArray';
 import getNavList from 'utils/getNavList';
@@ -166,6 +167,10 @@ function DevlogListTemplate({data, pageContext}) {
 
   return (
     <Layout withHeader>
+      <SEO
+        title='Devlog | edegiil.github.io'
+        description='edegil 데브로그'
+      />
       <Main>
         <TitleGroup>
           <Title>DEV.log</Title>

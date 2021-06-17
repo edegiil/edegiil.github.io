@@ -4,6 +4,7 @@ import {graphql, Link} from 'gatsby';
 
 import Layout from 'components/layout';
 import Footer from 'components/footer';
+import SEO from 'components/seo';
 
 import background_image from 'assets/images/background.png';
 import ring_of_power_left from 'assets/images/the_ring_of_power_left.png';
@@ -94,6 +95,10 @@ function Home({data}) {
 
   return (
     <Layout backgroundimage={background_image}>
+      <SEO
+        title='edegiil.github.io'
+        description='edegil 기술 블로그'
+      />
       <Main>
         <TitleGroup>
           <TitleWrapper>

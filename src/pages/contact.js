@@ -4,6 +4,7 @@ import Clipboard from 'clipboard';
 
 import Layout from 'components/layout';
 import Footer from 'components/footer';
+import SEO from 'components/seo';
 
 const Background = styled.div`
   display: flex;
@@ -62,6 +63,10 @@ function Contact() {
 
   return (
     <Layout withHeader>
+      <SEO
+        title='Contact | edegiil.github.io'
+        description='electropark917@gmail.com'
+      />
       <Background>
         <Text
           id='contact-email'

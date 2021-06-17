@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import AboutElement from 'components/aboutElement';
 import Layout from 'components/layout';
 import Footer from 'components/footer';
+import SEO from 'components/seo';
 
 import contents from 'configs/aboutContent';
 
@@ -85,6 +86,10 @@ function Home(props) {
 
   return (
     <Layout withHeader>
+      <SEO
+        title='About | edegiil.github.io'
+        description='About edegil'
+      />
       <Main>
         <TitleGroup>
           <Title>ABOUT</Title>

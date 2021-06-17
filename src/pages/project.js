@@ -5,6 +5,7 @@ import {graphql} from 'gatsby';
 import Layout from 'components/layout';
 import Footer from 'components/footer';
 import ProjectElement from 'components/projectElement';
+import SEO from 'components/seo';
 
 const Main = styled.main`
   display: grid;
@@ -57,6 +58,10 @@ function Proejct({data}) {
 
   return (
     <Layout withHeader>
+      <SEO
+        title='Project | edegiil.github.io'
+        description='edegil의 프로젝트'
+      />
       <Main>
         <TitleGroup>
           <Title>PROJECT</Title>

@@ -5,6 +5,7 @@ import {MDXRenderer} from 'gatsby-plugin-mdx';
 
 import Layout from 'components/layout';
 import Footer from 'components/footer';
+import SEO from 'components/seo';
 
 import back_icon from 'assets/icons/back.svg';
 import link_icon from 'assets/icons/link.svg';
@@ -136,6 +137,11 @@ function DevlogTemplate({data}) {
 
   return (
     <Layout withHeader>
+      <SEO
+        title={`${title} | edegiil.github.io`}
+        description={summary}
+        image={thumbnail}
+      />
       <Main>
         <NavGroup onClick={goBack}>
           <NavIcon src={back_icon} alt='goback' />
