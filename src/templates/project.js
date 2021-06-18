@@ -85,13 +85,13 @@ const Title = styled.div`
   align-items: center;
   margin: 0;
   margin-right: 8px;
-  @media ${(props) => props.theme.tablet} {
-    font-size: ${(props) => props.theme.BIG_SIZE}
-  }
 `;
 
 const TitleText = styled.h2`
   margin: 0;
+  @media ${(props) => props.theme.tablet} {
+    font-size: ${(props) => props.theme.BIG_SIZE}
+  }
 `;
 
 const TitleLink = styled.a`
