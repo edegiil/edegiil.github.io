@@ -20,6 +20,7 @@ const theme = {
   NORMAL_SIZE: '1rem', // 16px
   SMALL_SIZE: '0.75rem', // 12px
   TINY_SIZE: '0.5rem', // 8px
+  MICRO_SIZE: '0.4rem',
   BIG_SIZE: '1.5rem', // 24px
   HUGE_SIZE: '2rem', // 32px
   GIANT_SIZE: '2.5rem', // 40px

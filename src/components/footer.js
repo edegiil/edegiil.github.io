@@ -17,12 +17,22 @@ const FooterWrapper = styled.footer`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media ${(props) => props.theme.mobile} {
+    flex-direction: column;
+    height: 60px;
+  }
 `;
 
 const Statement = styled.div`
   font-size: ${(props) => props.theme.TINY_SIZE};
   font-weight: 100;
   color: ${(props) => props.theme.DARK_COLOR};
+  @media ${(props) => props.theme.tablet} {
+  
+  }
+  @media ${(props) => props.theme.mobile} {
+    font-size: ${(props) => props.theme.MICRO_SIZE};
+  }
 `;
 
 const Highlight = styled.span`
@@ -34,6 +44,9 @@ const Line = styled.div`
   height: 0.5px;
   background-color: ${(props) => props.theme.DARK_COLOR};
   margin: 0 16px;
+  @media ${(props) => props.theme.mobile} {
+    display: none;
+  }
 `;
 
 const LinkWrapper = styled.div`
@@ -42,8 +55,13 @@ const LinkWrapper = styled.div`
 
 const Link = styled.button`
   background-image: url(${(props) => props.icon});
+  background-size: cover;
   width: 16px;
   height: 16px;
+  @media ${(props) => props.theme.mobile} {
+    width: 14px;
+    height: 14px;
+  }
 `;
 
 function Footer() {

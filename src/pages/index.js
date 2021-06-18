@@ -17,6 +17,12 @@ const Main = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media ${(props) => props.theme.tablet} {
+    width: 85%;
+  }
+  @media ${(props) => props.theme.mobile} {
+    width: 100%;
+  }
 `;
 
 const TitleGroup = styled.div`
@@ -56,6 +62,10 @@ const NavGroup = styled.nav`
   display: grid;
   grid-auto-flow: column;
   column-gap: 32px;
+  @media ${(props) => props.theme.mobile} {
+    grid-auto-flow: row;
+    justify-items: center;
+  }
 `;
 
 const shine = keyframes`
