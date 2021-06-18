@@ -26,6 +26,7 @@ const Main = styled.main`
   @media ${(props) => props.theme.mobile} {
     width: 90%;
     row-gap: 16px;
+    padding-bottom: 60px;
   }
 `;
 
