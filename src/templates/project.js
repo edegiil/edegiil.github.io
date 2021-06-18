@@ -21,6 +21,15 @@ const Main = styled.main`
   flex-direction: column;
   align-items: center;
   align-content: start;
+  @media ${(props) => props.theme.tablet} {
+    width: 80%;
+    row-gap: 24px;
+  }
+  @media ${(props) => props.theme.mobile} {
+    width: 90%;
+    row-gap: 16px;
+    padding-bottom: 60px;
+  }
 `;
 
 const NavGroup = styled(Link)`
@@ -44,10 +53,10 @@ const TitleGroup = styled.section`
   width: 800px;
   height: 250px;
   @media ${(props) => props.theme.tablet} {
-    width: 500px;
+    width: 100%;
   }
   @media ${(props) => props.theme.mobile} {
-    width: 350px;
+    width: 100%;
   }
 
   &::after {
@@ -114,15 +123,15 @@ const InfoText = styled.div`
 
 const Content = styled.section`
   width: 800px;
-  @media ${(props) => props.theme.tablet} {
-    width: 500px;
-  }
-  @media ${(props) => props.theme.mobile} {
-    width: 350px;
-  }
   img {
     max-width: 100%;
     max-height: 1200px;
+  }
+  @media ${(props) => props.theme.tablet} {
+    width: 100%;
+  }
+  @media ${(props) => props.theme.mobile} {
+    width: 100%;
   }
 `;
 
