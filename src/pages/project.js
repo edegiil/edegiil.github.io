@@ -19,6 +19,15 @@ const Main = styled.main`
   flex-direction: column;
   align-items: center;
   align-content: start;
+  @media ${(props) => props.theme.tablet} {
+    width: 80%;
+    row-gap: 24px;
+  }
+  @media ${(props) => props.theme.mobile} {
+    width: 90%;
+    row-gap: 16px;
+    padding-bottom: 60px;
+  }
 `;
 
 const TitleGroup = styled.div`
@@ -27,10 +36,9 @@ const TitleGroup = styled.div`
   width: 800px;
   @media ${(props) => props.theme.tablet} {
     width: 100%;
-    padding: 0 5%;
   }
   @media ${(props) => props.theme.mobile} {
-    padding: 0 5%;
+    width: 100%;
   }
 `;
 
@@ -48,10 +56,14 @@ const Content = styled.div`
   grid-template-columns: repeat(3, 1fr);
   width: 800px;
   @media ${(props) => props.theme.tablet} {
-    width: 45%;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
   }
   @media ${(props) => props.theme.mobile} {
     width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
   }
 `;
 
