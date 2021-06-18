@@ -19,6 +19,7 @@ const Main = styled.main`
   flex-direction: column;
   align-items: center;
   align-content: start;
+  justify-items: center;
   @media ${(props) => props.theme.tablet} {
     width: 80%;
     row-gap: 24px;
@@ -56,7 +57,7 @@ const Content = styled.div`
   grid-template-columns: repeat(3, 1fr);
   width: 800px;
   @media ${(props) => props.theme.tablet} {
-    width: 100%;
+    width: 530px;
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
   }
