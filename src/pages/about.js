@@ -19,6 +19,14 @@ const Main = styled.main`
   padding: 128px 0 50px;
   flex-direction: column;
   align-items: center;
+  @media ${(props) => props.theme.tablet} {
+    width: 80%;
+    row-gap: 24px;
+  }
+  @media ${(props) => props.theme.mobile} {
+    width: 90%;
+    row-gap: 16px;
+  }
 `;
 
 const TitleGroup = styled.div`
@@ -27,10 +35,9 @@ const TitleGroup = styled.div`
   width: 800px;
   @media ${(props) => props.theme.tablet} {
     width: 100%;
-    padding: 0 5%;
   }
   @media ${(props) => props.theme.mobile} {
-    padding: 0 5%;
+    width: 100%;
   }
 `;
 
@@ -51,7 +58,7 @@ const Content = styled.div`
   width: 800px;
   min-width: 230px;
   @media ${(props) => props.theme.tablet} {
-    width: 45%;
+    width: 100%;
   }
   @media ${(props) => props.theme.mobile} {
     width: 100%;
@@ -71,6 +78,10 @@ const LinkAnchor = styled.a`
   background-position: center;
   background-size: cover;
   margin-right: 12px;
+  @media ${(props) => props.theme.mobile} {
+    width: 24px;
+    height: 24px;
+  }
 `;
 
 const List = styled.ul`

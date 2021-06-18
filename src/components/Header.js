@@ -13,13 +13,6 @@ const HeaderBlock = styled.header`
   top: 0;
   left: 0;
   z-index: 10;
-
-  @media ${(props) => props.theme.mobile} {
-    padding: 24px 24px;
-  }
-  @media ${(props) => props.theme.tablet} {
-    padding: 24px 30px;
-  }
 `;
 
 const NavGroup = styled.div`
@@ -28,6 +21,13 @@ const NavGroup = styled.div`
   grid-auto-flow: column;
   column-gap: 32px;
   justify-content: start;
+  @media ${(props) => props.theme.tablet} {
+    width: 80%;
+  }
+  @media ${(props) => props.theme.mobile} {
+    width: 90%;
+    column-gap: 16px;
+  }
 `;
 
 const shine = keyframes`

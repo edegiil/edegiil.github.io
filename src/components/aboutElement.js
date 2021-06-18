@@ -6,11 +6,18 @@ const Container = styled.div`
   background: ${(props) => props.theme.DARK_COLOR};
   padding: 16px 24px;
   border-radius: 20px;
+  @media ${(props) => props.theme.mobile} {
+    padding: 12px 24px;
+  }
 `;
 
 const TitleGroup = styled.div`
   display: flex;
   align-items: center;
+  @media ${(props) => props.theme.mobile} {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 const Title = styled.h4`
@@ -51,7 +58,7 @@ const Detail = styled.p`
 
 function AboutElement({data}) {
   const [is_opened, setIsOpened] = useState(false);
-  const [h, setHeight] = useState('0');
+  const [height, setHeight] = useState('0');
 
   const accrodion_element = useRef(null);
   const description_element = useRef(null);
@@ -83,7 +90,7 @@ function AboutElement({data}) {
           <DescriptionText>{final_position.time}</DescriptionText>
         </Description>
       </TitleGroup>
-      <DetailGroup is_opened={is_opened} ref={accrodion_element} height={h}>
+      <DetailGroup is_opened={is_opened} ref={accrodion_element} height={height}>
         <DescriptionGroup ref={description_element}>
           {
             descriptions.length > 1 ?
