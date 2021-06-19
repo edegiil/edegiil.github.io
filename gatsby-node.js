@@ -50,12 +50,32 @@ exports.createPages = async ({graphql, actions, reporter}) => {
       }
     `,
   );
+  const docs_data = await graphql(
+    `
+      {
+        allMdx(limit: 100, filter: {frontmatter: {type: {eq: "docs"}}}) {
+          edges {
+            node {
+              frontmatter {
+                path
+                type
+              }
+            }
+          }
+        }
+      }
+    `,
+  );
   // Handle errors
   if (devlog.errors) {
     reporter.panicOnBuild('Error while running GraphQL query.');
     return;
   }
   if (project.errors) {
+    reporter.panicOnBuild('Error while running GraphQL query.');
+    return;
+  }
+  if (docs_data.errors) {
     reporter.panicOnBuild('Error while running GraphQL query.');
     return;
   }
@@ -100,9 +120,22 @@ exports.createPages = async ({graphql, actions, reporter}) => {
         skip: i * POSTS_PER_PAGE,
         page_numbers,
         current_page: i + 1,
-      }
+      },
     });
   };
+
+  const docsTemplate = path.resolve('src/templates/docs.js');
+  const docs = docs_data.data.allMdx.edges;
+  docs.forEach(({node}) => {
+    const {path} = node.frontmatter;
+    createPage({
+      path,
+      component: docsTemplate,
+      context: {
+        directory: path,
+      },
+    });
+  });
 };
 
 // Replacing '/' would result in empty string which is invalid

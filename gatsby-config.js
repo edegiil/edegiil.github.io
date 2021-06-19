@@ -11,7 +11,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: [
-          "G-BPJQ569JDT", // Google Analytics / GA
+          'G-BPJQ569JDT', // Google Analytics / GA
         ],
         pluginConfig: {
           head: true,
@@ -72,6 +72,14 @@ module.exports = {
         path: './projects/',
       },
       __key: 'projects',
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'docs',
+        path: './docs/',
+      },
+      __key: 'docs',
     },
   ],
 };
