@@ -5,11 +5,12 @@ import {Link} from 'gatsby';
 const Container = styled(Link)`
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   position: relative;
   width: 260px;
   height: 260px;
+  padding: 24px;
+  box-sizing: border-box;
   background-color: ${(props) => props.theme.DARK_COLOR};
   border-radius: 20px;
   overflow: hidden;
@@ -23,6 +24,8 @@ const Container = styled(Link)`
     content: '';
     position: absolute;
     z-index: 0;
+    left: 0;
+    top: 0;
     width: 260px;
     height: 260px;
     border-radius: 20px;
@@ -40,13 +43,6 @@ const Title = styled.h3`
   z-index: 1;
 `;
 
-const Status = styled.div`
-  font-size: ${(props) => props.theme.SMALL_SIZE};
-  line-height: 1.25rem;
-  color: ${(props) => props.isClosed ? '#D00000' : '#0AB107'};
-  z-index: 1;
-`;
-
 const Summary = styled.div`
   font-size: ${(props) => props.theme.SMALL_SIZE};
   line-height: 1.25rem;
@@ -59,23 +55,32 @@ const Time = styled.div`
   line-height: 1rem;
   position: absolute;
   z-index: 1;
-  bottom: 16px;
+  top: 24px;
+  left: 24px;
   color: ${(props) => props.theme.BRIGHT_COLOR};
 `;
 
-function ProjectElement(props) {
-  const {title, status, summary, time, thumbnail, path} = props;
+const Category = styled.div`
+  font-size: ${(props) => props.theme.SMALL_SIZE};
+  line-height: 1rem;
+  position: absolute;
+  z-index: 1;
+  bottom: 24px;
+  left: 24px;
+  color: ${(props) => props.theme.BRIGHT_COLOR};
+`;
 
-  const is_closed = status === 'CLOSED';
+function DevlogElement(props) {
+  const {category, title, summary, date_created, thumbnail, path} = props;
 
   return (
     <Container to={path} backgroundimage={thumbnail}>
+      <Time>{date_created}</Time>
       <Title>{title}</Title>
-      <Status isClosed={is_closed}>{status}</Status>
       <Summary>{summary}</Summary>
-      <Time>{time}</Time>
+      <Category>{`#${category}`}</Category>
     </Container>
   );
 }
 
-export default ProjectElement;
+export default DevlogElement;

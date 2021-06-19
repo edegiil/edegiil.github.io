@@ -1,173 +1,182 @@
-import React, {useState, useCallback} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import AboutElement from 'components/aboutElement';
-import AboutModal from 'components/aboutModal';
+import Layout from 'components/layout';
+import Footer from 'components/footer';
+import SEO from 'components/seo';
 
-import contents from '../../data/contents';
+import contents from 'configs/aboutContent';
 
-const Background = styled.div`
-  display: flex;
+import github_icon from 'assets/icons/github.svg';
+
+const Main = styled.main`
+  display: grid;
+  row-gap: 36px;
+  box-sizing: border-box;
   min-height: 100vh;
-  width: 100vw;
-  padding: 81px 0;
+  width: 800px;
+  padding: 128px 0 50px;
   flex-direction: column;
   align-items: center;
+  @media ${(props) => props.theme.tablet} {
+    width: 80%;
+    row-gap: 24px;
+  }
+  @media ${(props) => props.theme.mobile} {
+    width: 90%;
+    row-gap: 16px;
+    padding-bottom: 60px;
+  }
 `;
 
 const TitleGroup = styled.div`
   display: flex;
   flex-direction: column;
-  width: 900px;
+  width: 800px;
   @media ${(props) => props.theme.tablet} {
     width: 100%;
-    padding: 0 5%;
   }
   @media ${(props) => props.theme.mobile} {
-    padding: 0 5%;
+    width: 100%;
   }
 `;
 
 const Title = styled.h2`
-  font-weight: 100;
-  margin-top: 0;
+  font-family: 'Half-Elven', sans-serif;
+  font-weight: bold;
+  margin: 0;
 `;
 
 const SubTitle = styled.div`
   font-weight: 100;
 `;
 
-const Contents = styled.main`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 900px;
-  box-sizing: border-box;
-  padding: 24px 0;
-  @media ${(props) => props.theme.tablet} {
-    width: 100%;
-    padding: 24px 5%;
-  }
-  @media ${(props) => props.theme.mobile} {
-    padding: 24px 5%;
-  }
-`;
-
-const ContentBox = styled.div`
+const Content = styled.div`
   display: grid;
   row-gap: 16px;
   align-content: start;
-  width: 45%;
+  width: 800px;
   min-width: 230px;
-  margin-bottom: 32px;
   @media ${(props) => props.theme.tablet} {
-    width: 45%;
+    width: 100%;
   }
   @media ${(props) => props.theme.mobile} {
     width: 100%;
   }
 `;
 
-const ContentBoxTitle = styled.h3`
+const ContentTitle = styled.h3`
   font-weight: normal;
   margin: 0;
 `;
 
+const LinkAnchor = styled.a`
+  width: 32px;
+  height: 32px;
+  background-image: url(${(props) => props.backgroundimage});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-right: 12px;
+  @media ${(props) => props.theme.mobile} {
+    width: 24px;
+    height: 24px;
+  }
+`;
+
+const List = styled.ul`
+
+`;
+
+const ListElement = styled.li`
+  font-weight: ${(props) => props.highlight ? 'bold' : null};
+`;
+
 function Home(props) {
-  const [modal_status, setModalStatus] = useState(false);
-  const [modal_data, setModalData] = useState({});
-
-  const handleModalClose = useCallback(() => {
-    setModalStatus(false);
-  }, []);
-
-  const handleModalOpen = useCallback((data) => () => {
-    const {title, descriptions, link, detail} = data;
-    const recent_description = descriptions[descriptions.length - 1];
-    const subtitle = `${recent_description.main} ${recent_description.time || ''}`;
-
-    setModalStatus(true);
-    setModalData({
-      title,
-      subtitle,
-      link,
-      detail,
-    });
-  }, []);
+  const {educations, careers, interests, tech_stacks} = contents.about;
 
   return (
-    <Background>
-      {
-        modal_status && (
-          <AboutModal
-            closeModal={handleModalClose}
-            data={modal_data}
+    <Layout withHeader>
+      <SEO
+        title='About | edegiil.github.io'
+        description='About edegil'
+      />
+      <Main>
+        <TitleGroup>
+          <Title>ABOUT</Title>
+          <SubTitle>1996년 생. 대구광역시 출생. 프론트엔드 개발자</SubTitle>
+        </TitleGroup>
+        <Content>
+          <LinkAnchor
+            target='_blank'
+            href='https://github.com/edegiil'
+            backgroundimage={github_icon}
           />
-        )
-      }
-      <TitleGroup>
-        <Title>소개</Title>
-        <SubTitle>1996년 생. 대구광역시 출생. 스타트업 개발자</SubTitle>
-      </TitleGroup>
-      <Contents>
-        <ContentBox>
-          <ContentBoxTitle>교육</ContentBoxTitle>
+        </Content>
+        <Content>
+          <List>
+            <ListElement>1일 1커밋 운동과 기술 블로그 운영을 하려고 노력 중</ListElement>
+            <ListElement>다른 사람들이 이해하기 쉬운 코드는 어떻게 쓸 수 있는가 고민 중</ListElement>
+            <ListElement>지식을 나누기 위해 개발 동아리를 운영 중</ListElement>
+            <ListElement highlight>비영리 코딩 교육 단체를 만들고 오픈소스 라이브러리도 개발할 예정</ListElement>
+          </List>
+        </Content>
+        <Content>
+          <ContentTitle>교육</ContentTitle>
           {
-            contents.about.educations.map((data, i) => {
+            educations.map((data, i) => {
               return (
                 <AboutElement
                   key={String(i)}
                   data={data}
-                  openModal={handleModalOpen(data)}
                 />
               );
             })
           }
-        </ContentBox>
-        <ContentBox>
-          <ContentBoxTitle>활동</ContentBoxTitle>
+        </Content>
+        <Content>
+          <ContentTitle>활동</ContentTitle>
           {
-            contents.about.careers.map((data, i) => {
+            careers.map((data, i) => {
               return (
                 <AboutElement
                   key={String(i)}
                   data={data}
-                  openModal={handleModalOpen(data)}
                 />
               );
             })
           }
-        </ContentBox>
-        <ContentBox>
-          <ContentBoxTitle>관심분야</ContentBoxTitle>
+        </Content>
+        <Content>
+          <ContentTitle>관심분야</ContentTitle>
           {
-            contents.about.interests.map((data, i) => {
+            interests.map((data, i) => {
               return (
                 <AboutElement
                   key={String(i)}
                   data={data}
-                  openModal={handleModalOpen(data)}
                 />
               );
             })
           }
-        </ContentBox>
-        <ContentBox>
-          <ContentBoxTitle>기술스택</ContentBoxTitle>
+        </Content>
+        <Content>
+          <ContentTitle>기술스택</ContentTitle>
           {
-            contents.about.tech_stacks.map((data, i) => {
+            tech_stacks.map((data, i) => {
               return (
                 <AboutElement
                   key={String(i)}
                   data={data}
-                  openModal={handleModalOpen(data)}
                 />
               );
             })
           }
-        </ContentBox>
-      </Contents>
-    </Background>
+        </Content>
+      </Main>
+      <Footer />
+    </Layout>
   );
 }
 

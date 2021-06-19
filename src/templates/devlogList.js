@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import {graphql} from 'gatsby';
+import {Link, graphql} from 'gatsby';
 
 import Layout from 'components/layout';
 import Footer from 'components/footer';
-import ProjectElement from 'components/projectElement';
+import DevlogElement from 'components/devlogElement';
 import SEO from 'components/seo';
 
 import parseGraphQLToArray from 'utils/parseGraphQLToArray';
+import getNavList from 'utils/getNavList';
 
 const Main = styled.main`
   display: grid;
@@ -68,37 +69,67 @@ const Content = styled.div`
   }
 `;
 
-function Proejct({data}) {
+const PageNav = styled.div`
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 16px;
+  justify-content: center;
+  align-items: center;
+`;
+
+const NavButton = styled(Link)`
+  color: ${(props) => props.theme.DARK_COLOR};
+
+  &.current {
+    font-weight: bold;
+    color: ${(props) => props.theme.MAIN_COLOR};
+  }
+`;
+
+function DevlogListTemplate({data, pageContext}) {
   const list = parseGraphQLToArray(data);
+  const {page_numbers, current_page} = pageContext;
+
+  const nav_list = getNavList(current_page, page_numbers);
 
   return (
     <Layout withHeader>
       <SEO
-        title='Project | edegiil.github.io'
-        description='edegil의 프로젝트'
+        title='Devlog | edegiil.github.io'
+        description='edegil 데브로그'
       />
       <Main>
         <TitleGroup>
-          <Title>PROJECT</Title>
+          <Title>DEV.log</Title>
         </TitleGroup>
         <Content>
           {
-            list.map((project) => {
-              const {title, status, summary, time, path, thumbnail} = project;
+            list && list.map((v, i) => {
+              const {category, title, summary, date_created, thumbnail, path} = v;
               return (
-                <ProjectElement
+                <DevlogElement
                   key={path}
-                  title={title}
-                  status={status}
-                  summary={summary}
-                  time={time}
-                  path={path}
+                  date_created={date_created}
                   thumbnail={thumbnail}
+                  path={path}
+                  title={title}
+                  summary={summary}
+                  category={category}
                 />
               );
             })
           }
         </Content>
+        <PageNav>
+          {
+            nav_list.map((page) => {
+              const path = page !== 1 ? `/devlog/${page}` : `/devlog`;
+              return (
+                <NavButton key={path} to={path} activeClassName='current'>{page}</NavButton>
+              );
+            })
+          }
+        </PageNav>
       </Main>
       <Footer />
     </Layout>
@@ -106,25 +137,27 @@ function Proejct({data}) {
 }
 
 export const query = graphql`
-  {
+  query($limit: Int!, $skip: Int!) {
     allMdx(
-      filter: {frontmatter: {type: {eq: "project"}}},
-      sort: {fields: frontmatter___id, order: ASC}
+      sort: {order: DESC, fields: frontmatter___path}
+      limit: $limit
+      skip: $skip
+      filter: {frontmatter: {type: {eq: "devlog"}}}
     ) {
       edges {
         node {
           frontmatter {
-            title
-            status
-            summary
-            time
             path
+            category
+            date_created
+            title
+            summary
             thumbnail
           }
         }
       }
     }
-  }
+  }  
 `;
 
-export default Proejct;
+export default DevlogListTemplate;

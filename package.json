@@ -1,6 +1,6 @@
 {
   "name": "edegiil.github.io",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "private": false,
   "description": "edegiil devlog",
   "author": "edegiil <electropark917@gmail.com>",
@@ -24,6 +24,7 @@
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "babel-plugin-styled-components": "^1.12.0",
+    "clipboard": "^2.0.8",
     "fontsource-montserrat": "^3.0.9",
     "fontsource-noto-sans-kr": "^3.0.9",
     "gatsby": "^3.2.1",
@@ -45,15 +46,25 @@
     "styled-components": "^5.2.3"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.14.5",
+    "@typescript-eslint/eslint-plugin": "^4.0.0",
+    "@typescript-eslint/parser": "^4.0.0",
+    "babel-eslint": "^10.0.0",
+    "eslint": "^7.5.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-react-app": "^6.0.0",
+    "eslint-plugin-flowtype": "^5.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.8",
     "gh-pages": "^3.1.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/edegiI/edegil.github.io"
+    "url": "https://github.com/edegiil/edegiil.github.io"
   },
   "bugs": {
-    "url": "https://github.com/edegil/edegil.github.io/issues"
+    "url": "https://github.com/edegiil/edegiil.github.io/issues"
   }
 }
