@@ -1,6 +1,7 @@
 ---
-path: "project/heritagemonitor"
-title: "05__헤리티지 모니터"
+id: "P20200501"
+path: "/project/heritagemonitor"
+title: "헤리티지 모니터"
 type: "project"
 summary: "문화재 통합 관리 솔루션"
 thumbnail: ""
@@ -9,6 +10,7 @@ platform: "WEB"
 tech: "React,Google Cloud Platform,Naver Cloud Platform,MySQL,Express"
 link: "https://ceedup.com"
 repository: ""
+status: "CLOSED"
 ---
 ![피스메인](https://drive.google.com/uc?export=download&id=1inGQ6pY8Vfr7C-qASERsmlhdNFejblKr)
 

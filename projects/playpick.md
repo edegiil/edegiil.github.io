@@ -1,14 +1,16 @@
 ---
-path: "project/playpick"
-title: "01__플레이픽"
+id: "P20180801"
+path: "/project/playpick"
+title: "플레이픽"
 type: "project"
 summary: "코디 결정장애 해결 플랫폼"
-thumbnail: ""
+thumbnail: "https://user-images.githubusercontent.com/35324795/121779293-e24b7280-cbd5-11eb-9f82-e05067bd6a22.png"
 time: "2018.8 ~ 2019.3"
 platform: "WEB"
 tech: "React,ExpressJS,MongoDB,Firebase"
 link: "https://appadvice.com/app/ed-94-8c-eb-a0-88-ec-9d-b4-ed-94-bd-ec-bd-94-eb-94-94-ea-b2-b0-ec-a0-95-ec-9e-a5-ec-95-a0-ed-95-b4-ec-86-8c/1418537860"
 repository: ""
+status: "CLOSED"
 ---
 ![플레이픽](https://drive.google.com/uc?export=download&id=16YIEYZh4toCHhMTsjSTaLU_UXjMWhHyu)
 

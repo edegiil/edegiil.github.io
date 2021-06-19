@@ -1,14 +1,16 @@
 ---
-path: "project/busyless"
-title: "03__비지리스"
+id: "P20190501"
+path: "/project/busyless"
+title: "비지리스"
 type: "project"
 summary: "정부창업지원사업 큐레이션 서비스"
-thumbnail: ""
+thumbnail: "https://user-images.githubusercontent.com/35324795/121779306-ee373480-cbd5-11eb-985a-e1d7d633d70b.png"
 time: "2019.5 ~ 2019.9"
 platform: "WEB,APP"
 tech: "React,Firebase,MongoDB"
 link: ""
 repository: ""
+status: "CLOSED"
 ---
 ![비지리스](https://drive.google.com/uc?export=download&id=1cYkoaEZa9aNHL9l7ohEUIgWIQDp3Volg)
 

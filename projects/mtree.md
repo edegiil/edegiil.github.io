@@ -1,14 +1,16 @@
 ---
-path: "project/mtree"
-title: "02__M-TREE 카페 홈페이지"
+id: "P20190201"
+path: "/project/mtree"
+title: "M-TREE 카페 홈페이지"
 type: "project"
-summary: "대구 창업카페"
+summary: "대구 창업카페 홈페이지"
 thumbnail: ""
 time: "2019.2 ~ 2019.4"
 platform: "WEB"
 tech: "React,Firebase"
 link: "https://m-tree.club/"
 repository: ""
+status: "CLOSED"
 ---
 ![mtree](https://drive.google.com/uc?export=download&id=1vxvaKCv-n_uAXJyCEUIpvkZZh8Twh77n)
 

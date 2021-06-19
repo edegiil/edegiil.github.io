@@ -1,6 +1,7 @@
 ---
-path: "project/peacemain"
-title: "06__피스메인 홈페이지"
+id: "P20210101"
+path: "/project/peacemain"
+title: "피스메인 홈페이지"
 type: "project"
 summary: "피스메인 동아리 모집 페이지"
 thumbnail: ""
@@ -9,6 +10,7 @@ platform: "WEB"
 tech: "React,Typescript,Styled-Component,Express"
 link: "https://peacemain-club.github.io/"
 repository: "https://github.com/peacemain-club/peacemain-club.github.io"
+status: "MAINTENANCE"
 ---
 ![피스메인](https://drive.google.com/uc?export=download&id=1Js4LlgVg3UEZUJdK-P57ef2RfyV0K69b)
 

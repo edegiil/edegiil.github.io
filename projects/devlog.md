@@ -1,14 +1,16 @@
 ---
-path: "project/devlog"
-title: "04__개발자 블로그"
+id: "P20191001"
+path: "/project/devlog"
+title: "기술 블로그"
 type: "project"
-summary: "개인 웹 포트폴리오 및 블로그"
+summary: "웹 포트폴리오이자 기술 블로그"
 thumbnail: ""
 time: "2019.10 ~ 2021.2"
 platform: "WEB"
 tech: "React,Gatsby"
 link: "https://edegiil.github.io"
 repository: "https://github.com/edegiil/edegiil.github.io"
+status: "MAINTENANCE"
 ---
 
 ### 프로젝트에 대한 이야기
