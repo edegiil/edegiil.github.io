@@ -26,7 +26,7 @@ Edegil의 프론트엔드 개발자 블로그.
   - Gatsby3 업그레이드 및 코드 블록 syntax highlighting 적용
   - 구글 Analytics 적용
 
-* 2021.6.7 - ver 2.2.0 kick off
+* 2021.6.19 - ver 2.2.0
   - 디자인 수정 (반지의 제왕 테마)
   - 블로그 pagination 적용
   - SEO 적용
