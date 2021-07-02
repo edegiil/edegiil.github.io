@@ -89,6 +89,19 @@ const contents = {
         `,
         link: 'https://github.com/peacemain-club',
       },
+      {
+        title: '우아한 테크캠프 4기',
+        descriptions: [
+          {
+            main: '교육생',
+            time: '2021.7 ~ 2021.8',
+          },
+        ],
+        detail:
+        ` 배달의 민족을 서비스하는 우아한형제들에서 진행하는 교육형 인턴십.
+        `,
+        link: 'https://woowabros.github.io/devrel/2021/04/20/woowa-techcamp_4th.html',
+      },
     ],
     interests: [
       {
