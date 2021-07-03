@@ -122,6 +122,12 @@ const Content = styled.section`
   @media ${(props) => props.theme.mobile} {
     width: 100%;
   }
+
+  /* markdown style */
+  a {
+    text-decoration: underline;
+    font-weight: bold;
+  }
 `;
 
 function DevlogTemplate({data}) {
