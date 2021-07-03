@@ -97,19 +97,6 @@ const GlobalStyle = createGlobalStyle`
     padding-left: 1.5rem;
   }
 
-  pre {
-    background-color: ${(props) => props.theme.DARK_COLOR};
-    padding: 12px 16px;
-    border-radius: 8px;
-    white-space: break-spaces;
-    line-height: 18px;
-    font-size: 1.2rem;
-
-    code {
-      color: white;
-    }
-  }
-
   deckgo-highlight-code {
     --deckgo-highlight-code-font-family: 'Source Code Pro';
     --deckgo-highlight-code-border-radius: 5px;

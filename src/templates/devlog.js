@@ -128,6 +128,11 @@ const Content = styled.section`
     text-decoration: underline;
     font-weight: bold;
   }
+
+  h1, h2 {
+    border-bottom: 0.5px solid ${(props) => props.theme.DARK_COLOR};
+    padding-bottom: 1rem;
+  }
 `;
 
 function DevlogTemplate({data}) {
