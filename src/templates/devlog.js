@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import {graphql, navigate} from 'gatsby';
-import {MDXRenderer} from 'gatsby-plugin-mdx';
 
 import Layout from 'components/layout';
 import Footer from 'components/footer';
 import SEO from 'components/seo';
+import MDXContent from 'components/mdxContent';
 
 import back_icon from 'assets/icons/back.svg';
 
@@ -110,26 +110,6 @@ const InfoText = styled.div`
   line-height: 1.25rem;
 `;
 
-const Content = styled.section`
-  width: 800px;
-  img {
-    max-width: 100%;
-    max-height: 1200px;
-  }
-  @media ${(props) => props.theme.tablet} {
-    width: 100%;
-  }
-  @media ${(props) => props.theme.mobile} {
-    width: 100%;
-  }
-
-  /* markdown style */
-  a {
-    text-decoration: underline;
-    font-weight: bold;
-  }
-`;
-
 function DevlogTemplate({data}) {
   const {body, frontmatter} = data.mdx;
   const {title, summary, date_created, category, thumbnail} = frontmatter;
@@ -164,9 +144,7 @@ function DevlogTemplate({data}) {
             <InfoText>{category}</InfoText>
           </Downside>
         </TitleGroup>
-        <Content>
-          <MDXRenderer>{body}</MDXRenderer>
-        </Content>
+        <MDXContent>{body}</MDXContent>
       </Main>
       <Footer />
     </Layout>
