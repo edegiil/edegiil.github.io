@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import {graphql, Link} from 'gatsby';
-import {MDXRenderer} from 'gatsby-plugin-mdx';
 
 import Layout from 'components/layout';
 import Footer from 'components/footer';
 import SEO from 'components/seo';
+import MDXContent from 'components/mdxContent';
 
 import back_icon from 'assets/icons/back.svg';
 import link_icon from 'assets/icons/link.svg';
@@ -121,20 +121,6 @@ const InfoText = styled.div`
   line-height: 1.25rem;
 `;
 
-const Content = styled.section`
-  width: 800px;
-  img {
-    max-width: 100%;
-    max-height: 1200px;
-  }
-  @media ${(props) => props.theme.tablet} {
-    width: 100%;
-  }
-  @media ${(props) => props.theme.mobile} {
-    width: 100%;
-  }
-`;
-
 function ProjectTemplate({data}) {
   const {body, frontmatter} = data.mdx;
   const {title, summary, time, platform, link, repository, thumbnail} = frontmatter;
@@ -177,9 +163,7 @@ function ProjectTemplate({data}) {
             <InfoText>{platform}</InfoText>
           </Downside>
         </TitleGroup>
-        <Content>
-          <MDXRenderer>{body}</MDXRenderer>
-        </Content>
+        <MDXContent>{body}</MDXContent>
       </Main>
       <Footer />
     </Layout>

@@ -85,21 +85,9 @@ const GlobalStyle = createGlobalStyle`
     font-size: ${(props) => props.theme.NORMAL_SIZE};
   }
 
-  code {
-    background-color: ${(props) => props.theme.DARK_COLOR};
-    padding: 2px 4px;
-    border-radius: 3px;
-  }
-
-  li {
-    list-style: inside;
-    text-indent: -1.5rem;
-    padding-left: 1.5rem;
-  }
-
   deckgo-highlight-code {
     --deckgo-highlight-code-font-family: 'Source Code Pro';
-    --deckgo-highlight-code-border-radius: 5px;
+    --deckgo-highlight-code-border-radius: 10px;
     --deckgo-highlight-code-background: ${(props) => props.theme.CODE_BLOCK_COLOR};
     --deckgo-highlight-code-padding: 20px 24px;
     --deckgo-highlight-code-line-height: 1.5rem;

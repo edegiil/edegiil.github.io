@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import {graphql} from 'gatsby';
-import {MDXRenderer} from 'gatsby-plugin-mdx';
 
 import Layout from 'components/layout';
 import SEO from 'components/seo';
+import MDXContent from 'components/mdxContent';
 
 const Main = styled.main`
   display: grid;
@@ -26,19 +26,6 @@ const Main = styled.main`
     padding: 24px 0 24px;
   }
 `;
-const Content = styled.section`
-  width: 800px;
-  img {
-    max-width: 100%;
-    max-height: 1200px;
-  }
-  @media ${(props) => props.theme.tablet} {
-    width: 100%;
-  }
-  @media ${(props) => props.theme.mobile} {
-    width: 100%;
-  }
-`;
 
 function DocsTemplate({data}) {
   const {body, frontmatter} = data.mdx;
@@ -51,9 +38,7 @@ function DocsTemplate({data}) {
         description={description}
       />
       <Main>
-        <Content>
-          <MDXRenderer>{body}</MDXRenderer>
-        </Content>
+        <MDXContent>{body}</MDXContent>
       </Main>
     </Layout>
   );
