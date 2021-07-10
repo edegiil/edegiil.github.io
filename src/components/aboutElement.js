@@ -1,6 +1,8 @@
 import React, {useState, useRef} from 'react';
 import styled from 'styled-components';
 
+import parseNewLine from 'utils/parseNewLine';
+
 const Container = styled.div`
   cursor: pointer;
   background: ${(props) => props.theme.DARK_COLOR};
@@ -106,7 +108,7 @@ function AboutElement({data}) {
           }
         </DescriptionGroup>
         <Detail ref={detail_element}>
-          {detail}
+          {parseNewLine(detail)}
         </Detail>
       </DetailGroup>
     </Container>
