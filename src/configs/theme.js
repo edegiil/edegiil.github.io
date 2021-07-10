@@ -85,6 +85,12 @@ const GlobalStyle = createGlobalStyle`
     font-size: ${(props) => props.theme.NORMAL_SIZE};
   }
 
+  li {
+    list-style: inside;
+    text-indent: -1.5rem;
+    padding-left: 1.5rem;
+  }
+
   deckgo-highlight-code {
     --deckgo-highlight-code-font-family: 'Source Code Pro';
     --deckgo-highlight-code-border-radius: 10px;
